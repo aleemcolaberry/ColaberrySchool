@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Systems Architect Accelerator · Free Open House | Colaberry</title>
+<meta name="description" content="Go from using AI to architecting real systems with Claude. Colaberry's AI Systems Architect Accelerator is a membership for working professionals, career switchers, and builders. Learn with Claude, build real projects, deploy in the real world. Join the free Open House. Membership is $149/month.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="From AI Curious to AI Architect · Free Open House">
+<meta property="og:description" content="Colaberry's AI Systems Architect Accelerator. Learn with Claude, build real systems, deploy in the real world. Membership · $149/month.">
+<meta property="og:image" content="../assets/logo/export/og-1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="From AI Curious to AI Architect · Free Open House">
+<meta name="twitter:description" content="Colaberry's AI Systems Architect Accelerator. Membership is $149/month.">
+<link rel="icon" href="../assets/logo/colaberry-app-icon.png">
+<link rel="stylesheet" href="../styles.css?v=b492c172">
+<link rel="stylesheet" href="aw.css?v=sh1">
+<link rel="stylesheet" href="partner.css?v=ffcce0c8">
+<link rel="stylesheet" href="home.css?v=930f93f2">
+<link rel="stylesheet" href="home-bento.css?v=48b21a17">
+<link rel="stylesheet" href="nav.css?v=ia11">
+</head>
+<body class="aw">
+<noscript>
+  <div style="max-width: 560px; margin: 80px auto; padding: 0 24px; font-family: Roboto, Arial, sans-serif; text-align: center;">
+    <h1 style="font-size: 28px;">From AI Curious to AI Architect</h1>
+    <p style="font-size: 17px; color: #4A4A4A;">Colaberry's AI Systems Architect Accelerator. Membership is $149/month. This page needs JavaScript, or register directly at <a href="https://learn.colaberry.com/" style="color: #E5121D;">learn.colaberry.com</a>.</p>
+  </div>
+</noscript>
+<div id="root"></div>
+
+<template id="__bundler_thumbnail" data-bg-color="#FB2832">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FB2832"/>
+    <g transform="translate(600 340)" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="-150" cy="0" r="30"/>
+      <circle cx="150" cy="-70" r="22"/>
+      <circle cx="150" cy="70" r="22"/>
+      <path d="M-122 -12 L122 -64 M-122 12 L122 64"/>
+    </g>
+    <text x="600" y="560" font-family="Roboto, Arial, sans-serif" font-size="58" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-1">From AI Curious</text>
+    <text x="600" y="630" font-family="Roboto, Arial, sans-serif" font-size="58" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-1">To AI Architect</text>
+  </svg>
+</template>
+
+<!-- Vendored libraries — self-hosted in assets/vendor/ (no CDN, works offline). -->
+<script src="../assets/vendor/lucide.min.js"></script>
+<script src="../assets/vendor/react.production.min.js"></script>
+<script src="../assets/vendor/react-dom.production.min.js"></script>
+<script src="../assets/vendor/babel.min.js"></script>
+<script src="../assets/vendor/gsap.min.js"></script>
+<script src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script src="../_ds_bundle.js?v=8d0600d2"></script>
+<script>if (window.gsap && window.ScrollTrigger) { gsap.registerPlugin(ScrollTrigger); }</script>
+
+<script type="text/babel" src="ai-parts.jsx?v=b926075a"></script>
+<script type="text/babel" src="ai-aw-parts.jsx?v=sh1"></script>
+<script type="text/babel" src="ai-aw-illos.jsx?v=44b7e8af"></script>
+<script type="text/babel" src="ai-bg-partner.jsx?v=98c7d8a2"></script>
+<script type="text/babel" src="ai-site-nav.jsx?v=sh1"></script>
+<script type="text/babel" src="tweaks-panel.jsx?v=5872805b"></script>
+<script type="text/babel" src="ai-home-hero.jsx?v=c33e69be"></script>
+<script type="text/babel" src="ai-home-sections.jsx?v=4457447d"></script>
+<script src="boot-fallback.js?v=0459fbf7"></script>
+<script type="text/babel">
+  // Strip any site chrome carried over from in-app (preview) navigation —
+  // no-op on a normal hard page load; prevents a duplicate nav/footer.
+  document.querySelectorAll('#siteNav, #siteMenu, .snav-menu, .site-mmenu, body > #site-nav, body > #site-footer').forEach((e) => e.remove());
+  document.querySelectorAll('body > .aw-footer').forEach((e) => e.remove());
+
+  const { SiteNav, HomeHero, HomeMarquee } = window;
+  const { HomeStats, HomePaths, HomeHow, HomePhoto, HomeCertificate, HomeLogos, HomeTestimonials, HomePricing, HomeFinal } = window;
+  const { BgPartner, AwFooter } = window;
+  const { useTweaks, TweaksPanel, TweakSection, TweakRadio, TweakColor } = window;
+
+  // Accent presets — each maps a swatch hex to the Anthropic-token trio it
+  // drives in the partnership section, plus the shared glow accent.
+  const ACCENTS = {
+    '#D97757': { name: null, ink: '#B0552F', tint: '#FBF4F0' }, // Clay (default — no override)
+    '#FB2832': { name: 'cherry', ink: '#C20E1E', tint: '#FEEFEF' },
+    '#367895': { name: 'berry', ink: '#265A72', tint: '#EAF2F5' },
+    '#5BA63C': { name: 'leaf', ink: '#356A24', tint: '#EEF6E9' },
+  };
+  const ACCENT_SWATCHES = Object.keys(ACCENTS);
+
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "layout": "editorial",
+    "mood": "contrast",
+    "accent": "#D97757"
+  }/*EDITMODE-END*/;
+
+  function App() {
+    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+    const bento = t.layout === 'bento';
+    const ink = t.mood === 'ink';
+    const accent = ACCENTS[t.accent] || ACCENTS['#D97757'];
+    // Non-default accent → override Anthropic trio + shared glow var.
+    const accentVars = accent.name ? {
+      '--anthropic': t.accent, '--anthropic-ink': accent.ink,
+      '--anthropic-tint': accent.tint, '--feat-accent': t.accent,
+    } : null;
+    const accentName = accent.name;
+
+    React.useEffect(() => {
+      const draw = () => { if (window.lucide && window.lucide.createIcons) window.lucide.createIcons(); };
+      draw();
+      const t = setInterval(draw, 400);
+      const stop = setTimeout(() => clearInterval(t), 3000);
+
+      let ctx = null, cancelVis = () => {};
+      if (window.gsap && window.ScrollTrigger) {
+        cancelVis = awWhenVisible(() => {
+          ctx = gsap.context(() => {
+            document.querySelectorAll('[data-rv-group]').forEach((group) => {
+              const els = group.querySelectorAll('[data-rv]');
+              if (!els.length) return;
+              // Cards cascade in one by one — bigger rise + clear per-item beat.
+              gsap.from(els, {
+                y: 44, opacity: 0, duration: .9, ease: 'power3.out',
+                stagger: { each: .22 },
+                clearProps: 'transform,opacity', // hand style control back to CSS so :hover transforms keep working
+                scrollTrigger: { trigger: group, start: 'top 88%', once: true },
+              });
+            });
+            ScrollTrigger.refresh();
+          });
+        });
+      }
+      return () => { clearInterval(t); clearTimeout(stop); cancelVis(); if (ctx) ctx.revert(); };
+    }, []);
+
+    // Keep ScrollTrigger positions correct after a layout tweak reflows the page.
+    React.useEffect(() => {
+      if (window.ScrollTrigger) { const id = setTimeout(() => ScrollTrigger.refresh(), 260); return () => clearTimeout(id); }
+    }, [bento, ink, t.accent]);
+
+    return (
+      <React.Fragment>
+        <a className="aw-skip" href="#main">Skip to content</a>
+        <SiteNav active="accelerator" />
+        <main id="main">
+          <HomeHero />
+          <HomeMarquee />
+          <HomePaths />
+          <HomeStats />
+          <HomeHow />
+          <HomePhoto />
+          <BgPartner bento={bento} accentVars={accentVars} accentName={accentName} />
+          <HomeCertificate bento={bento} mood={ink ? 'ink' : null} accentVars={accentVars} accentName={accentName} />
+          <HomeLogos />
+          <HomeTestimonials />
+          <HomeFinal />
+        </main>
+        <AwFooter />
+        <TweaksPanel title="Tweaks">
+          <TweakSection label="Credential sections" />
+          <TweakRadio label="Layout" value={t.layout}
+            options={[{ value: 'editorial', label: 'Editorial' }, { value: 'bento', label: 'Bento' }]}
+            onChange={(v) => setTweak('layout', v)} />
+          <TweakRadio label="Mood" value={t.mood}
+            options={[{ value: 'contrast', label: 'Contrast' }, { value: 'ink', label: 'Unified ink' }]}
+            onChange={(v) => setTweak('mood', v)} />
+          <TweakSection label="Accent" />
+          <TweakColor label="Partnership accent" value={t.accent}
+            options={ACCENT_SWATCHES}
+            onChange={(v) => setTweak('accent', v)} />
+        </TweaksPanel>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+<script src="to-top.js?v=5aa90bfa" defer></script>
+</body>
+</html>

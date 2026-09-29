@@ -1,0 +1,57 @@
+<!-- @dsCard group="Components" viewport="700x230" name="Badges & Avatars" subtitle="Status pills and student/instructor avatars" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css?v=b492c172">
+<style>
+  body { margin: 0; padding: 26px; background: var(--surface-page); }
+  .grp { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .grp:last-child { margin-bottom: 0; }
+  .lbl { font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); width: 64px; flex: none; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="../../assets/vendor/react.production.min.js"></script>
+<script src="../../assets/vendor/react-dom.production.min.js"></script>
+<script src="../../assets/vendor/babel.min.js"></script>
+<script src="../../_ds_bundle.js?v=8d0600d2"></script>
+<script type="text/babel">
+  const { Badge, Avatar } = window.ColaberryDesignSystem_098454;
+  function Demo() {
+    return (
+      <div>
+        <div className="grp">
+          <span className="lbl">Tints</span>
+          <Badge tone="green" dot>Enrolling</Badge>
+          <Badge tone="blue">Data Science</Badge>
+          <Badge tone="red" dot>Closing soon</Badge>
+          <Badge tone="warning">Due Friday</Badge>
+          <Badge tone="neutral">Self-paced</Badge>
+        </div>
+        <div className="grp">
+          <span className="lbl">Emphasis</span>
+          <Badge solid>New</Badge>
+          <Badge outline>Hybrid</Badge>
+        </div>
+        <div className="grp">
+          <span className="lbl">Avatars</span>
+          <Avatar src="../../assets/avatars/person-1.png" name="Mika Rivera" size="lg" ring />
+          <Avatar src="../../assets/avatars/person-2.png" name="Owen Brooks" size="lg" />
+          <Avatar src="../../assets/avatars/person-3.png" name="Sam Okafor" size="lg" />
+          <Avatar name="Ada Lovelace" size="lg" />
+          <div className="cb-avatar-group">
+            <Avatar src="../../assets/avatars/person-2.png" name="Owen Brooks" />
+            <Avatar src="../../assets/avatars/person-1.png" name="Mika Rivera" />
+            <Avatar name="Ada Lovelace" />
+            <Avatar name="Lee Park" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body>
+</html>

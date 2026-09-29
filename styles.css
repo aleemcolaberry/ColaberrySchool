@@ -1,0 +1,16 @@
+/* ============================================================
+   Colaberry Design System — global entry point
+   Consumers link THIS file for the foundation: fonts + icons,
+   color/type/spacing tokens, base element styles, the motion
+   layer, and app utilities. For fully-styled CSS-only components
+   with no build/React, link components.css instead (it imports
+   this file, so it is a complete one-link superset).
+   Everything reachable here ships to consumers.
+   ============================================================ */
+@import url('./tokens/fonts.css?v=396abfe9');
+@import url('./tokens/colors.css?v=1a261112');
+@import url('./tokens/typography.css?v=2e2781f8');
+@import url('./tokens/spacing.css?v=80058ccc');
+@import url('./tokens/base.css?v=73ae8ab2');
+@import url('./tokens/motion.css?v=193241a6');
+@import url('./tokens/utilities.css?v=3aacc1f0');

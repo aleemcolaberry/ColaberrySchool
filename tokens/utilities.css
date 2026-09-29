@@ -1,0 +1,111 @@
+/* ============================================================
+   Colaberry — App utilities
+   A tight set of layout + interaction primitives for building
+   detailed web applications fast, all on the brand tokens. These
+   are opt-in helper classes; they never style bare elements.
+   ============================================================ */
+
+/* ---------------------------------------------------------------
+   LAYOUT
+   --------------------------------------------------------------- */
+/* Page width container. Modifiers cap the max-width. */
+.cb-container { width: 100%; max-width: var(--container-lg); margin-inline: auto; padding-inline: var(--gutter); }
+.cb-container--sm  { max-width: var(--container-sm); }
+.cb-container--md  { max-width: var(--container-md); }
+.cb-container--xl  { max-width: var(--container-xl); }
+.cb-container--max { max-width: var(--container-max); }
+.cb-container--bleed { max-width: none; }
+
+/* Vertical rhythm — stack children with a consistent gap. */
+.cb-stack { display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
+.cb-stack--2 { gap: var(--space-2); }
+.cb-stack--3 { gap: var(--space-3); }
+.cb-stack--6 { gap: var(--space-6); }
+.cb-stack--8 { gap: var(--space-8); }
+
+/* Horizontal group that wraps. Good for chips, button rows, meta. */
+.cb-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); min-width: 0; }
+.cb-cluster--2 { gap: var(--space-2); }
+.cb-cluster--end { justify-content: flex-end; }
+.cb-cluster--between { justify-content: space-between; }
+
+/* Row that does NOT wrap, children can shrink (truncate-friendly). */
+.cb-row { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
+.cb-row > .cb-grow { flex: 1 1 auto; min-width: 0; }
+
+/* Responsive auto-fit grid — cards/tiles. Set --min to tune. */
+.cb-grid { display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fit, minmax(min(var(--min, 260px), 100%), 1fr)); }
+.cb-grid--tight { gap: var(--space-4); }
+.cb-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.cb-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.cb-grid--4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 768px) {
+  .cb-grid--2, .cb-grid--3, .cb-grid--4 { grid-template-columns: 1fr; }
+}
+
+/* Center a block both axes (full-height shells, empty states). */
+.cb-center { display: grid; place-items: center; }
+
+/* App shell — sidebar + content; collapses to single column on mobile. */
+.cb-shell { display: grid; grid-template-columns: var(--cb-aside, 264px) 1fr; min-height: 100vh; }
+.cb-shell > .cb-shell__main { min-width: 0; }
+@media (max-width: 1024px) { .cb-shell { grid-template-columns: 1fr; } }
+
+/* Sticky page region (toolbars, table headers). */
+.cb-sticky { position: sticky; top: 0; z-index: var(--z-sticky); background: var(--surface-page); }
+
+/* Scroll area with momentum + thin themed scrollbar. */
+.cb-scroll { overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+.cb-scroll::-webkit-scrollbar { width: 10px; height: 10px; }
+.cb-scroll::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: var(--radius-pill); border: 2px solid transparent; background-clip: padding-box; }
+.cb-scroll::-webkit-scrollbar-thumb:hover { background: var(--border-strong); background-clip: padding-box; }
+
+/* Hairline divider. */
+.cb-divider { border: none; border-top: 1px solid var(--border-subtle); margin: var(--space-6) 0; }
+.cb-divider--v { border-top: none; border-left: 1px solid var(--border-subtle); margin: 0 var(--space-4); align-self: stretch; }
+
+/* ---------------------------------------------------------------
+   INTERACTION — contrast-safe, themeable hover surfaces.
+   .cb-interactive gives any clickable row/cell/nav-item a hover and
+   active state that is GUARANTEED visible in light and dark (it uses
+   --surface-hover, which is directionally correct in both themes —
+   unlike surface-card→surface-page, which can be a no-op).
+   --------------------------------------------------------------- */
+.cb-interactive {
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+@media (hover: hover) {
+  .cb-interactive:hover { background: var(--surface-hover); }
+}
+.cb-interactive:active { background: var(--surface-hover-strong); }
+.cb-interactive:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.cb-interactive[aria-current="true"],
+.cb-interactive.is-active { background: var(--surface-brand-subtle); color: var(--text-brand); }
+
+/* ---------------------------------------------------------------
+   ACCESSIBILITY HELPERS
+   --------------------------------------------------------------- */
+/* Visually hidden but available to assistive tech. */
+.cb-sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+/* Skip-to-content link: hidden until focused. */
+.cb-skip-link {
+  position: fixed; left: var(--space-3); top: calc(-1 * var(--space-16)); z-index: var(--z-toast);
+  background: var(--surface-inverse); color: var(--text-on-inverse);
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-sm);
+  transition: top var(--dur-fast) var(--ease-out);
+}
+.cb-skip-link:focus { top: var(--space-3); }
+
+/* ---------------------------------------------------------------
+   SURFACE HELPERS
+   --------------------------------------------------------------- */
+.cb-elevate-sm { box-shadow: var(--shadow-sm); }
+.cb-elevate-md { box-shadow: var(--shadow-md); }
+.cb-elevate-lg { box-shadow: var(--shadow-lg); }
+.cb-panel { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); }
+.cb-panel--pad { padding: var(--space-6); }

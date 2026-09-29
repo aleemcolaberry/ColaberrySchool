@@ -1,0 +1,172 @@
+/* ============================================================
+   Home · expressive tweaks layer
+   Bento layouts + Ink mood + Accent recolor for the two
+   credential sections: Official Partnership (.bg-partband)
+   and Official Certificate (#certificate .bg-cert2).
+
+   Everything here is GATED behind a tweak class/attribute:
+   .is-bento, [data-mood="ink"], [data-accent]. With none set,
+   the page renders exactly as the approved baseline.
+   ============================================================ */
+
+/* ---- Accent recolor (glows in both feature sections) ------- */
+/* The partnership section also has --anthropic trio overridden
+   inline, so its kicker / stats / em / seal recolor automatically. */
+[data-accent].bg-partband .bg-partband__glow {
+  background: radial-gradient(circle, color-mix(in srgb, var(--feat-accent) 42%, transparent), transparent 68%);
+}
+[data-accent] .bg-cert2__glow {
+  background: radial-gradient(circle, color-mix(in srgb, var(--feat-accent) 40%, transparent), transparent 68%);
+}
+[data-accent] .bg-cert2__badge {
+  color: color-mix(in srgb, var(--feat-accent) 82%, #000);
+  background: color-mix(in srgb, var(--feat-accent) 12%, var(--surface-card));
+  border-color: color-mix(in srgb, var(--feat-accent) 26%, transparent);
+}
+[data-accent] .bg-cert2__badge .cb-i { color: var(--feat-accent); }
+/* keep the partnership seal a single solid accent (its baseline
+   gradient's 2nd stop is hard-clay, which clashes off-clay) */
+[data-accent].bg-partband .bg-certbig__seal { background: var(--feat-accent); }
+
+/* ============================================================
+   BENTO — Official Partnership (.bg-partband.is-bento)
+   Left column becomes gapped tiles; the plaque is a tall tile.
+   ============================================================ */
+.bg-partband.is-bento .bg-partband__inner {
+  grid-template-columns: 1.25fr 1fr;
+  grid-template-areas:
+    "intro cert"
+    "stats cert"
+    "cta   cert";
+  gap: 16px;
+  align-items: stretch;
+  align-content: start;
+}
+.bg-partband.is-bento .bg-pt-intro { grid-area: intro; }
+.bg-partband.is-bento .bg-partstats { grid-area: stats; margin: 0; }
+.bg-partband.is-bento .bg-pt-cta    { grid-area: cta; }
+.bg-partband.is-bento .bg-certwrap  { grid-area: cert; align-items: stretch; height: 100%; }
+.bg-partband.is-bento .bg-certbig   { max-width: none; align-self: stretch; }
+
+/* the two synthesized panels (intro + cta) read as bento tiles */
+.bg-partband.is-bento .bg-pt-intro,
+.bg-partband.is-bento .bg-pt-cta {
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius-xl);
+  padding: clamp(28px, 3vw, 40px);
+}
+.bg-partband.is-bento .bg-pt-intro .bg-partband__kick { margin-bottom: 16px; }
+.bg-partband.is-bento .bg-pt-intro h2 { font-size: clamp(30px, 3.2vw, 46px); }
+.bg-partband.is-bento .bg-pt-intro .bg-partband__p { margin-top: 18px; font-size: var(--fs-body); }
+.bg-partband.is-bento .bg-pt-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.bg-partband.is-bento .bg-pt-cta::before {
+  content: "Free · live online"; font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--neutral-400);
+}
+.bg-partband.is-bento .bg-partstat {
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.12);
+}
+
+@media (max-width: 940px) {
+  .bg-partband.is-bento .bg-partband__inner {
+    grid-template-columns: 1fr;
+    grid-template-areas: "intro" "stats" "cta" "cert";
+    gap: 14px;
+  }
+  .bg-partband.is-bento .bg-pt-cta { flex-direction: column; align-items: stretch; }
+  .bg-partband.is-bento .bg-pt-cta::before { text-align: center; }
+}
+
+/* ============================================================
+   BENTO — Official Certificate (#certificate.is-bento .bg-cert2)
+   The solid split-card dissolves into gapped tiles: an intro
+   tile, three feature tiles, and the dark plaque as a tall tile.
+   ============================================================ */
+#certificate.is-bento .bg-cert2 {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+  grid-template-columns: 1.05fr .95fr;
+  grid-template-areas:
+    "intro doc"
+    "feats doc";
+  gap: 16px;
+  align-items: stretch;
+}
+#certificate.is-bento .cb2-intro { grid-area: intro; }
+#certificate.is-bento .cb2-feats { grid-area: feats; }
+#certificate.is-bento .bg-cert2__right {
+  grid-area: doc;
+  border-radius: var(--radius-2xl);
+  height: 100%;
+}
+/* intro tile */
+#certificate.is-bento .cb2-intro {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-2xl);
+  padding: clamp(32px, 3.4vw, 52px);
+  box-shadow: var(--shadow-sm);
+}
+#certificate.is-bento .cb2-intro .bg-cert2__feats { display: none; } /* feats live in their own tile */
+/* feature tiles row */
+#certificate.is-bento .cb2-feats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+#certificate.is-bento .cb2-feats .bg-cert2__feat {
+  flex-direction: column;
+  gap: 14px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 24px 22px;
+  box-shadow: var(--shadow-sm);
+}
+@media (max-width: 940px) {
+  #certificate.is-bento .bg-cert2 {
+    grid-template-columns: 1fr;
+    grid-template-areas: "intro" "feats" "doc";
+  }
+  #certificate.is-bento .cb2-feats { grid-template-columns: 1fr; }
+  #certificate.is-bento .cb2-feats .bg-cert2__feat { flex-direction: row; }
+}
+
+/* ============================================================
+   INK MOOD — Official Certificate goes full-bleed dark so it
+   fuses with the (already dark) partnership band above it.
+   Applies with or without bento.
+   ============================================================ */
+#certificate[data-mood="ink"] { background: var(--neutral-950); }
+#certificate[data-mood="ink"] .bg-cert2 {
+  background: var(--neutral-950);
+  border-color: rgba(255,255,255,.1);
+}
+#certificate[data-mood="ink"] .aw-h2 { color: #fff; }
+#certificate[data-mood="ink"] .bg-cert2__lead { color: var(--neutral-300); }
+#certificate[data-mood="ink"] .bg-cert2__lead strong { color: #fff; }
+#certificate[data-mood="ink"] .bg-cert2__ft { color: #fff; }
+#certificate[data-mood="ink"] .bg-cert2__fd { color: var(--neutral-400); }
+#certificate[data-mood="ink"] .bg-cert2__badge {
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  border-color: rgba(255,255,255,.15);
+}
+#certificate[data-mood="ink"] .bg-cert2__badge .cb-i { color: #fff; }
+
+/* ink + bento: intro & feature tiles become translucent-on-dark */
+#certificate[data-mood="ink"].is-bento .cb2-intro,
+#certificate[data-mood="ink"].is-bento .cb2-feats .bg-cert2__feat {
+  background: rgba(255,255,255,.045);
+  border-color: rgba(255,255,255,.1);
+  box-shadow: none;
+}
+/* ink + NON-bento: the split card's left half also darkens */
+#certificate[data-mood="ink"]:not(.is-bento) .bg-cert2 { border: 1px solid rgba(255,255,255,.1); }

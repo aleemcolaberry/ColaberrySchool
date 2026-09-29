@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Marketing · Video Storyboard" description="Shot-by-shot storyboard for short-form video (TikTok/Reels/Shorts) — frames, timecodes, on-screen text, VO, and production notes." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  @media print {
+    @page { size: A4 portrait; margin: 12mm; }
+    body { background: #fff !important; }
+  }
+</style>
+</helmet>
+<div style="background:var(--surface-subtle);min-height:100vh;display:grid;justify-items:center;padding:36px 16px;font-family:var(--font-body)">
+  <div style="width:100%;max-width:1000px;display:flex;flex-direction:column;gap:20px">
+
+    <!-- Header band -->
+    <div style="background:var(--neutral-950);color:#fff;border-radius:var(--radius-xl);padding:30px 34px;display:flex;flex-wrap:wrap;align-items:center;gap:20px 28px;break-inside:avoid">
+      <div style="flex:none;width:64px;height:64px;border-radius:var(--radius-lg);background:var(--red-500);display:grid;place-items:center;font-family:var(--font-mono);font-weight:700;font-size:24px;letter-spacing:-.02em">C5</div>
+      <div style="flex:1;min-width:240px">
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--neutral-400);margin-bottom:6px">Marketing · Short-form video · Storyboard</div>
+        <h1 style="font-family:var(--font-display);font-weight:900;font-size:30px;line-height:1.05;letter-spacing:-.02em;margin:0;color:#fff">The 60-Second Live Build</h1>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;flex-basis:100%">
+        <span style="font-family:var(--font-mono);font-size:11.5px;padding:6px 12px;border:1px solid rgba(255,255,255,.22);border-radius:var(--radius-pill);color:var(--neutral-200)">&#8804;60s · 9:16 vertical</span>
+        <span style="font-family:var(--font-mono);font-size:11.5px;padding:6px 12px;border:1px solid rgba(255,255,255,.22);border-radius:var(--radius-pill);color:var(--neutral-200)">TikTok · Reels · Shorts</span>
+        <span style="font-family:var(--font-mono);font-size:11.5px;padding:6px 12px;border:1px solid rgba(255,255,255,.22);border-radius:var(--radius-pill);color:var(--neutral-200)">Audience: builders &amp; founders</span>
+        <span style="font-family:var(--font-mono);font-size:11.5px;padding:6px 12px;border:1px solid rgba(255,255,255,.22);border-radius:var(--radius-pill);color:var(--neutral-200)">Tool: jogg.ai / arcads.ai</span>
+        <span style="font-family:var(--font-mono);font-size:11.5px;padding:6px 12px;background:var(--red-500);border-radius:var(--radius-pill);color:#fff;font-weight:700">Priority #1</span>
+      </div>
+    </div>
+
+    <!-- Strategy row -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;break-inside:avoid">
+      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:18px 20px">
+        <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--red-500);font-weight:700;margin-bottom:8px">Hook (first 3s)</div>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--text-body)">"Everyone's scared AI will take their job. I'm going to build one — right now."</p>
+      </div>
+      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:18px 20px">
+        <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-600);font-weight:700;margin-bottom:8px">CTA</div>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--text-body)">Free Open House · <b style="color:var(--text-strong)">July 16, 2026</b> — link in bio &#8594; Open House registration page.</p>
+      </div>
+      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:18px 20px">
+        <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-700);font-weight:700;margin-bottom:8px">Share trigger</div>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--text-body)">"Wait — a non-engineer built that?" Viewers tag a friend who "still thinks AI is hype."</p>
+      </div>
+    </div>
+
+    <!-- Beat bar -->
+    <sc-if value="{{ showBeatBar }}" hint-placeholder-val="{{ true }}">
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:16px 20px;break-inside:avoid">
+      <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:10px">Beat sheet · 60 seconds</div>
+      <div style="display:flex;gap:4px">
+        <div style="flex:3;min-width:0;background:var(--red-500);color:#fff;border-radius:6px;padding:8px 6px;text-align:center"><span style="font-family:var(--font-mono);font-size:10px;font-weight:700;display:block">HOOK</span></div>
+        <div style="flex:5;min-width:0;background:var(--neutral-800);color:#fff;border-radius:6px;padding:8px 6px;text-align:center"><span style="font-family:var(--font-mono);font-size:10px;font-weight:700;display:block">SETUP</span></div>
+        <div style="flex:27;min-width:0;background:var(--blue-600);color:#fff;border-radius:6px;padding:8px 6px;text-align:center"><span style="font-family:var(--font-mono);font-size:10px;font-weight:700;display:block">BUILD MONTAGE</span></div>
+        <div style="flex:13;min-width:0;background:var(--green-700);color:#fff;border-radius:6px;padding:8px 6px;text-align:center"><span style="font-family:var(--font-mono);font-size:10px;font-weight:700;display:block">REVEAL</span></div>
+        <div style="flex:6;min-width:0;background:var(--neutral-800);color:#fff;border-radius:6px;padding:8px 6px;text-align:center"><span style="font-family:var(--font-mono);font-size:10px;font-weight:700;display:block">PROOF</span></div>
+        <div style="flex:6;min-width:0;background:var(--red-500);color:#fff;border-radius:6px;padding:8px 6px;text-align:center"><span style="font-family:var(--font-mono);font-size:10px;font-weight:700;display:block">CTA</span></div>
+      </div>
+      <div style="display:flex;gap:4px;margin-top:6px">
+        <span style="flex:3;font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-align:center">0–3</span>
+        <span style="flex:5;font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-align:center">3–8</span>
+        <span style="flex:27;font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-align:center">8–35</span>
+        <span style="flex:13;font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-align:center">35–48</span>
+        <span style="flex:6;font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-align:center">48–54</span>
+        <span style="flex:6;font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-align:center">54–60</span>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SHOT 1 -->
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:20px;display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;break-inside:avoid">
+      <div style="width:140px;height:249px"><image-slot id="vsb-shot-1" shape="rounded" radius="10" placeholder="Frame still 9:16"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--text-strong)">Shot 1 — Cold open</span>
+          <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;background:var(--neutral-950);color:#fff;padding:4px 10px;border-radius:var(--radius-pill)">0:00–0:03</span>
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--red-500);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Hook · talking head</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 20px">
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Action</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Direct-to-camera, tight crop, mid-gesture. Hard cut in — no logo, no intro.</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">On-screen text</div><p style="margin:0;font-size:13px;line-height:1.5;font-weight:700;background:var(--neutral-950);color:#fff;padding:8px 12px;border-radius:8px;display:inline-block">"AI won't take your job. Watch me build one in 60 seconds."</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Audio / VO</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">"Everyone's scared AI will take their job. I'm going to build one — right now."</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Production notes</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-muted)">4K vertical; captions burned in ≥48px; first frame must work muted. arcads.ai AI actor OK.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 2 -->
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:20px;display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;break-inside:avoid">
+      <div style="width:140px;height:249px"><image-slot id="vsb-shot-2" shape="rounded" radius="10" placeholder="Frame still 9:16"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--text-strong)">Shot 2 — Setup</span>
+          <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;background:var(--neutral-950);color:#fff;padding:4px 10px;border-radius:var(--radius-pill)">0:03–0:08</span>
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--blue-600);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Screen capture</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 20px">
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Action</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Whip-cut to a clean screen recording — blank Claude window, one-line business problem typed in.</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">On-screen text</div><p style="margin:0;font-size:13px;line-height:1.5;font-weight:700;background:var(--neutral-950);color:#fff;padding:8px 12px;border-radius:8px;display:inline-block">"One real business problem. Zero code."</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Audio / VO</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Keyboard foley. VO: "Real problem, from a real business. No code background."</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Production notes</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-muted)">Record at 2× then play at 1×; hide bookmarks bar; capture at 60fps.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 3 -->
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:20px;display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;break-inside:avoid">
+      <div style="width:140px;height:249px"><image-slot id="vsb-shot-3" shape="rounded" radius="10" placeholder="Frame still 9:16"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--text-strong)">Shot 3 — Build montage</span>
+          <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;background:var(--neutral-950);color:#fff;padding:4px 10px;border-radius:var(--radius-pill)">0:08–0:35</span>
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--blue-600);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Timelapse</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 20px">
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Action</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Timelapse of the build — prompts flying, UI assembling, quick zoom-punches on key moments.</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">On-screen text</div><p style="margin:0;font-size:13px;line-height:1.5;font-weight:700;background:var(--neutral-950);color:#fff;padding:8px 12px;border-radius:8px;display:inline-block">"1 — describe the workflow" &#8594; "2 — Claude drafts the agent" &#8594; "3 — wire it to the data"</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Audio / VO</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Rising music bed; VO drops in as each step caption lands.</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Production notes</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-muted)">Keep each step ≤9s. jogg.ai talking-avatar PIP in corner optional.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 4 -->
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:20px;display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;break-inside:avoid">
+      <div style="width:140px;height:249px"><image-slot id="vsb-shot-4" shape="rounded" radius="10" placeholder="Frame still 9:16"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--text-strong)">Shot 4 — Reveal</span>
+          <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;background:var(--neutral-950);color:#fff;padding:4px 10px;border-radius:var(--radius-pill)">0:35–0:48</span>
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--green-700);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Live demo</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 20px">
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Action</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Cut to a phone in hand — the finished assistant answering a real customer message.</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">On-screen text</div><p style="margin:0;font-size:13px;line-height:1.5;font-weight:700;background:var(--neutral-950);color:#fff;padding:8px 12px;border-radius:8px;display:inline-block">"Built in one hour. Deployed for real."</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Audio / VO</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Music ducks; phone UI sounds. VO: "That's a working AI system — built by someone who started exactly where you are."</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Production notes</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-muted)">Real device, not a mockup; let screen light the hand.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 5 -->
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:20px;display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;break-inside:avoid">
+      <div style="width:140px;height:249px"><image-slot id="vsb-shot-5" shape="rounded" radius="10" placeholder="Frame still 9:16"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--text-strong)">Shot 5 — Proof</span>
+          <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;background:var(--neutral-950);color:#fff;padding:4px 10px;border-radius:var(--radius-pill)">0:48–0:54</span>
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--green-700);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Social proof</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 20px">
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Action</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Proof card over graduate photo — stats punch in one by one.</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">On-screen text</div><p style="margin:0;font-size:13px;line-height:1.5;font-weight:700;background:var(--neutral-950);color:#fff;padding:8px 12px;border-radius:8px;display:inline-block">"5,000+ careers changed since 2012 · 49 countries"</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Audio / VO</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Three ascending UI ticks as the stats land.</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Production notes</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-muted)">Approved stats only — must match live landing-page copy exactly.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOT 6 -->
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:20px;display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;break-inside:avoid">
+      <div style="width:140px;height:249px"><image-slot id="vsb-shot-6" shape="rounded" radius="10" placeholder="Frame still 9:16"></image-slot></div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span style="font-family:var(--font-display);font-weight:900;font-size:17px;color:var(--text-strong)">Shot 6 — CTA end card</span>
+          <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;background:var(--neutral-950);color:#fff;padding:4px 10px;border-radius:var(--radius-pill)">0:54–0:60</span>
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--red-500);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Brand card</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px 20px">
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Action</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Hard cut to brand end card. Logo, date, one button. Nothing else moves.</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">On-screen text</div><p style="margin:0;font-size:13px;line-height:1.5;font-weight:700;background:var(--red-500);color:#fff;padding:8px 12px;border-radius:8px;display:inline-block">"Free Open House · July 16, 2026 — link in bio"</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Audio / VO</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-body)">Music resolves. VO: "Come see how it's done — free, July 16."</p></div>
+          <div><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:5px">Production notes</div><p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--text-muted)">Hold ≥2s after VO for the replay loop; CTA routes to the Open House registration page.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Approvals + compliance -->
+    <sc-if value="{{ showApprovals }}" hint-placeholder-val="{{ true }}">
+    <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:20px;break-inside:avoid">
+      <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:14px">Sign-off · Definition of Done</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+        <div style="border:1px dashed var(--border-strong);border-radius:var(--radius-lg);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div><b style="font-size:14px;color:var(--text-strong)">Sohail</b><span style="display:block;font-size:12px;color:var(--text-muted)">Marketing</span></div>
+          <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--red-500)">PENDING</span>
+        </div>
+        <div style="border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div><b style="font-size:14px;color:var(--text-strong)">Ali Muwwakkil</b><span style="display:block;font-size:12px;color:var(--text-muted)">Managing Director</span></div>
+          <span style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--green-700)">APPROVED · JUN 18</span>
+        </div>
+      </div>
+      <p style="margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--text-muted)">Compliance: confirm whether the TWC-approved caption line is required before any <b>paid</b> distribution. Organic posting is lower risk.</p>
+    </div>
+    </sc-if>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1040},&quot;showBeatBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showApprovals&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showBeatBar: this.props.showBeatBar ?? true,
+      showApprovals: this.props.showApprovals ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>

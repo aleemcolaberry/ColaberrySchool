@@ -1,0 +1,245 @@
+/* ============================================================
+   Anthropic / Claude Partner Network — partnership proof
+   Layered on the same editorial system (aw.css + wp.css).
+   Claude's brand coral is used ONLY for partner moments so it
+   reads as a co-brand accent, never competing with Cherry.
+   ============================================================ */
+:root { --anthropic: #D97757; --anthropic-ink: #B0552F; --anthropic-tint: #FBF4F0; }
+
+/* ---------- Hero partner badge (replaces the plain eyebrow) ---------- */
+.bg-partbadge { display: inline-flex; align-items: center; gap: 12px; padding: 7px 18px 7px 7px; margin-bottom: 30px;
+  border-radius: var(--radius-pill); border: 1px solid color-mix(in srgb, var(--anthropic) 40%, var(--border-default));
+  background: color-mix(in srgb, var(--anthropic) 8%, var(--surface-card)); box-shadow: var(--shadow-sm); text-decoration: none; }
+a.bg-partbadge:hover { text-decoration: none; border-color: color-mix(in srgb, var(--anthropic) 64%, var(--border-default)); }
+.bg-partbadge__tile { width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; flex: none;
+  background: var(--anthropic); color: #fff; }
+.bg-partbadge__tx { display: flex; flex-direction: column; line-height: 1.16; }
+.bg-partbadge__tx b { font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 14px; letter-spacing: -0.01em; color: var(--text-strong); }
+.bg-partbadge__tx span { font-family: var(--font-mono); font-size: 10px; font-weight: var(--fw-bold); letter-spacing: .07em;
+  text-transform: uppercase; color: var(--anthropic-ink); }
+
+/* ---------- Hero proof cards (Coursiv-style certificate + partner) ---------- */
+/* The hero is display:flex; wrap grid + proof in a column stack so the proof
+   strip sits BELOW the hero, full-width, instead of becoming a second column.
+   flex-start lets the hero grow with the extra strip rather than center-clip. */
+.aw-hero { align-items: flex-start; }
+.aw-hero__stack { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; }
+.bg-proof { position: relative; z-index: 2; max-width: 1440px; margin: 48px auto 0; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.bg-proofcard { display: flex; align-items: center; gap: 22px; padding: 20px 24px; border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle); background: var(--surface-card); box-shadow: var(--shadow-sm); text-decoration: none;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out); }
+.bg-proofcard:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); text-decoration: none;
+  border-color: color-mix(in srgb, var(--anthropic) 44%, var(--border-subtle)); }
+.bg-proofcard__media { flex: none; }
+.bg-proofcard__body { flex: 1; min-width: 0; }
+.bg-proofcard__t { display: block; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 18px; letter-spacing: -0.01em;
+  color: var(--text-strong); margin: 0 0 5px; }
+.bg-proofcard__d { display: block; font-size: var(--fs-body-sm); color: var(--text-muted); margin: 0; line-height: 1.45; max-width: 38ch; }
+.bg-proofcard__d b { color: var(--text-strong); font-weight: var(--fw-bold); }
+.bg-proofcard__arrow { flex: none; color: var(--text-subtle); display: grid; place-items: center;
+  transition: transform var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out); }
+.bg-proofcard:hover .bg-proofcard__arrow { color: var(--anthropic); transform: translateX(4px); }
+
+/* Seal (certified) */
+.bg-seal { width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; position: relative; flex: none;
+  background: radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--anthropic) 20%, #fff), #fff);
+  border: 2px solid var(--anthropic); color: var(--anthropic);
+  box-shadow: 0 5px 16px color-mix(in srgb, var(--anthropic) 28%, transparent); }
+.bg-seal::after { content: ""; position: absolute; inset: 5px; border-radius: 50%; border: 1px dashed color-mix(in srgb, var(--anthropic) 55%, transparent); }
+.bg-seal__chk { position: absolute; right: -3px; bottom: -3px; width: 22px; height: 22px; border-radius: 50%; background: var(--green-600);
+  color: #fff; display: grid; place-items: center; border: 2px solid var(--surface-card); }
+.bg-seal__chk .cb-i { font-size: 12px; }
+
+/* Partner tile */
+.bg-ptile { width: 62px; height: 62px; border-radius: 16px; display: grid; place-items: center; flex: none;
+  background: linear-gradient(150deg, var(--anthropic), #C25E3C); color: #fff;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--anthropic) 34%, transparent); }
+
+@media (max-width: 760px) { .bg-proof { grid-template-columns: 1fr; } }
+
+/* ---------- Official partnership band (dark) ---------- */
+.bg-partband { position: relative; overflow: hidden; background: var(--neutral-950); color: #fff;
+  border-top: 1px solid rgba(255,255,255,.08); }
+.bg-partband__glow { position: absolute; top: -180px; right: -140px; width: 560px; height: 560px; border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--anthropic) 42%, transparent), transparent 68%); filter: blur(8px); z-index: 1; }
+.bg-partband__inner { position: relative; z-index: 2; max-width: 1240px; margin: 0 auto; padding: 104px 28px;
+  display: grid; grid-template-columns: 1.08fr .92fr; gap: 72px; align-items: center; }
+.bg-partband__kick { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 13px;
+  font-weight: var(--fw-bold); letter-spacing: .1em; text-transform: uppercase; color: var(--anthropic); margin-bottom: 22px; }
+.bg-partband h2 { font-family: var(--font-display); font-weight: var(--fw-black); font-size: clamp(34px, 4.4vw, 60px);
+  line-height: 1.02; letter-spacing: -0.03em; color: #fff; margin: 0; }
+.bg-partband h2 em { font-style: normal; color: var(--anthropic); }
+.bg-partband__p { font-size: var(--fs-body-lg); color: var(--neutral-300); line-height: 1.62; max-width: 52ch; margin: 24px 0 0; }
+.bg-partband__p b { color: #fff; font-weight: var(--fw-bold); }
+.bg-partband__cta { display: inline-block; }
+.bg-partstats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 38px 0 36px; }
+.bg-partstat { padding: 22px 18px; border-radius: var(--radius-lg); background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.1); }
+.bg-partstat__n { font-family: var(--font-display); font-weight: var(--fw-black); font-size: 42px; letter-spacing: -0.03em;
+  color: var(--anthropic); line-height: 1; display: inline-flex; align-items: center; gap: 4px; }
+.bg-partstat__n .cb-i { font-size: 30px; }
+.bg-partstat__l { font-size: 12.5px; color: var(--neutral-400); margin-top: 10px; line-height: 1.38; }
+.bg-partband__src { display: inline-flex; align-items: center; gap: 9px; margin-top: 4px; font-family: var(--font-mono);
+  font-size: 11.5px; letter-spacing: .04em; color: var(--neutral-500); }
+.bg-partband__src .cb-i { color: var(--green-400); }
+@media (max-width: 940px) { .bg-partband__inner { grid-template-columns: 1fr; gap: 48px; } }
+@media (max-width: 480px) { .bg-partstats { grid-template-columns: 1fr; } }
+
+/* ---------- Certificate plaque (right of the band) ---------- */
+.bg-certwrap { display: flex; justify-content: center; position: relative; }
+
+/* Ghost cards fanned behind the plaque — hint at additional learning paths
+   included with the same membership. Pure decoration; fan wider on hover. */
+.bg-certghost { position: absolute; top: 0; bottom: 0; left: 50%; width: min(100%, 420px); z-index: 0;
+  border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,.16);
+  background: linear-gradient(165deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+  transition: transform .55s var(--ease-out); }
+.bg-certghost--a { transform: translateX(-50%) rotate(2.6deg) translateY(-24px); }
+.bg-certghost--b { transform: translateX(-50%) rotate(6deg) translateY(-40px); opacity: .6; }
+.bg-certwrap:hover .bg-certghost--a { transform: translateX(-50%) rotate(4.4deg) translateY(-32px); }
+.bg-certwrap:hover .bg-certghost--b { transform: translateX(-50%) rotate(9.5deg) translateY(-54px); }
+.bg-certghost--a span { position: absolute; top: 7px; left: 20px; display: inline-block; padding: 2px 0; font-family: var(--font-mono); font-size: 10px;
+  font-weight: var(--fw-bold); letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.72); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .bg-certghost { transition: none; } }
+/* Gentle float — same rhythm as the hero lead card. Lives on the wrapper so it
+   never fights the GSAP entrance or the card's own hover lift; pauses on hover. */
+.bg-certwrap { animation: certFloat 5.5s ease-in-out 0.8s infinite; will-change: transform; }
+.bg-certwrap:hover { animation-play-state: paused; }
+.bg-certbig { width: 100%; max-width: 420px; background: linear-gradient(165deg, #ffffff, var(--anthropic-tint));
+  border-radius: var(--radius-xl); padding: 30px 32px 26px; border: 1px solid color-mix(in srgb, var(--anthropic) 26%, #fff);
+  box-shadow: 0 34px 70px rgba(0,0,0,.46); transform: rotate(-1.4deg); position: relative; z-index: 1; overflow: hidden; cursor: pointer;
+  transition: transform .55s var(--ease-out), box-shadow .55s var(--ease-out); }
+.bg-certbig:hover { transform: rotate(0deg) translateY(-12px) scale(1.03); box-shadow: 0 50px 100px rgba(0,0,0,.6); }
+.bg-certbig:hover .bg-certbig__seal { transform: rotate(14deg) scale(1.1); }
+.bg-certbig__seal { transition: transform .55s var(--ease-out); }
+.bg-certbig::after { content: ""; position: absolute; top: 0; left: -65%; width: 55%; height: 100%; z-index: 4; pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.5), transparent); transform: skewX(-16deg); opacity: 0; }
+.bg-certbig:hover::after { animation: bg-cardshine .9s ease; }
+.bg-certbig::before { content: ""; position: absolute; inset: 9px; border-radius: 14px; border: 1px solid color-mix(in srgb, var(--anthropic) 22%, transparent); pointer-events: none; }
+.bg-certbig__head { display: flex; align-items: center; justify-content: space-between; }
+.bg-certbig__brand { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px;
+  font-weight: var(--fw-bold); letter-spacing: .08em; text-transform: uppercase; color: var(--anthropic-ink); }
+.bg-certbig__id { font-family: var(--font-mono); font-size: 10px; font-weight: var(--fw-bold); letter-spacing: .06em; color: var(--text-subtle); }
+.bg-certbig__kick { display: block; margin: 22px 0 6px; font-family: var(--font-mono); font-size: 11px; font-weight: var(--fw-bold);
+  letter-spacing: .12em; text-transform: uppercase; color: var(--text-subtle); }
+.bg-certbig__name { font-family: var(--font-display); font-weight: var(--fw-black); font-size: 25px; letter-spacing: -0.02em;
+  line-height: 1.1; color: var(--neutral-950); margin: 0 0 14px; }
+.bg-certbig__awarded { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin: 0 0 22px; padding-bottom: 22px;
+  border-bottom: 1px solid color-mix(in srgb, var(--anthropic) 18%, var(--border-subtle)); }
+.bg-certbig__awarded b { color: var(--neutral-950); font-weight: var(--fw-bold); }
+.bg-certbig__foot { display: flex; align-items: center; gap: 18px; }
+.bg-certbig__seal { width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; flex: none;
+  background: linear-gradient(150deg, var(--anthropic), #C25E3C); color: #fff;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--anthropic) 36%, transparent); }
+.bg-certbig__sig { flex: 1; }
+.bg-certbig__sigline { display: block; height: 1.5px; background: var(--neutral-400); border-radius: 2px; margin-bottom: 7px; }
+.bg-certbig__siglabel { font-family: var(--font-mono); font-size: 10.5px; font-weight: var(--fw-bold); letter-spacing: .05em;
+  text-transform: uppercase; color: var(--anthropic-ink); }
+@keyframes bg-cardshine { 0% { left: -65%; opacity: 0; } 18% { opacity: 1; } 100% { left: 135%; opacity: 0; } }
+
+/* ============================================================
+   Earn your Colaberry AI Certificate — split card
+   ============================================================ */
+.bg-cert2 { display: grid; grid-template-columns: 1.04fr .96fr; border-radius: var(--radius-2xl); overflow: hidden;
+  border: 1px solid var(--border-subtle); background: var(--surface-card); box-shadow: var(--shadow-lg); }
+.bg-cert2__left { padding: clamp(40px, 4.4vw, 64px); }
+.bg-cert2__badge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px;
+  font-weight: var(--fw-bold); letter-spacing: .08em; text-transform: uppercase; color: var(--red-700);
+  background: color-mix(in srgb, var(--red-500) 12%, var(--surface-card)); padding: 8px 15px; border-radius: var(--radius-pill);
+  border: 1px solid color-mix(in srgb, var(--red-500) 24%, transparent); margin-bottom: 24px; }
+.bg-cert2__badge .cb-i { color: var(--red-600); }
+.bg-cert2__left .aw-h2 { margin-top: 0; }
+.bg-cert2__lead { font-size: var(--fs-body-lg); color: var(--text-muted); line-height: 1.6; max-width: 46ch; margin: 22px 0 0; }
+.bg-cert2__lead strong { color: var(--text-strong); font-weight: var(--fw-bold); }
+.bg-cert2__feats { display: flex; flex-direction: column; gap: 22px; margin: 36px 0 34px; }
+.bg-cert2__feat { display: flex; align-items: flex-start; gap: 16px; }
+.bg-cert2__ficon { flex: none; width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center;
+  color: var(--_c); background: color-mix(in srgb, var(--_c) 13%, var(--surface-card));
+  border: 1px solid color-mix(in srgb, var(--_c) 22%, transparent); }
+.bg-cert2__ft { display: block; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 17px;
+  letter-spacing: -0.01em; color: var(--text-strong); margin-bottom: 3px; }
+.bg-cert2__fd { display: block; font-size: var(--fs-body-sm); color: var(--text-muted); line-height: 1.5; max-width: 46ch; }
+.bg-cert2__cta { display: inline-block; }
+
+/* Dark certificate panel */
+.bg-cert2__right { position: relative; overflow: hidden; background: var(--neutral-950); display: grid; place-items: center;
+  padding: clamp(40px, 4.4vw, 72px) clamp(32px, 4vw, 60px); min-height: 420px; }
+.bg-cert2__glow { position: absolute; top: -120px; right: -120px; width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--red-500) 38%, transparent), transparent 68%); z-index: 1; }
+
+/* ---------- Learning-path rows inside the plaque ---------- */
+.bg-lp { display: flex; flex-direction: column; margin: 12px 0 2px; }
+.bg-lp__row { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
+.bg-lp__row + .bg-lp__row { border-top: 1px dashed rgba(0,0,0,.12); }
+.bg-lp__n { font-family: var(--font-mono); font-size: 11px; font-weight: var(--fw-bold); letter-spacing: .04em;
+  color: var(--anthropic-ink); flex: none; width: 20px; }
+.bg-lp__t { flex: 1; font-size: 13.5px; font-weight: var(--fw-medium); color: var(--neutral-900); line-height: 1.3; }
+.bg-lp__chk { flex: none; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center;
+  background: color-mix(in srgb, var(--green-500) 16%, #fff); color: var(--green-700); }
+
+/* Temporary certificate mock (.bg-cdoc) */
+/* Float the whole right column (doc + seal move as one); offset from the
+   partnership plaque's timing so the two never bob in sync on the home page. */
+.bg-cert2__right { animation: certFloat 6.2s ease-in-out 1.4s infinite; will-change: transform; }
+.bg-cert2__right:hover { animation-play-state: paused; }
+@keyframes certFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bg-certwrap, .bg-cert2__right { animation: none; }
+}
+.bg-cdoc { position: relative; z-index: 2; width: 100%; max-width: 440px; background: linear-gradient(168deg, #ffffff, #FBFAF8);
+  border: 1px solid rgba(0,0,0,.08); border-radius: 14px; padding: 26px 30px 24px; box-shadow: 0 30px 64px rgba(0,0,0,.5);
+  transform: rotate(-1.6deg); overflow: hidden; cursor: pointer;
+  transition: transform .55s var(--ease-out), box-shadow .55s var(--ease-out); }
+.bg-cdoc:hover { transform: rotate(0deg) translateY(-12px) scale(1.03); box-shadow: 0 52px 104px rgba(0,0,0,.62); }
+.bg-cdoc::after { content: ""; position: absolute; top: 0; left: -65%; width: 55%; height: 100%; z-index: 5; pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.6), transparent); transform: skewX(-16deg); opacity: 0; }
+.bg-cdoc:hover::after { animation: bg-cardshine .9s ease; }
+.bg-cdoc::before { content: ""; position: absolute; inset: 8px; border-radius: 9px; border: 1px solid color-mix(in srgb, var(--red-500) 22%, transparent); pointer-events: none; }
+.bg-cdoc__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0,0,0,.08); }
+.bg-cdoc__logo { height: 19px; width: auto; display: block; }
+.bg-cdoc__no { font-family: var(--font-mono); font-size: 9px; font-weight: var(--fw-bold); letter-spacing: .05em; color: var(--text-subtle); }
+.bg-cdoc__kick { display: block; margin: 20px 0 5px; font-family: var(--font-mono); font-size: 10px; font-weight: var(--fw-bold);
+  letter-spacing: .16em; text-transform: uppercase; color: var(--text-subtle); text-align: center; }
+.bg-cdoc__prog { font-family: var(--font-display); font-weight: var(--fw-black); font-size: 23px; letter-spacing: -0.01em;
+  line-height: 1.05; color: var(--neutral-950); margin: 0 0 16px; text-align: center; }
+.bg-cdoc__issued { display: block; font-family: var(--font-mono); font-size: 9px; font-weight: var(--fw-bold); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--text-subtle); text-align: center; }
+.bg-cdoc__name { display: block; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 22px; letter-spacing: -0.01em;
+  color: var(--red-600); text-align: center; margin: 5px 0 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(0,0,0,.08); }
+.bg-cdoc__desc { font-size: 11px; color: var(--text-muted); line-height: 1.5; text-align: center; margin: 0 0 20px; max-width: 38ch;
+  margin-left: auto; margin-right: auto; }
+.bg-cdoc__foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; }
+.bg-cdoc__date span, .bg-cdoc__sign span:last-child { display: block; font-family: var(--font-mono); font-size: 8.5px;
+  font-weight: var(--fw-bold); letter-spacing: .06em; text-transform: uppercase; color: var(--text-subtle); }
+.bg-cdoc__date b { font-family: var(--font-display); font-size: 13px; font-weight: var(--fw-bold); color: var(--neutral-950); }
+.bg-cdoc__sign { text-align: right; }
+.bg-cdoc__signline { display: block; width: 110px; height: 1.5px; background: var(--neutral-400); margin: 0 0 6px auto; }
+.bg-cdoc__sign span:last-child { color: var(--red-700); }
+/* seal medallion overlapping the certificate */
+.bg-cdoc__seal { position: absolute; z-index: 3; right: clamp(20px, 4vw, 54px); bottom: clamp(28px, 5vw, 56px);
+  width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; gap: 0; text-align: center;
+  background: radial-gradient(circle at 50% 38%, var(--red-500), var(--red-700)); color: #fff;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--red-700) 56%, transparent); border: 3px solid rgba(255,255,255,.22);
+  transition: transform .55s var(--ease-out); }
+.bg-cdoc:hover ~ .bg-cdoc__seal, .bg-cert2__right:hover .bg-cdoc__seal { transform: rotate(15deg) scale(1.1); }
+.bg-cdoc__seal::after { content: ""; position: absolute; inset: 7px; border-radius: 50%; border: 1.5px dashed rgba(255,255,255,.45); }
+.bg-cdoc__seal img { width: 38px; height: auto; display: block; margin-bottom: 3px; }
+.bg-cdoc__seal span { font-family: var(--font-mono); font-size: 8px; font-weight: var(--fw-bold); letter-spacing: .14em; }
+@media (max-width: 940px) {
+  .bg-cert2 { grid-template-columns: 1fr; }
+  .bg-cert2__right { min-height: 360px; }
+}
+@media (max-width: 420px) { .bg-cdoc__seal { right: 16px; bottom: 18px; width: 78px; height: 78px; } .bg-cdoc__seal img { width: 30px; } }
+
+/* ---------- Nav partner chip ---------- */
+.bg-navpartner { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 11px;
+  font-weight: var(--fw-bold); letter-spacing: .05em; text-transform: uppercase; color: var(--anthropic-ink);
+  padding: 6px 12px; border-radius: var(--radius-pill); background: color-mix(in srgb, var(--anthropic) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--anthropic) 30%, transparent); text-decoration: none; transition: background var(--dur-base) var(--ease-out); }
+a.bg-navpartner:hover { text-decoration: none; background: color-mix(in srgb, var(--anthropic) 18%, transparent); }
+.bg-navpartner .bg-navpartner__g { color: var(--anthropic); display: grid; place-items: center; }
+@media (max-width: 1180px) { .bg-navpartner { display: none; } }

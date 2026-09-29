@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redirecting to registration… | Colaberry</title>
+<meta name="description" content="Register for the Colaberry AI Systems Architect Accelerator Open House.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/logo/colaberry-app-icon.png">
+<!-- Legacy entry point: registration now happens on JotForm, which redirects
+     to thank-you.html when the form is completed. This page only forwards
+     old links/bookmarks (and carries an ?e= / ?email= prefill through). -->
+<meta http-equiv="refresh" content="1;url=https://form.jotform.com/251193437881463">
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; text-align: center;
+    font-family: Roboto, Arial, system-ui, sans-serif; color: #1A1A1A; background: #FBFAF8; }
+  .wrap { padding: 40px 24px; display: grid; gap: 14px; justify-items: center; }
+  .spin { width: 34px; height: 34px; border-radius: 50%; border: 3px solid #E4E1DC; border-top-color: #FB2832;
+    animation: r 0.8s linear infinite; }
+  @keyframes r { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+  a { color: #E5121D; font-weight: 700; }
+  p { margin: 0; color: #4A4A4A; font-size: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img src="../assets/logo/colaberry-horizontal.png" alt="Colaberry" style="height: 32px" onerror="this.style.display='none'">
+  <div class="spin" aria-hidden="true"></div>
+  <p>Taking you to the Open House registration form…</p>
+  <p>Not redirected? <a id="manual" href="https://form.jotform.com/251193437881463">Continue to the form</a></p>
+</div>
+<script>
+(function () {
+  var FORM = 'https://form.jotform.com/251193437881463';
+  var q = new URLSearchParams(location.search);
+  var email = q.get('email') || q.get('e');
+  var url = FORM + (email ? '?email=' + encodeURIComponent(email) : '');
+  document.getElementById('manual').href = url;
+  location.replace(url);
+})();
+</script>
+</body>
+</html>

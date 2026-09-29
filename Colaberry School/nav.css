@@ -1,0 +1,198 @@
+/* ============================================================
+   Colaberry · Unified site navigation (.snav) — v2 IA
+   Matches training.colaberry.com. Nine flat links regrouped into
+   five: Programs ▾ · Student Projects · Events · Resources ▾ · About ▾
+   Rendered by SiteNav (React) and site-chrome.js (static). Tokens only.
+   ============================================================ */
+:root { --anthropic: #D97757; --anthropic-ink: #B0552F; }
+
+.snav { position: fixed; inset: 0 0 auto 0; z-index: 50;
+  background: color-mix(in srgb, var(--surface-page) 82%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(16px); backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out); }
+.snav[data-scrolled="true"] { border-bottom-color: var(--border-subtle); background: color-mix(in srgb, var(--surface-page) 94%, transparent); }
+.snav__in { max-width: 1480px; margin: 0 auto; padding: 12px 28px; display: flex; align-items: center; gap: 20px; }
+
+.snav__brand { display: flex; align-items: center; gap: 14px; flex: none; }
+.snav__logo { display: inline-flex; align-items: center; flex: none; text-decoration: none; }
+.snav__logo img { height: 28px; display: block; }
+
+/* ---------- primary links ---------- */
+.snav__links { display: flex; align-items: center; gap: 2px; margin: 0 auto; list-style: none; padding: 0; }
+.snav__item { position: relative; }
+.snav__link { appearance: none; border: 0; background: none; cursor: pointer; font: inherit;
+  position: relative; display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; min-height: 44px;
+  border-radius: var(--radius-pill); font-size: 15px; font-weight: var(--fw-medium); color: var(--text-muted);
+  text-decoration: none; white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out); }
+.snav__link:hover, .snav__item[data-open="true"] > .snav__link { color: var(--text-strong); background: var(--surface-hover); text-decoration: none; }
+.snav__link[aria-current="page"], .snav__item[data-current="true"] > .snav__link { color: var(--text-strong); font-weight: var(--fw-bold); }
+.snav__link[aria-current="page"]::after, .snav__item[data-current="true"] > .snav__link::after { content: ""; position: absolute;
+  left: 14px; right: 14px; bottom: 4px; height: 2px; border-radius: 2px; background: var(--red-500); }
+.snav__chev { width: 7px; height: 7px; border-right: 1.6px solid currentColor; border-bottom: 1.6px solid currentColor;
+  transform: translateY(-2px) rotate(45deg); transition: transform var(--dur-fast) var(--ease-out); opacity: .7; }
+.snav__item[data-open="true"] .snav__chev { transform: translateY(1px) rotate(-135deg); }
+
+/* ---------- dropdown panels ---------- */
+.snav__panel { position: absolute; top: 100%; left: 50%; padding-top: 10px; z-index: 5;
+  opacity: 0; visibility: hidden; transform: translate(-50%, 6px);
+  transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), visibility var(--dur-fast); }
+.snav__item[data-open="true"] > .snav__panel { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+@media (hover: hover) and (min-width: 1121px) {
+  .snav__item:hover > .snav__panel { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+  .snav__item:hover .snav__chev { transform: translateY(1px) rotate(-135deg); }
+}
+.snav__card { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg, 16px);
+  box-shadow: 0 1px 2px rgba(20,16,12,.04), 0 18px 48px -12px rgba(20,16,12,.18); padding: 10px; min-width: 280px; }
+.snav__kicker { display: block; padding: 10px 12px 6px; font-family: var(--font-mono); font-size: 11px; font-weight: var(--fw-bold);
+  letter-spacing: .08em; text-transform: uppercase; color: var(--text-subtle); }
+.snav__row { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: var(--radius-md); text-decoration: none; color: var(--text-strong);
+  transition: background var(--dur-fast) var(--ease-out); }
+.snav__row:hover { background: var(--surface-hover); text-decoration: none; }
+.snav__row b { font-size: 15px; font-weight: var(--fw-bold); letter-spacing: -0.01em; }
+.snav__row span { font-size: 13.5px; color: var(--text-muted); line-height: 1.35; }
+.snav__row[aria-current="page"] b { color: var(--red-600); }
+.snav__row[data-ext] b::after { content: " ↗"; font-weight: var(--fw-medium); color: var(--text-subtle); }
+
+/* Programs mega panel */
+.snav__card--programs { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 6px; width: min(680px, calc(100vw - 48px)); }
+.snav__paths { display: flex; flex-direction: column; }
+.snav__path { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 2px 10px; align-items: baseline; padding: 12px; border-radius: var(--radius-md);
+  text-decoration: none; color: var(--text-strong); transition: background var(--dur-fast) var(--ease-out); }
+.snav__path:hover { background: var(--surface-hover); text-decoration: none; }
+.snav__path i { grid-row: span 2; font-style: normal; font-family: var(--font-mono); font-size: 12px; font-weight: var(--fw-bold); color: var(--red-600); }
+.snav__path b { font-size: 15px; font-weight: var(--fw-bold); letter-spacing: -0.01em; }
+.snav__path span { font-size: 13.5px; color: var(--text-muted); }
+.snav__aside { display: flex; flex-direction: column; background: var(--surface-sunken, var(--surface-hover)); border-radius: var(--radius-md); padding: 4px; }
+.snav__aside .snav__row:hover { background: var(--surface-card); }
+.snav__price { margin-top: auto; padding: 12px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); }
+.snav__price b { color: var(--text-strong); }
+
+/* Resources two-column */
+.snav__card--cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; width: min(520px, calc(100vw - 48px)); }
+
+/* Anthropic partner — a credential beside the logo, not a button */
+.snav-partner { display: inline-flex; align-items: center; gap: 8px; padding: 2px 0 2px 14px; border-left: 1px solid var(--border-subtle);
+  text-decoration: none; min-height: 32px; }
+.snav-partner:hover { text-decoration: none; }
+.snav-partner:hover .snav-partner__tx b { color: var(--anthropic-ink); }
+
+/* ---------- right cluster ---------- */
+.snav__meta { display: flex; align-items: center; gap: 8px; flex: none; }
+.snav-partner__ic { width: 24px; height: 24px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--anthropic); color: #fff; }
+.snav-partner__tx { display: flex; flex-direction: column; line-height: 1.1; }
+.snav-partner__tx small { font-family: var(--font-mono); font-size: 9.5px; font-weight: var(--fw-bold); letter-spacing: .06em; text-transform: uppercase; color: var(--anthropic-ink); }
+.snav-partner__tx b { font-size: 13px; font-weight: var(--fw-bold); color: var(--text-strong); letter-spacing: -0.01em; }
+.snav__login { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 16px; font-family: var(--font-display);
+  font-size: 14.5px; font-weight: var(--fw-bold); color: var(--text-strong); text-decoration: none; white-space: nowrap;
+  border-radius: var(--radius-pill); border: 1.5px solid var(--border-strong, var(--border-default)); background: var(--surface-card);
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out); }
+.snav__login:hover { border-color: var(--text-strong); background: var(--surface-hover); color: var(--text-strong); text-decoration: none; }
+.snav__login .cb-i { font-size: 1.05em; }
+.snav__cta { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: var(--radius-pill);
+  background: var(--red-500); color: #fff; font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 14.5px;
+  text-decoration: none; white-space: nowrap; transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
+.snav__cta:hover { background: var(--red-600); color: #fff; text-decoration: none; }
+.snav__cta-s { display: none; }
+.snav__cta:active { transform: translateY(1px); }
+.snav__cta .cb-i, .snav__cta svg { font-size: 1em; transition: transform var(--dur-base) var(--ease-out); }
+.snav__cta:hover .cb-i { transform: translateX(3px); }
+
+.snav__burger { display: none; appearance: none; cursor: pointer; width: 44px; height: 44px; border-radius: var(--radius-md);
+  border: 1px solid var(--border-default); background: var(--surface-card); color: var(--text-strong); align-items: center; justify-content: center; }
+.snav__burger .cb-i { font-size: 23px; }
+
+.snav a:focus-visible, .snav button:focus-visible, .snav-menu a:focus-visible, .snav-menu button:focus-visible { outline: 2px solid var(--red-500); outline-offset: 2px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1280px) {
+  .snav-partner__tx { display: none; }
+  .snav__link { padding: 10px 11px; }
+}
+@media (max-width: 1120px) {
+  .snav__links { display: none; }
+  .snav-partner__tx { display: flex; }
+  .snav__meta { margin-left: auto; }
+  .snav__burger { display: inline-flex; }
+}
+@media (max-width: 640px) {
+  .snav__in { padding: 10px 16px; gap: 10px; }
+  .snav__login, .snav-partner { display: none; }
+  .snav__meta--campaign .snav__login { display: inline-flex; padding: 0 12px; font-size: 14px; }
+  .snav__meta--campaign .snav__login .cb-i { display: none; }  /* no drawer on program pages, so Log In stays */
+  .snav__cta { padding: 0 16px; font-size: 14px; }       /* primary action stays visible on phones */
+  .snav__cta-l { display: none; }
+  .snav__cta-s { display: inline; }
+  .snav__logo img { height: 26px; }
+}
+@media (max-width: 340px) { .snav__cta .cb-i { display: none; } }
+
+/* ============================================================
+   Utility bar — Colaberry network links, small + top-right.
+   Light and quiet so it never competes with the primary nav.
+   In normal flow (scrolls away); the fixed .snav--ubar row sits
+   below it via --ubar-y (36px → 0 as the page scrolls).
+   ============================================================ */
+.snav-ubar { position: relative; z-index: 51; height: 36px; border-bottom: 1px solid var(--border-subtle);
+  background: color-mix(in srgb, var(--surface-page) 94%, var(--neutral-900)); }
+.snav-ubar__in { max-width: 1480px; height: 100%; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.snav-ubar__vibe { display: inline-flex; align-items: center; gap: 8px; min-width: 0; font-size: 13px; font-weight: var(--fw-bold); color: var(--text-strong); text-decoration: none; white-space: nowrap; }
+.snav-ubar__vibe:hover { color: var(--red-600); text-decoration: none; }
+.snav-ubar__vibe-d { font-family: var(--font-mono); font-size: 11px; font-weight: var(--fw-bold); letter-spacing: .06em; text-transform: uppercase; color: var(--text-subtle); }
+.snav-ubar__vibe .cb-i { font-size: 13px; transition: transform var(--dur-fast) var(--ease-out); }
+.snav-ubar__vibe:hover .cb-i { transform: translateX(2px); }
+.snav-ubar__dot { position: relative; width: 7px; height: 7px; border-radius: 50%; background: var(--red-500); flex: none; }
+.snav-ubar__dot::after { content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 1.5px solid var(--red-500); opacity: 0; animation: snav-ping 2.4s var(--ease-out) infinite; }
+@keyframes snav-ping { 0% { transform: scale(.6); opacity: .7; } 80%, 100% { transform: scale(1.6); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .snav-ubar__dot::after { animation: none; } }
+.snav-ubar__sites { display: flex; align-items: stretch; height: 100%; min-width: 0; }
+.snav-ubar__sites a { position: relative; display: inline-flex; align-items: center; gap: 4px; padding: 0 14px; font-size: 13px; font-weight: var(--fw-medium);
+  color: var(--text-muted); text-decoration: none; white-space: nowrap; transition: color var(--dur-fast) var(--ease-out); }
+.snav-ubar__sites a + a::before { content: ""; position: absolute; left: 0; top: 50%; width: 1px; height: 14px; margin-top: -7px; background: var(--border-default); }
+.snav-ubar__sites a:last-child { padding-right: 0; }
+.snav-ubar__sites a:hover { color: var(--text-strong); text-decoration: none; }
+.snav-ubar__sites a .cb-i { font-size: 12px; color: var(--text-subtle); }
+.snav-ubar__sites a[aria-current] { color: var(--text-strong); font-weight: var(--fw-bold); }
+.snav-ubar__sites a[aria-current]::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: -1px; height: 2px; background: var(--red-500); }
+.snav--ubar { top: var(--ubar-y, 36px); }
+@media (max-width: 900px) { .snav-ubar__in { padding: 0 20px; } .snav-ubar__vibe-d { display: none; } }
+@media (max-width: 640px) {
+  .snav-ubar { display: none; }             /* network links move into the drawer */
+  .snav--ubar { top: 0; }
+}
+
+/* ============================================================
+   Mobile drawer — grouped, scannable, CTA pinned
+   ============================================================ */
+.snav-menu { position: fixed; inset: 0; z-index: 60; background: var(--surface-page); display: flex; flex-direction: column;
+  transform: translateX(100%); visibility: hidden; transition: transform var(--dur-slow) var(--ease-emphasized), visibility var(--dur-slow); }
+.snav-menu[data-open="true"] { transform: none; visibility: visible; }
+.snav-menu__top { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--border-subtle); }
+.snav-menu__top img { height: 26px; display: block; }
+.snav-menu__close { appearance: none; cursor: pointer; width: 44px; height: 44px; border-radius: var(--radius-md);
+  border: 1px solid var(--border-default); background: var(--surface-card); color: var(--text-strong); display: grid; place-items: center; }
+.snav-menu__close .cb-i { font-size: 24px; }
+.snav-menu__body { flex: 1; overflow-y: auto; padding: 8px 22px 24px; display: flex; flex-direction: column; gap: 22px; }
+.snav-menu__group { display: flex; flex-direction: column; }
+.snav-menu__group h6 { margin: 18px 0 6px; font-family: var(--font-mono); font-size: 11px; font-weight: var(--fw-bold); letter-spacing: .08em; text-transform: uppercase; color: var(--text-subtle); }
+.snav-menu__group a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 8px 2px;
+  font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 19px; letter-spacing: -0.015em; color: var(--text-strong);
+  text-decoration: none; border-bottom: 1px solid var(--border-subtle); }
+.snav-menu__group a small { display: block; font-family: var(--font-body, inherit); font-weight: var(--fw-medium); font-size: 13.5px; letter-spacing: 0; color: var(--text-muted); }
+.snav-menu__group a[aria-current="page"] { color: var(--red-600); }
+.snav-menu__group a .cb-i { font-size: 18px; color: var(--text-subtle); flex: none; }
+.snav-menu__partner { display: inline-flex; align-items: center; gap: 12px; align-self: flex-start; padding: 8px 16px 8px 8px;
+  border-radius: var(--radius-pill); background: var(--surface-card); border: 1px solid color-mix(in srgb, var(--anthropic) 30%, var(--border-subtle)); text-decoration: none; }
+.snav-menu__partner .snav-partner__ic { width: 30px; height: 30px; }
+.snav-menu__partner span { display: flex; flex-direction: column; line-height: 1.15; }
+.snav-menu__partner small { font-family: var(--font-mono); font-size: 10px; font-weight: var(--fw-bold); letter-spacing: .06em; text-transform: uppercase; color: var(--anthropic-ink); }
+.snav-menu__partner b { font-size: 14px; color: var(--text-strong); }
+.snav-menu__foot { padding: 14px 22px calc(18px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--border-subtle);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 10px; background: var(--surface-page); }
+.snav-menu__login, .snav-menu__cta { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 14px;
+  border-radius: var(--radius-pill); font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 16px; text-decoration: none; text-align: center; }
+.snav-menu__login { border: 1px solid var(--border-default); color: var(--text-strong); background: var(--surface-card); }
+.snav-menu__cta { background: var(--red-500); color: #fff; }
+.snav-menu__cta:hover { background: var(--red-600); color: #fff; text-decoration: none; }
+@media (max-width: 360px) { .snav-menu__foot { grid-template-columns: minmax(0, 1fr); } }

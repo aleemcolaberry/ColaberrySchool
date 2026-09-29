@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shorts | Colaberry AI Systems Architect Accelerator</title>
+<meta name="description" content="Quick AI lessons, student builds and behind-the-scenes clips from Colaberry, in under 60 seconds.">
+<link rel="icon" href="../assets/logo/colaberry-app-icon.png">
+<link rel="stylesheet" href="../assets/fonts/remixicon.css">
+<link rel="stylesheet" href="../styles.css?v=b492c172">
+<link rel="stylesheet" href="aw.css?v=sh1">
+<link rel="stylesheet" href="partner.css?v=ffcce0c8">
+<link rel="stylesheet" href="site-pages.css?v=b6aea278">
+<link rel="stylesheet" href="shorts.css?v=sh1">
+<link rel="stylesheet" href="nav.css?v=ia11">
+<script src="../motion.js?v=216f9290"></script>
+</head>
+<body class="aw" data-page="shorts">
+<a href="#main" class="cb-skip-link">Skip to content</a>
+<div id="site-nav"></div>
+<main id="main">
+<section class="pg-hero">
+<span class="pg-hero__kicker cb-anim cb-anim--rise"><span class="cb-i"><i class="ri-play-circle-line"></i></span>Shorts</span>
+<h1 class="cb-anim cb-anim--rise cb-delay-1">Learn AI in 60 seconds</h1>
+<p class="pg-hero__lead cb-anim cb-anim--rise cb-delay-2">Quick lessons on building with Claude, career-switch stories and a look inside what our students ship. New clips every week on YouTube and Instagram.</p>
+<div class="sh-actions cb-anim cb-anim--rise cb-delay-3">
+<a class="pgbtn pgbtn--primary" href="https://www.youtube.com/@ColaberrySODA/shorts" target="_blank" rel="noopener"><span class="cb-i"><i class="ri-youtube-fill"></i></span>Follow on YouTube</a>
+<a class="pgbtn pgbtn--ghost" href="https://www.instagram.com/colaberryschool/" target="_blank" rel="noopener"><span class="cb-i"><i class="ri-instagram-line"></i></span>Follow on Instagram</a>
+</div>
+</section>
+<section class="pg-section" style="padding-top:8px">
+<div class="sh-channels">
+<a class="sh-ch" data-reveal href="https://www.youtube.com/@ColaberrySODA/shorts" target="_blank" rel="noopener"><span class="sh-ch__ic"><span class="cb-i"><i class="ri-youtube-fill"></i></span></span><span class="sh-ch__tx"><small>YouTube Shorts</small><b>@ColaberrySODA</b><span>Hands-on AI tips, real projects and career advice.</span></span><span class="sh-ch__go cb-i"><i class="ri-arrow-right-up-line"></i></span></a>
+<a class="sh-ch" data-reveal style="--i:1" href="https://www.instagram.com/colaberryschool/" target="_blank" rel="noopener"><span class="sh-ch__ic sh-ch__ic--ig"><span class="cb-i"><i class="ri-instagram-line"></i></span></span><span class="sh-ch__tx"><small>Instagram Reels</small><b>@colaberryschool</b><span>Behind the scenes with our students and team.</span></span><span class="sh-ch__go cb-i"><i class="ri-arrow-right-up-line"></i></span></a>
+</div>
+<div class="sh-bar"><h2>Latest shorts</h2>
+<div class="blog-filters" role="group" aria-label="Filter shorts">
+<button class="blog-chip sh-chip" data-filter="all" aria-pressed="true">All</button>
+<button class="blog-chip sh-chip" data-filter="claude" aria-pressed="false">Claude tips</button>
+<button class="blog-chip sh-chip" data-filter="career" aria-pressed="false">Career switch</button>
+<button class="blog-chip sh-chip" data-filter="builds" aria-pressed="false">Student builds</button>
+<button class="blog-chip sh-chip" data-filter="inside" aria-pressed="false">Behind the scenes</button>
+</div></div>
+<div class="sh-grid" id="shGrid"></div>
+<p class="sh-empty" id="shEmpty">No shorts in this topic yet. Check back soon.</p>
+<div style="text-align:center;margin-top:44px" data-reveal>
+<a class="pgbtn pgbtn--ghost pgbtn--lg" href="https://www.youtube.com/@ColaberrySODA/shorts" target="_blank" rel="noopener">See all shorts on YouTube<span class="cb-i"><i class="ri-external-link-line"></i></span></a>
+</div>
+</section>
+<section class="pg-cta aw-grain aw-grain--light">
+<div class="pg-cta__inner" data-reveal="scale">
+<span class="pg-cta__kick">Free AI training · Start today · Membership · $149/mo</span>
+<h2>From watching to building</h2>
+<p>A minute of AI a day is a start. Start free and build your first real system with Claude.</p>
+<a class="pgbtn pgbtn--ondark pgbtn--lg" href="https://training.colaberry.com/start-free">Start learning AI for free<span class="cb-i"><i class="ri-arrow-right-line"></i></span></a>
+</div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="site-chrome.js?v=sh1"></script>
+<script src="to-top.js?v=5aa90bfa" defer></script>
+<script>
+/* SHORTS: paste a YouTube Shorts or Instagram Reel URL into "url" and a title.
+   topic: claude | career | builds | inside. Entries without a url show as placeholders. */
+var SHORTS = [
+  { url: '', title: '', topic: 'claude' },
+  { url: '', title: '', topic: 'career' },
+  { url: '', title: '', topic: 'builds' },
+  { url: '', title: '', topic: 'inside' },
+  { url: '', title: '', topic: 'claude' },
+  { url: '', title: '', topic: 'builds' },
+  { url: '', title: '', topic: 'career' },
+  { url: '', title: '', topic: 'claude' }
+];
+(function(){
+var TOP={claude:'Claude tips',career:'Career switch',builds:'Student builds',inside:'Behind the scenes'};
+var grid=document.getElementById('shGrid'),empty=document.getElementById('shEmpty');
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function ytId(u){var m=u.match(/(?:shorts\/|youtu\.be\/|[?&]v=)([\w-]{11})/);return m&&m[1]}
+SHORTS.forEach(function(s){
+  var tag='<span class="sh-tag">'+TOP[s.topic]+'</span>',t=s.title?'<span class="sh-title">'+esc(s.title)+'</span>':'',el,id=s.url&&ytId(s.url);
+  if(id){el=document.createElement('button');el.type='button';el.className='sh-tile';el.setAttribute('aria-label','Play: '+(s.title||'YouTube Short'));
+    el.innerHTML='<img src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="" loading="lazy"><span class="sh-play"><span class="cb-i"><i class="ri-play-fill"></i></span></span><span class="sh-meta">'+tag+t+'<span class="sh-src"><i class="ri-youtube-fill"></i>YouTube</span></span>';
+    el.addEventListener('click',function(){el.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&playsinline=1&rel=0" title="'+esc(s.title||'YouTube Short')+'" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';el.style.cursor='default';},{once:true});
+  }else if(s.url){el=document.createElement('a');el.className='sh-tile';el.href=s.url;el.target='_blank';el.rel='noopener';
+    el.innerHTML='<span class="sh-play"><span class="cb-i"><i class="ri-instagram-line"></i></span></span><span class="sh-meta">'+tag+t+'<span class="sh-src"><i class="ri-instagram-line"></i>Watch on Instagram</span></span>';
+  }else{el=document.createElement('div');el.className='sh-tile sh-tile--ph';
+    el.innerHTML='<span class="sh-ph">short video<br>paste link in SHORTS</span><span class="sh-meta">'+tag+'</span>';}
+  el.setAttribute('data-topic',s.topic);grid.appendChild(el);
+});
+var chips=document.querySelectorAll('.sh-chip');
+chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.setAttribute('aria-pressed','false')});c.setAttribute('aria-pressed','true');var f=c.getAttribute('data-filter'),n=0;
+grid.querySelectorAll('.sh-tile').forEach(function(k){var on=f==='all'||k.getAttribute('data-topic')===f;k.classList.toggle('is-hidden',!on);if(on)n++});empty.style.display=n?'none':'block';});});
+})();
+</script>
+</body>
+</html>

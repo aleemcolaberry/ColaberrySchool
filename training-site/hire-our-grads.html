@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hire Our Grads | Colaberry</title>
+<meta name="description" content="Hire job-ready data analysts and BI professionals from Colaberry. Build your data team with diverse, project-tested talent.">
+<link rel="stylesheet" href="../assets/fonts/remixicon.css">
+<link rel="stylesheet" href="../components.css?v=e9ba514f">
+<link rel="stylesheet" href="site.css?v=cdeabe7e">
+<script src="../motion.js?v=216f9290"></script>
+</head>
+<body>
+<a href="#main" class="cb-skip-link">Skip to content</a>
+<div class="site">
+  <div id="site-header"></div>
+  <main id="main">
+
+    <section class="hero">
+      <span class="hero__blob" style="width:440px;height:440px;background:var(--blue-100);top:-140px;right:-100px"></span>
+      <div class="wrap hero__grid">
+        <div>
+          <span class="eyebrow eyebrow--blue cb-anim cb-anim--rise">For Employers</span>
+          <h1 class="cb-anim cb-anim--rise cb-delay-1">Hire job-ready data talent</h1>
+          <p class="lead maxw-prose cb-anim cb-anim--rise cb-delay-2">Build your data team with diverse, project-tested professionals trained on the exact tools your business uses — at no cost to you.</p>
+          <div class="hero__cta cb-anim cb-anim--rise cb-delay-3">
+            <a class="cb-btn cb-btn--primary cb-btn--lg" href="#connect">Request talent</a>
+            <a class="cb-btn cb-btn--outline cb-btn--lg" href="success-stories.html">See our grads</a>
+          </div>
+        </div>
+        <div class="cb-anim cb-anim--scale cb-delay-2"><img class="hero__img" src="https://training.colaberry.com/hubfs/Image%20Container%20(4).png" alt="Data professional at work" onerror="this.onerror=null;this.src='../assets/img-fallback.svg'"></div>
+      </div>
+    </section>
+
+    <section class="section section--ink">
+      <div class="wrap">
+        <div class="stats">
+          <div class="stat" data-reveal><div class="stat__num">5000+</div><div class="stat__lbl">Trained professionals</div></div>
+          <div class="stat" data-reveal style="--i:1"><div class="stat__num">98%</div><div class="stat__lbl">Employment rate</div></div>
+          <div class="stat" data-reveal style="--i:2"><div class="stat__num">45+</div><div class="stat__lbl">Countries represented</div></div>
+          <div class="stat" data-reveal style="--i:3"><div class="stat__num">1 yr</div><div class="stat__lbl">Post-placement support</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div style="max-width:640px;margin:0 0 44px">
+          <span class="eyebrow">Why Colaberry Grads</span>
+          <h2 class="h-sec">Project-tested from day one</h2>
+        </div>
+        <div class="trio">
+          <div class="cb-card cb-card--pad feat" data-reveal><div class="feat__ic" style="background:var(--chart-1)"><span class="cb-i"><i class="ri-tools-line"></i></span></div><h4>Tool-Ready</h4><p>Trained on SQL, Power BI, Tableau, QlikSense, and ETL — productive from week one.</p></div>
+          <div class="cb-card cb-card--pad feat" data-reveal style="--i:1"><div class="feat__ic" style="background:var(--chart-3)"><span class="cb-i"><i class="ri-team-line"></i></span></div><h4>Diverse Talent</h4><p>A community spanning 45+ countries and every professional background imaginable.</p></div>
+          <div class="cb-card cb-card--pad feat" data-reveal style="--i:2"><div class="feat__ic" style="background:var(--chart-2)"><span class="cb-i"><i class="ri-shake-hands-line"></i></span></div><h4>Zero Cost to Hire</h4><p>No placement fees. We simply want our graduates to land in great roles.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sub" id="connect">
+      <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1000px;margin-inline:auto">
+        <div data-reveal="right">
+          <span class="eyebrow">Let's Connect</span>
+          <h2 class="h-sec">Tell us what you're hiring for</h2>
+          <p class="lead">Share your roles and we'll match you with qualified, motivated candidates from our talent pool — usually within a week.</p>
+        </div>
+        <form class="cb-card cb-card--pad" id="hireForm" novalidate data-reveal="left" style="padding:32px">
+          <div class="cb-stack cb-stack--6">
+            <div class="field" style="display:flex;flex-direction:column;gap:8px"><label for="co" style="font-size:14px;font-weight:600;color:var(--text-strong)">Company</label><input class="cb-input" id="co" placeholder="Acme Inc." required></div>
+            <div class="field" style="display:flex;flex-direction:column;gap:8px"><label for="em" style="font-size:14px;font-weight:600;color:var(--text-strong)">Work email</label><input class="cb-input" id="em" type="email" placeholder="you@company.com" required></div>
+            <div class="field" style="display:flex;flex-direction:column;gap:8px"><label for="role" style="font-size:14px;font-weight:600;color:var(--text-strong)">Role you're hiring for</label><input class="cb-input" id="role" placeholder="Data Analyst, BI Developer…"></div>
+            <button class="cb-btn cb-btn--primary cb-btn--lg cb-btn--full" type="submit">Request Talent</button>
+            <p id="sent" class="muted" style="display:none;text-align:center;color:var(--status-success)"><span class="cb-i"><i class="ri-check-line"></i></span> Thanks! Our partnerships team will reach out shortly.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</div>
+<script src="site.js?v=31aaa504"></script>
+<script>
+  document.getElementById('hireForm').addEventListener('submit', function (e) {
+    e.preventDefault(); document.getElementById('sent').style.display = 'block'; this.reset();
+  });
+</script>
+</body>
+</html>

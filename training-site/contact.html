@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Colaberry</title>
+<meta name="description" content="Get in touch with Colaberry's admissions and support teams. Apply now or schedule a time to talk.">
+<link rel="stylesheet" href="../assets/fonts/remixicon.css">
+<link rel="stylesheet" href="../components.css?v=e9ba514f">
+<link rel="stylesheet" href="site.css?v=cdeabe7e">
+<script src="../motion.js?v=216f9290"></script>
+</head>
+<body>
+<a href="#main" class="cb-skip-link">Skip to content</a>
+<div class="site">
+  <div id="site-header"></div>
+  <main id="main">
+
+    <section class="phero">
+      <div class="wrap" style="max-width:760px">
+        <span class="eyebrow cb-anim cb-anim--rise">Contact</span>
+        <h1 class="cb-anim cb-anim--rise cb-delay-1">Let's talk about your future</h1>
+        <p class="lead cb-anim cb-anim--rise cb-delay-2">Have a question about our programs, payment options, or admissions? Send us a note and a member of our team will get back to you.</p>
+      </div>
+    </section>
+
+    <section class="section--tight">
+      <div class="wrap" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:start">
+
+        <form class="cb-card cb-card--pad" id="contactForm" novalidate data-reveal="right" style="padding:32px">
+          <div class="cb-stack cb-stack--6">
+            <div class="field-row" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+              <div class="field" style="display:flex;flex-direction:column;gap:8px"><label for="fn" style="font-size:14px;font-weight:600;color:var(--text-strong)">First name</label><input class="cb-input" id="fn" placeholder="Ada" required></div>
+              <div class="field" style="display:flex;flex-direction:column;gap:8px"><label for="ln" style="font-size:14px;font-weight:600;color:var(--text-strong)">Last name</label><input class="cb-input" id="ln" placeholder="Lovelace" required></div>
+            </div>
+            <div class="field" style="display:flex;flex-direction:column;gap:8px"><label for="em" style="font-size:14px;font-weight:600;color:var(--text-strong)">Email</label><input class="cb-input" id="em" type="email" placeholder="you@email.com" required></div>
+            <div class="field" style="display:flex;flex-direction:column;gap:8px"><label for="intr" style="font-size:14px;font-weight:600;color:var(--text-strong)">I'm interested in</label>
+              <select class="cb-select" id="intr" style="width:100%;font-family:var(--font-body);font-size:var(--fs-body);color:var(--text-strong);background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:11px 14px;min-height:46px">
+                <option>Data Analytics</option><option>Data Science</option><option>Job Readiness</option><option>Payment options &amp; scholarships</option><option>Hiring our graduates</option>
+              </select>
+            </div>
+            <div class="field" style="display:flex;flex-direction:column;gap:8px"><label for="msg" style="font-size:14px;font-weight:600;color:var(--text-strong)">Message</label><textarea class="cb-ta" id="msg" rows="4" placeholder="Tell us a little about your goals…"></textarea></div>
+            <button class="cb-btn cb-btn--primary cb-btn--lg cb-btn--full" type="submit">Send message</button>
+            <p id="sent" class="muted" style="display:none;text-align:center;color:var(--status-success)"><span class="cb-i"><i class="ri-check-line"></i></span> Thanks! We'll be in touch shortly.</p>
+          </div>
+        </form>
+
+        <div class="cb-stack cb-stack--6" data-reveal="left">
+          <div class="cb-card cb-card--pad">
+            <h4 style="margin:0 0 16px">Reach us directly</h4>
+            <div class="cb-stack cb-stack--3">
+              <div style="display:flex;gap:14px;align-items:center"><span class="cb-i" style="color:var(--brand-primary);font-size:22px;flex:none"><i class="ri-phone-line"></i></span><div style="min-width:0"><div class="muted" style="font-size:13px">Phone</div><b style="color:var(--text-strong);font-size:15px">(972)&nbsp;992-1024</b></div></div>
+              <div style="display:flex;gap:14px;align-items:center"><span class="cb-i" style="color:var(--brand-primary);font-size:22px;flex:none"><i class="ri-mail-line"></i></span><div style="min-width:0"><div class="muted" style="font-size:13px">Admissions</div><b style="color:var(--text-strong);font-size:15px;overflow-wrap:anywhere">admissions@colaberry.com</b></div></div>
+              <div style="display:flex;gap:14px;align-items:center"><span class="cb-i" style="color:var(--brand-primary);font-size:22px;flex:none"><i class="ri-customer-service-2-line"></i></span><div style="min-width:0"><div class="muted" style="font-size:13px">Student Support</div><b style="color:var(--text-strong);font-size:15px;overflow-wrap:anywhere">support@colaberry.com</b></div></div>
+            </div>
+          </div>
+          <div class="cb-card cb-card--pad cb-card--accent">
+            <h4 style="margin:0 0 6px">Prefer to dive in?</h4>
+            <p class="muted" style="margin:0 0 18px">Start your application now and an advisor will reach out within one business day.</p>
+            <a class="cb-btn cb-btn--primary cb-btn--full" href="https://app.colaberry.com/account/login">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</div>
+<script src="site.js?v=31aaa504"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('sent').style.display = 'block';
+    this.reset();
+  });
+</script>
+</body>
+</html>

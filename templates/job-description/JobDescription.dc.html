@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Career · Job Description" description="One-page A4 job description with Colaberry letterhead and brand watermark (logo / draft / confidential). Print-ready." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  @media print { @page { size:A4 portrait; margin:0; } body{background:#fff!important;} .jd-stage{padding:0!important;} .jd{box-shadow:none!important;} }
+</style>
+</helmet>
+<div class="jd-stage" style="background:var(--surface-subtle);min-height:100vh;display:grid;place-items:start center;padding:32px 16px;font-family:var(--font-body)">
+  <div class="jd" data-export="colaberry-job-description" data-export-w="1588" style="position:relative;width:794px;max-width:100%;min-height:1123px;background:var(--surface-card);box-shadow:var(--shadow-lg);display:flex;flex-direction:column;overflow:hidden;-webkit-print-color-adjust:exact;print-color-adjust:exact">
+    <!-- Watermark layer -->
+    <div aria-hidden="true" style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:0">
+      <sc-if value="{{ wmLogo }}" hint-placeholder-val="{{ true }}">
+        <img src="../../assets/logo/colaberry-mark.png" alt="" style="width:480px;max-width:80%;opacity:.05;transform:rotate(-14deg)">
+      </sc-if>
+      <sc-if value="{{ wmText }}" hint-placeholder-val="{{ false }}">
+        <div style="font-family:var(--font-display);font-weight:900;font-size:104px;letter-spacing:.12em;color:var(--red-500);opacity:.06;transform:rotate(-28deg);white-space:nowrap">{{ wmLabel }}</div>
+      </sc-if>
+    </div>
+    <!-- Letterhead -->
+    <div style="position:relative;z-index:1;padding:40px 48px 20px;border-bottom:3px solid var(--red-500);display:flex;justify-content:space-between;align-items:flex-end;gap:12px 16px;flex-wrap:wrap">
+      <img src="../../assets/logo/colaberry-horizontal.png" alt="Colaberry" style="height:36px;width:auto">
+      <div style="text-align:right;font-size:11.5px;color:var(--text-muted);font-family:var(--font-mono);line-height:1.8">careers@colaberry.com<br>colaberry.com · Plano, TX</div>
+    </div>
+    <!-- Body -->
+    <div style="position:relative;z-index:1;padding:32px 48px 40px;flex:1;display:flex;flex-direction:column;gap:24px">
+      <!-- Title block -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;color:var(--red-600);font-weight:600">JOB DESCRIPTION · REQ #CB-2026-041</div>
+        <h1 style="margin:0;font-family:var(--font-display);font-weight:900;font-size:clamp(26px,4vw,34px);line-height:1.1;letter-spacing:-.02em;color:var(--text-strong)">Data Analytics Instructor</h1>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="font-size:11.5px;font-weight:700;color:var(--red-700);background:var(--red-50);border:1px solid var(--red-200);border-radius:999px;padding:4px 12px">Full-time</span>
+          <span style="font-size:11.5px;font-weight:700;color:var(--blue-700);background:var(--blue-50);border:1px solid var(--blue-200);border-radius:999px;padding:4px 12px">Hybrid · Plano, TX</span>
+          <span style="font-size:11.5px;font-weight:700;color:var(--green-800);background:var(--green-50);border:1px solid var(--green-200);border-radius:999px;padding:4px 12px">Education team</span>
+        </div>
+      </div>
+      <!-- Meta grid -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;background:var(--surface-subtle);border:1px solid var(--border-default);border-radius:12px;padding:16px 20px">
+        <div style="min-width:0"><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--text-subtle)">REPORTS TO</div><div style="font-size:13px;font-weight:600;color:var(--text-strong);margin-top:3px">Director of Training</div></div>
+        <div style="min-width:0"><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--text-subtle)">START DATE</div><div style="font-size:13px;font-weight:600;color:var(--text-strong);margin-top:3px">September 2026</div></div>
+        <sc-if value="{{ showSalary }}" hint-placeholder-val="{{ true }}">
+          <div style="min-width:0"><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--text-subtle)">SALARY RANGE</div><div style="font-size:13px;font-weight:600;color:var(--text-strong);margin-top:3px">$72,000 – $88,000</div></div>
+        </sc-if>
+        <div style="min-width:0"><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--text-subtle)">POSTED</div><div style="font-size:13px;font-weight:600;color:var(--text-strong);margin-top:3px">July 17, 2026</div></div>
+      </div>
+      <!-- About the role -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;font-weight:600;color:var(--red-600)">ABOUT THE ROLE</span><span style="flex:1;height:1px;background:var(--border-default)"></span></div>
+        <p style="margin:0;font-size:13.5px;line-height:1.7;color:var(--text-body)">Colaberry has helped 5,000+ people future-proof their careers in data &amp; AI since 2012. As a Data Analytics Instructor, you'll lead live cohorts through SQL, BI, and applied AI coursework — coaching career-switchers from their first query to a job-ready portfolio. You'll shape curriculum, mentor 1:1, and keep our classrooms warm, inclusive, and hands-on.</p>
+      </div>
+      <!-- Responsibilities -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;font-weight:600;color:var(--red-600)">WHAT YOU'LL DO</span><span style="flex:1;height:1px;background:var(--border-default)"></span></div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:13.5px;line-height:1.6;color:var(--text-body)">
+          <div style="display:flex;gap:10px"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--red-500);margin-top:7px"></span><span style="min-width:0">Teach live SQL, Power BI, and Python sessions to cohorts of 20–30 learners, on campus and remote.</span></div>
+          <div style="display:flex;gap:10px"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--red-500);margin-top:7px"></span><span style="min-width:0">Review portfolio projects weekly and give specific, encouraging feedback tied to hiring-manager expectations.</span></div>
+          <div style="display:flex;gap:10px"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--red-500);margin-top:7px"></span><span style="min-width:0">Improve curriculum each cohort — refresh datasets, labs, and AI-assisted workflows with the education team.</span></div>
+          <div style="display:flex;gap:10px"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--red-500);margin-top:7px"></span><span style="min-width:0">Mentor learners 1:1 on study plans, interview prep, and confidence — many are veterans and career-switchers.</span></div>
+          <div style="display:flex;gap:10px"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--red-500);margin-top:7px"></span><span style="min-width:0">Track cohort progress in our LMS and flag learners who need extra support early.</span></div>
+        </div>
+      </div>
+      <!-- Qualifications -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;font-weight:600;color:var(--red-600)">WHAT YOU'LL BRING</span><span style="flex:1;height:1px;background:var(--border-default)"></span></div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:13.5px;line-height:1.6;color:var(--text-body)">
+          <div style="display:flex;gap:10px"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--green-600);margin-top:7px"></span><span style="min-width:0">3+ years working with SQL and at least one BI tool (Power BI, Tableau) on real business problems.</span></div>
+          <div style="display:flex;gap:10px"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--green-600);margin-top:7px"></span><span style="min-width:0">Experience teaching, mentoring, or onboarding others — formal classroom experience not required.</span></div>
+          <div style="display:flex;gap:10px"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--green-600);margin-top:7px"></span><span style="min-width:0">Plain-language communication: you can explain a JOIN to someone who has never written code.</span></div>
+          <div style="display:flex;gap:10px"><span style="flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:var(--green-600);margin-top:7px"></span><span style="min-width:0">Nice to have: Python for analytics, LLM/AI-assisted tooling, or prior bootcamp/adult-education experience.</span></div>
+        </div>
+      </div>
+      <!-- Benefits -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;font-weight:600;color:var(--red-600)">BENEFITS</span><span style="flex:1;height:1px;background:var(--border-default)"></span></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 24px;font-size:13px;line-height:1.6;color:var(--text-body)">
+          <div style="min-width:0">Medical, dental &amp; vision coverage</div>
+          <div style="min-width:0">401(k) with company match</div>
+          <div style="min-width:0">15 days PTO + education holidays</div>
+          <div style="min-width:0">Annual learning &amp; certification budget</div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div style="position:relative;z-index:1;margin-top:auto;border-top:1px solid var(--border-default);background:var(--surface-subtle);padding:18px 48px;display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap">
+      <div style="min-width:0;flex:1 1 320px;font-size:10.5px;line-height:1.6;color:var(--text-subtle)"><b style="color:var(--text-muted)">How to apply:</b> send your resume to careers@colaberry.com with the req # in the subject line. Colaberry is an equal-opportunity employer — no degree required; veterans encouraged to apply.</div>
+      <img src="../../assets/logo/colaberry-mark.png" alt="" style="height:28px;width:auto;opacity:.9">
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;watermark&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;logo&quot;,&quot;tsType&quot;:&quot;'logo'|'draft'|'confidential'|'none'&quot;,&quot;options&quot;:[&quot;logo&quot;,&quot;draft&quot;,&quot;confidential&quot;,&quot;none&quot;],&quot;section&quot;:&quot;Watermark&quot;},&quot;showSalary&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const wm = this.props.watermark ?? 'logo';
+    return {
+      wmLogo: wm === 'logo',
+      wmText: wm === 'draft' || wm === 'confidential',
+      wmLabel: wm === 'confidential' ? 'CONFIDENTIAL' : 'DRAFT',
+      showSalary: this.props.showSalary ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>

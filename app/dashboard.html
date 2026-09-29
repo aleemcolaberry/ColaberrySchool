@@ -1,0 +1,422 @@
+<!-- @dsCard group="Application" viewport="1280x880" name="Analytics dashboard" subtitle="Hash-routed app shell — 7 deep-linkable views, charts, dark-mode toggle" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — Colaberry Learn</title>
+<link rel="stylesheet" href="../assets/fonts/remixicon.css">
+<link rel="stylesheet" href="../components.css?v=e9ba514f">
+<link rel="stylesheet" href="app.css?v=f49a9928">
+<script src="theme.js?v=9aeea57d"></script>
+<script src="icons.js?v=c57b0605"></script>
+<script src="toast.js?v=006ae98e"></script>
+<script src="guard.js?v=bbc91a2c"></script>
+</head>
+<body>
+<div class="dash">
+
+  <!-- MOBILE DRAWER -->
+  <div class="scrim" id="scrim"></div>
+  <nav class="drawer" id="drawer" aria-label="Mobile">
+    <button class="iconbtn drawer__close" id="drawerClose" aria-label="Close menu"><span class="cb-i"><i class="ri-close-line"></i></span></button>
+    <a href="index.html" class="brand side__brand" style="padding-top:0"><img class="brand__logo" src="../assets/logo/colaberry-horizontal-black.png" alt="Colaberry" data-logo-swap></a>
+    <div class="cb-stack cb-stack--2">
+      <a class="navitem" data-nav="overview" href="#/overview"><span class="cb-i"><i class="ri-dashboard-3-line"></i></span> Overview</a>
+      <a class="navitem" data-nav="courses" href="#/courses"><span class="cb-i"><i class="ri-book-open-line"></i></span> My courses</a>
+      <a class="navitem" data-nav="assignments" href="#/assignments"><span class="cb-i"><i class="ri-file-list-3-line"></i></span> Assignments <span class="cb-badge cb-badge--red" style="margin-left:auto;font-size:11px;padding:2px 8px">2</span></a>
+      <a class="navitem" data-nav="schedule" href="#/schedule"><span class="cb-i"><i class="ri-calendar-line"></i></span> Schedule</a>
+      <div class="side__group">Career</div>
+      <a class="navitem" data-nav="jobs" href="#/jobs"><span class="cb-i"><i class="ri-briefcase-4-line"></i></span> Job board</a>
+      <a class="navitem" data-nav="mentor" href="#/mentor"><span class="cb-i"><i class="ri-user-star-line"></i></span> Mentor</a>
+      <div class="side__group">Account</div>
+      <a class="navitem" data-nav="settings" href="#/settings"><span class="cb-i"><i class="ri-settings-3-line"></i></span> Settings</a>
+      <a class="navitem navitem--danger" href="login.html"><span class="cb-i"><i class="ri-logout-box-r-line"></i></span> Log out</a>
+    </div>
+  </nav>
+
+  <!-- SIDEBAR -->
+  <aside class="side">
+    <a href="index.html" class="brand side__brand"><img class="brand__logo" src="../assets/logo/colaberry-horizontal-black.png" alt="Colaberry" data-logo-swap></a>
+    <nav class="cb-stack cb-stack--2" aria-label="Main">
+      <a class="navitem" data-nav="overview" href="#/overview"><span class="cb-i"><i class="ri-dashboard-3-line"></i></span> Overview</a>
+      <a class="navitem" data-nav="courses" href="#/courses"><span class="cb-i"><i class="ri-book-open-line"></i></span> My courses</a>
+      <a class="navitem" data-nav="assignments" href="#/assignments"><span class="cb-i"><i class="ri-file-list-3-line"></i></span> Assignments <span class="cb-badge cb-badge--red" style="margin-left:auto;font-size:11px;padding:2px 8px">2</span></a>
+      <a class="navitem" data-nav="schedule" href="#/schedule"><span class="cb-i"><i class="ri-calendar-line"></i></span> Schedule</a>
+      <div class="side__group">Career</div>
+      <a class="navitem" data-nav="jobs" href="#/jobs"><span class="cb-i"><i class="ri-briefcase-4-line"></i></span> Job board</a>
+      <a class="navitem" data-nav="mentor" href="#/mentor"><span class="cb-i"><i class="ri-user-star-line"></i></span> Mentor</a>
+      <div class="side__group">Account</div>
+      <a class="navitem" data-nav="settings" href="#/settings"><span class="cb-i"><i class="ri-settings-3-line"></i></span> Settings</a>
+    </nav>
+    <div class="side__foot">
+      <div class="side__user">
+        <span class="cb-avatar cb-avatar--sm">AL</span>
+        <div style="min-width:0;flex:1">
+          <div class="cb-truncate" style="font-weight:600;font-size:14px;color:var(--text-strong)">Ada Lovelace</div>
+          <div class="cb-truncate muted" style="font-size:12px">AI Architect · Cohort 12</div>
+        </div>
+        <a href="login.html" class="cb-i" style="color:var(--status-danger);font-size:18px" title="Log out"><i class="ri-logout-box-r-line"></i></a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <button class="iconbtn dash-burger" id="burger" aria-label="Open menu"><span class="cb-i"><i class="ri-menu-line"></i></span></button>
+      <div class="topbar__search">
+        <span class="cb-i"><i class="ri-search-line"></i></span>
+        <input placeholder="Search courses, projects, people…">
+      </div>
+      <div style="flex:1"></div>
+      <button class="iconbtn" data-theme-toggle aria-label="Toggle theme" title="Toggle theme"><span class="cb-i"><i class="ri-moon-line"></i></span></button>
+      <div class="cb-pop" id="notifPop">
+        <button class="iconbtn" id="notifBtn" aria-label="Notifications" title="Notifications" style="position:relative"><span class="cb-i"><i class="ri-notification-3-line"></i></span><span class="dot-status" style="background:var(--brand-primary);position:absolute;top:9px;right:10px"></span></button>
+        <div class="cb-pop__panel" data-p="bottom" style="left:auto;right:0;min-width:290px">
+          <b style="display:block;font-size:13px;color:var(--text-strong);margin-bottom:6px">Notifications</b>
+          <a class="notif" href="#/assignments/a-capstone"><span class="cb-i"><i class="ri-alarm-line"></i></span>LLM capstone proposal due Jun 28</a>
+          <a class="notif" href="#/jobs"><span class="cb-i"><i class="ri-briefcase-4-line"></i></span>New job match: Junior Data Analyst @ Optum</a>
+        </div>
+      </div>
+      <a href="#/settings" class="cb-avatar cb-avatar--sm" title="Account settings" style="text-decoration:none">AL</a>
+    </div>
+
+    <div class="dash__body">
+
+      <!-- OVERVIEW -->
+      <section class="view is-active" data-view="overview" data-screen-label="Overview">
+
+      <!-- PAGE HEAD -->
+      <div class="page-head">
+        <div>
+          <p class="muted" style="margin:0 0 4px;font-size:14px">Wednesday, June 26 · Week 8 of 24</p>
+          <h1>Welcome back, Ada 👋</h1>
+        </div>
+        <div class="cb-cluster">
+          <button class="cb-btn cb-btn--outline cb-btn--sm" id="exportBtn" title="Print or save as PDF"><span class="cb-i"><i class="ri-download-2-line"></i></span> Export</button>
+          <a class="cb-btn cb-btn--confirm cb-btn--sm" href="#/courses/c-genai"><span class="cb-i"><i class="ri-play-circle-line"></i></span> Resume lesson</a>
+        </div>
+      </div>
+
+      <!-- KPIs -->
+      <div class="kpis">
+        <div class="cb-card kpi" data-reveal>
+          <div class="kpi__top">
+            <span class="kpi__ic" style="background:var(--chart-1)"><span class="cb-i"><i class="ri-progress-4-line"></i></span></span>
+            <span class="trend up"><span class="cb-i"><i class="ri-arrow-up-line"></i></span> 12%</span>
+          </div>
+          <div><div class="kpi__val">68%</div><div class="kpi__lbl">Course progress</div></div>
+          <svg class="spark" viewBox="0 0 120 40" preserveAspectRatio="none"><polyline points="0,34 20,30 40,31 60,22 80,18 100,12 120,6" fill="none" stroke="var(--chart-1)" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="cb-card kpi" data-reveal style="--i:1">
+          <div class="kpi__top">
+            <span class="kpi__ic" style="background:var(--chart-3)"><span class="cb-i"><i class="ri-medal-line"></i></span></span>
+            <span class="trend up"><span class="cb-i"><i class="ri-arrow-up-line"></i></span> 4%</span>
+          </div>
+          <div><div class="kpi__val">A−</div><div class="kpi__lbl">Average grade · 91%</div></div>
+          <svg class="spark" viewBox="0 0 120 40" preserveAspectRatio="none"><polyline points="0,28 20,26 40,22 60,24 80,16 100,14 120,10" fill="none" stroke="var(--chart-3)" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="cb-card kpi" data-reveal style="--i:2">
+          <div class="kpi__top">
+            <span class="kpi__ic" style="background:var(--chart-6)"><span class="cb-i"><i class="ri-calendar-check-line"></i></span></span>
+            <span class="trend up"><span class="cb-i"><i class="ri-arrow-up-line"></i></span> 2%</span>
+          </div>
+          <div><div class="kpi__val">96%</div><div class="kpi__lbl">Attendance</div></div>
+          <svg class="spark" viewBox="0 0 120 40" preserveAspectRatio="none"><polyline points="0,18 20,14 40,20 60,12 80,14 100,8 120,9" fill="none" stroke="var(--chart-6)" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="cb-card kpi" data-reveal style="--i:3">
+          <div class="kpi__top">
+            <span class="kpi__ic" style="background:var(--chart-2)"><span class="cb-i"><i class="ri-rocket-2-line"></i></span></span>
+            <span class="trend down"><span class="cb-i"><i class="ri-arrow-down-line"></i></span> 1 due</span>
+          </div>
+          <div><div class="kpi__val">3 / 4</div><div class="kpi__lbl">Projects shipped</div></div>
+          <svg class="spark" viewBox="0 0 120 40" preserveAspectRatio="none"><polyline points="0,30 24,30 48,22 72,22 96,14 120,14" fill="none" stroke="var(--chart-2)" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+      <!-- ROW: line chart + donut -->
+      <div class="dash-grid">
+        <section class="cb-card cb-card--pad" data-reveal>
+          <div class="panel-head">
+            <h3>Progress over the cohort</h3>
+            <div class="seg" id="seg">
+              <button class="is-active" data-series="progress">Progress</button>
+              <button data-series="hours">Study hours</button>
+              <button data-series="grades">Grades</button>
+            </div>
+          </div>
+          <svg id="lineChart" class="chart" viewBox="0 0 640 240" style="height:260px" preserveAspectRatio="none" aria-label="Progress line chart">
+            <g id="grid" stroke="var(--border-subtle)" stroke-width="1"></g>
+            <path id="areaPath" fill="url(#ag)"></path>
+            <path id="linePath" fill="none" stroke="var(--chart-1)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--chart-1)" stop-opacity="0.22"/><stop offset="1" stop-color="var(--chart-1)" stop-opacity="0"/></linearGradient></defs>
+          </svg>
+          <div class="legend"><span><i style="background:var(--chart-1)"></i> You</span><span><i style="background:var(--border-strong)"></i> Cohort average</span></div>
+        </section>
+
+        <section class="cb-card cb-card--pad" data-reveal style="--i:1">
+          <div class="panel-head"><h3>Program completion</h3></div>
+          <div class="donut">
+            <svg viewBox="0 0 180 180" width="200" height="200" style="transform:rotate(-90deg)">
+              <circle cx="90" cy="90" r="74" fill="none" stroke="var(--surface-sunken)" stroke-width="20"></circle>
+              <circle id="donutArc" cx="90" cy="90" r="74" fill="none" stroke="var(--chart-1)" stroke-width="20" stroke-linecap="round" data-pct="68" stroke-dasharray="465" stroke-dashoffset="465"></circle>
+            </svg>
+            <div class="donut__center" style="position:absolute"><b>68%</b><span>16 of 24 weeks</span></div>
+          </div>
+          <div class="cb-stack cb-stack--3" style="margin-top:12px">
+            <div class="cb-cluster cb-cluster--between"><span class="cb-cluster cb-cluster--2"><span class="dot-status" style="background:var(--chart-1)"></span> Completed</span><b>16 wks</b></div>
+            <div class="cb-cluster cb-cluster--between"><span class="cb-cluster cb-cluster--2"><span class="dot-status" style="background:var(--surface-sunken)"></span> Remaining</span><b>8 wks</b></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ROW: skills + project scores -->
+      <div class="dash-grid">
+        <section class="cb-card cb-card--pad" data-reveal>
+          <div class="panel-head"><h3>Skill mastery</h3><span class="cb-badge cb-badge--outline">Updated today</span></div>
+          <div class="cb-stack cb-stack--6">
+            <div class="skill"><div class="skill__top"><b>Python</b><span>92%</span></div><div class="track"><i style="background:var(--chart-3)" data-w="92"></i></div></div>
+            <div class="skill"><div class="skill__top"><b>SQL &amp; Databases</b><span>88%</span></div><div class="track"><i style="background:var(--chart-3)" data-w="88"></i></div></div>
+            <div class="skill"><div class="skill__top"><b>Data Visualization</b><span>85%</span></div><div class="track"><i style="background:var(--chart-1)" data-w="85"></i></div></div>
+            <div class="skill"><div class="skill__top"><b>Statistics</b><span>81%</span></div><div class="track"><i style="background:var(--chart-1)" data-w="81"></i></div></div>
+            <div class="skill"><div class="skill__top"><b>Machine Learning</b><span>74%</span></div><div class="track"><i style="background:var(--chart-4)" data-w="74"></i></div></div>
+            <div class="skill"><div class="skill__top"><b>LLMs &amp; GenAI</b><span>60%</span></div><div class="track"><i style="background:var(--chart-2)" data-w="60"></i></div></div>
+          </div>
+        </section>
+
+        <section class="cb-card cb-card--pad" data-reveal style="--i:1">
+          <div class="panel-head"><h3>Project scores</h3><span class="muted" style="font-size:13px">vs cohort avg</span></div>
+          <div class="bars" id="bars">
+            <div class="bars__col"><div style="display:flex;gap:4px;align-items:flex-end;width:100%;max-width:52px;height:100%;justify-content:center">
+              <div style="width:14px;background:var(--chart-1);border-radius:4px 4px 0 0;height:0;transition:height .8s var(--ease-out)" data-h="88"></div>
+              <div style="width:14px;background:var(--border-default);border-radius:4px 4px 0 0;height:0;transition:height .8s var(--ease-out)" data-h="79"></div>
+            </div><div class="bars__lbl">EDA</div></div>
+            <div class="bars__col"><div style="display:flex;gap:4px;align-items:flex-end;width:100%;max-width:52px;height:100%;justify-content:center">
+              <div style="width:14px;background:var(--chart-1);border-radius:4px 4px 0 0;height:0;transition:height .8s var(--ease-out)" data-h="92"></div>
+              <div style="width:14px;background:var(--border-default);border-radius:4px 4px 0 0;height:0;transition:height .8s var(--ease-out)" data-h="81"></div>
+            </div><div class="bars__lbl">Dashboard</div></div>
+            <div class="bars__col"><div style="display:flex;gap:4px;align-items:flex-end;width:100%;max-width:52px;height:100%;justify-content:center">
+              <div style="width:14px;background:var(--chart-1);border-radius:4px 4px 0 0;height:0;transition:height .8s var(--ease-out)" data-h="85"></div>
+              <div style="width:14px;background:var(--border-default);border-radius:4px 4px 0 0;height:0;transition:height .8s var(--ease-out)" data-h="83"></div>
+            </div><div class="bars__lbl">ML model</div></div>
+            <div class="bars__col"><div style="display:flex;gap:4px;align-items:flex-end;width:100%;max-width:52px;height:100%;justify-content:center">
+              <div style="width:14px;background:var(--chart-1);border-radius:4px 4px 0 0;height:0;transition:height .8s var(--ease-out);opacity:.45" data-h="40"></div>
+              <div style="width:14px;background:var(--border-default);border-radius:4px 4px 0 0;height:0;transition:height .8s var(--ease-out)" data-h="80"></div>
+            </div><div class="bars__lbl">Capstone</div></div>
+          </div>
+          <div class="legend"><span><i style="background:var(--chart-1)"></i> You</span><span><i style="background:var(--border-default)"></i> Cohort avg</span></div>
+        </section>
+      </div>
+
+      <!-- ASSIGNMENTS TABLE -->
+      <section class="cb-card cb-card--pad" data-reveal>
+        <div class="panel-head">
+          <h3>Upcoming &amp; recent assignments</h3>
+          <a href="#/assignments" class="cb-btn cb-btn--link"><span class="cb-i"><i class="ri-file-list-3-line"></i></span> View all</a>
+        </div>
+        <div class="cb-scroll">
+          <table class="cb-table cb-table--hover" style="width:100%;min-width:560px">
+            <thead><tr><th>Assignment</th><th>Module</th><th>Due</th><th>Status</th><th class="num">Score</th></tr></thead>
+            <tbody>
+              <tr data-assignment="a-capstone">
+                <td><div class="who"><span class="cb-i" style="color:var(--chart-2);font-size:18px"><i class="ri-file-code-line"></i></span> LLM capstone — proposal</div></td>
+                <td class="muted">GenAI</td><td class="muted">Jun 28</td>
+                <td><span class="cb-badge cb-badge--warning" data-status="due">Due soon</span></td>
+                <td class="num muted">—</td>
+              </tr>
+              <tr data-assignment="a-churn">
+                <td><div class="who"><span class="cb-i" style="color:var(--chart-4);font-size:18px"><i class="ri-bar-chart-box-line"></i></span> Churn model evaluation</div></td>
+                <td class="muted">Machine Learning</td><td class="muted">Jun 24</td>
+                <td><span class="cb-badge cb-badge--blue" data-status="review">In review</span></td>
+                <td class="num muted">—</td>
+              </tr>
+              <tr data-assignment="a-dash">
+                <td><div class="who"><span class="cb-i" style="color:var(--chart-1);font-size:18px"><i class="ri-dashboard-line"></i></span> Sales analytics dashboard</div></td>
+                <td class="muted">Data Viz</td><td class="muted">Jun 17</td>
+                <td><span class="cb-badge cb-badge--green" data-status="done">Graded</span></td>
+                <td class="num"><b>92</b></td>
+              </tr>
+              <tr data-assignment="a-sql">
+                <td><div class="who"><span class="cb-i" style="color:var(--chart-3);font-size:18px"><i class="ri-database-2-line"></i></span> SQL window functions lab</div></td>
+                <td class="muted">SQL</td><td class="muted">Jun 12</td>
+                <td><span class="cb-badge cb-badge--green" data-status="done">Graded</span></td>
+                <td class="num"><b>96</b></td>
+              </tr>
+              <tr data-assignment="a-eda">
+                <td><div class="who"><span class="cb-i" style="color:var(--chart-3);font-size:18px"><i class="ri-function-line"></i></span> Pandas EDA notebook</div></td>
+                <td class="muted">Foundations</td><td class="muted">Jun 5</td>
+                <td><span class="cb-badge cb-badge--green" data-status="done">Graded</span></td>
+                <td class="num"><b>88</b></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      </section>
+
+      <!-- MY COURSES -->
+      <section class="view" data-view="courses" data-screen-label="My courses">
+        <div class="page-head"><div><p class="muted" style="margin:0 0 4px;font-size:14px">4 courses · week 8 of 24</p><h1>My courses</h1></div></div>
+        <div id="courseDetail"></div>
+        <div class="cb-grid" style="--min:260px" id="courseGrid">
+          <article class="cb-card cb-card--pad">
+            <div class="cb-cluster cb-cluster--between"><span class="cb-badge cb-badge--green" data-status="done">Complete</span><span class="muted" style="font-size:13px">Weeks 1–6</span></div>
+            <h3 style="margin:14px 0 4px">Foundations</h3>
+            <p class="muted" style="font-size:14px;margin:0 0 16px">Python, SQL &amp; the analyst mindset.</p>
+            <div class="cb-prog" style="margin-top:auto"><div class="cb-prog__head"><span class="cb-prog__label">Progress</span><span class="cb-prog__val">100%</span></div><div class="cb-prog__track"><div class="cb-prog__bar green" style="width:100%"></div></div></div>
+            <a class="cb-btn cb-btn--outline cb-btn--sm" style="margin-top:18px;align-self:flex-start" href="#/courses/c-foundations"><span class="cb-i"><i class="ri-book-open-line"></i></span> Review syllabus</a>
+          </article>
+          <article class="cb-card cb-card--pad">
+            <div class="cb-cluster cb-cluster--between"><span class="cb-badge cb-badge--neutral" data-status="active">Wrapping up</span><span class="muted" style="font-size:13px">Weeks 7–10</span></div>
+            <h3 style="margin:14px 0 4px">Data Visualization</h3>
+            <p class="muted" style="font-size:14px;margin:0 0 16px">Chart grammar to executive dashboards.</p>
+            <div class="cb-prog" style="margin-top:auto"><div class="cb-prog__head"><span class="cb-prog__label">Progress</span><span class="cb-prog__val">85%</span></div><div class="cb-prog__track"><div class="cb-prog__bar green" style="width:85%"></div></div></div>
+            <a class="cb-btn cb-btn--outline cb-btn--sm" style="margin-top:18px;align-self:flex-start" href="#/courses/c-viz"><span class="cb-i"><i class="ri-book-open-line"></i></span> Open syllabus</a>
+          </article>
+          <article class="cb-card cb-card--pad">
+            <div class="cb-cluster cb-cluster--between"><span class="cb-badge cb-badge--neutral" data-status="active">In progress</span><span class="muted" style="font-size:13px">Weeks 11–16</span></div>
+            <h3 style="margin:14px 0 4px">Machine Learning</h3>
+            <p class="muted" style="font-size:14px;margin:0 0 16px">Supervised learning, end to end.</p>
+            <div class="cb-prog" style="margin-top:auto"><div class="cb-prog__head"><span class="cb-prog__label">Progress</span><span class="cb-prog__val">74%</span></div><div class="cb-prog__track"><div class="cb-prog__bar green" style="width:74%"></div></div></div>
+            <a class="cb-btn cb-btn--outline cb-btn--sm" style="margin-top:18px;align-self:flex-start" href="#/courses/c-ml"><span class="cb-i"><i class="ri-book-open-line"></i></span> Open syllabus</a>
+          </article>
+          <article class="cb-card cb-card--pad" style="border-color:var(--border-brand)">
+            <div class="cb-cluster cb-cluster--between"><span class="cb-badge cb-badge--blue" data-status="active">Current</span><span class="muted" style="font-size:13px">Weeks 17–24</span></div>
+            <h3 style="margin:14px 0 4px">LLMs &amp; GenAI</h3>
+            <p class="muted" style="font-size:14px;margin:0 0 16px">Prompting, RAG &amp; your capstone.</p>
+            <div class="cb-prog" style="margin-top:auto"><div class="cb-prog__head"><span class="cb-prog__label">Progress</span><span class="cb-prog__val">60%</span></div><div class="cb-prog__track"><div class="cb-prog__bar green" style="width:60%"></div></div></div>
+            <a class="cb-btn cb-btn--confirm cb-btn--sm" style="margin-top:18px;align-self:flex-start" href="#/courses/c-genai"><span class="cb-i"><i class="ri-play-circle-line"></i></span> Continue — lesson 4.2</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ASSIGNMENTS -->
+      <section class="view" data-view="assignments" data-screen-label="Assignments">
+        <div class="page-head"><div><p class="muted" style="margin:0 0 4px;font-size:14px">2 open · 3 graded</p><h1>Assignments</h1></div></div>
+        <div id="assignmentDetail"></div>
+        <section class="cb-card cb-card--pad" id="assignmentListCard">
+          <div class="cb-scroll">
+            <table class="cb-table cb-table--hover" style="width:100%;min-width:560px">
+              <thead><tr><th>Assignment</th><th>Module</th><th>Due</th><th>Status</th><th class="num">Score</th></tr></thead>
+              <tbody id="assignRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <!-- SCHEDULE -->
+      <section class="view" data-view="schedule" data-screen-label="Schedule">
+        <div class="page-head"><div><p class="muted" style="margin:0 0 4px;font-size:14px">Week 8 · Jun 22–28</p><h1>Schedule</h1></div></div>
+        <section class="cb-card cb-card--pad">
+          <div class="sched-item">
+            <div class="sched-date"><b>26</b>Wed</div>
+            <div><b style="color:var(--text-strong)">Live lab — RAG systems</b><div class="muted" style="font-size:13px;margin-top:2px">6:00–8:00 PM CT · Dr. Priya Sharma · join link arrives by email 10 min before</div></div>
+            <span class="cb-badge cb-badge--blue" data-status="today">Today</span>
+          </div>
+          <div class="sched-item">
+            <div class="sched-date"><b>27</b>Thu</div>
+            <div><b style="color:var(--text-strong)">Mentor 1:1 — capstone review</b><div class="muted" style="font-size:13px;margin-top:2px">5:30 PM CT · 30 min · <a href="mailto:priya.sharma@colaberry.com?subject=Reschedule%20our%201:1">reschedule</a></div></div>
+            <span class="cb-badge cb-badge--neutral" data-status="mentor">1:1</span>
+          </div>
+          <div class="sched-item">
+            <div class="sched-date"><b>28</b>Fri</div>
+            <div><b style="color:var(--text-strong)">LLM capstone proposal due</b><div class="muted" style="font-size:13px;margin-top:2px">11:59 PM CT · <a href="#/assignments/a-capstone">open the brief</a></div></div>
+            <span class="cb-badge cb-badge--warning" data-status="due">Deadline</span>
+          </div>
+          <div class="sched-item">
+            <div class="sched-date"><b>1</b>Mon</div>
+            <div><b style="color:var(--text-strong)">Project review — cohort 12</b><div class="muted" style="font-size:13px;margin-top:2px">6:00 PM CT · guest reviewers from the Optum analytics team</div></div>
+            <span class="cb-badge cb-badge--neutral" data-status="live">Live</span>
+          </div>
+        </section>
+      </section>
+
+      <!-- JOB BOARD -->
+      <section class="view" data-view="jobs" data-screen-label="Job board">
+        <div class="page-head"><div><p class="muted" style="margin:0 0 4px;font-size:14px">Matched to your skill profile</p><h1>Job board</h1></div></div>
+        <div class="cb-grid" style="--min:280px">
+          <article class="cb-card cb-card--pad">
+            <div class="cb-cluster cb-cluster--between"><span class="cb-badge cb-badge--green" data-status="match">92% match</span><button class="cb-btn cb-btn--ghost cb-btn--sm" data-save-job="j-optum"><span class="cb-i"><i class="ri-bookmark-line"></i></span> Save</button></div>
+            <h3 style="margin:12px 0 2px">Junior Data Analyst</h3>
+            <p class="muted" style="font-size:14px;margin:0 0 12px">Optum · Remote (US) · $72–85k</p>
+            <p class="muted" style="font-size:14px;margin:0 0 18px">SQL-heavy reporting on the provider analytics team; Tableau a plus.</p>
+            <a class="cb-btn cb-btn--outline cb-btn--sm" style="margin-top:auto;align-self:flex-start" href="mailto:placements@colaberry.com?subject=Referral%20request%20—%20Junior%20Data%20Analyst%20@%20Optum"><span class="cb-i"><i class="ri-mail-send-line"></i></span> Request referral</a>
+          </article>
+          <article class="cb-card cb-card--pad">
+            <div class="cb-cluster cb-cluster--between"><span class="cb-badge cb-badge--green" data-status="match">87% match</span><button class="cb-btn cb-btn--ghost cb-btn--sm" data-save-job="j-capone"><span class="cb-i"><i class="ri-bookmark-line"></i></span> Save</button></div>
+            <h3 style="margin:12px 0 2px">Analytics Engineer</h3>
+            <p class="muted" style="font-size:14px;margin:0 0 12px">Capital One · Hybrid, Plano TX · $95–110k</p>
+            <p class="muted" style="font-size:14px;margin:0 0 18px">dbt + Snowflake pipelines feeding risk dashboards.</p>
+            <a class="cb-btn cb-btn--outline cb-btn--sm" style="margin-top:auto;align-self:flex-start" href="mailto:placements@colaberry.com?subject=Referral%20request%20—%20Analytics%20Engineer%20@%20Capital%20One"><span class="cb-i"><i class="ri-mail-send-line"></i></span> Request referral</a>
+          </article>
+          <article class="cb-card cb-card--pad">
+            <div class="cb-cluster cb-cluster--between"><span class="cb-badge cb-badge--green" data-status="match">84% match</span><button class="cb-btn cb-btn--ghost cb-btn--sm" data-save-job="j-usaa"><span class="cb-i"><i class="ri-bookmark-line"></i></span> Save</button></div>
+            <h3 style="margin:12px 0 2px">BI Analyst</h3>
+            <p class="muted" style="font-size:14px;margin:0 0 12px">USAA · San Antonio TX · $78–90k</p>
+            <p class="muted" style="font-size:14px;margin:0 0 18px">Member-experience reporting; strong storytelling emphasis.</p>
+            <a class="cb-btn cb-btn--outline cb-btn--sm" style="margin-top:auto;align-self:flex-start" href="mailto:placements@colaberry.com?subject=Referral%20request%20—%20BI%20Analyst%20@%20USAA"><span class="cb-i"><i class="ri-mail-send-line"></i></span> Request referral</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- MENTOR -->
+      <section class="view" data-view="mentor" data-screen-label="Mentor">
+        <div class="page-head"><div><p class="muted" style="margin:0 0 4px;font-size:14px">Your 1:1 guide through the program</p><h1>Mentor</h1></div></div>
+        <div class="dash-grid">
+          <section class="cb-card cb-card--pad">
+            <div class="cb-cluster" style="gap:16px">
+              <span class="cb-avatar cb-avatar--lg">PS</span>
+              <div><h3 style="margin:0">Dr. Priya Sharma</h3><p class="muted" style="margin:2px 0 0;font-size:14px">Principal Data Scientist · 11 yrs in healthcare analytics</p></div>
+            </div>
+            <p class="muted" style="margin:18px 0 20px">Runs your Thursday 1:1s and reviews every project before grading. Ask her anything from SQL style to salary negotiation.</p>
+            <div class="cb-cluster">
+              <a class="cb-btn cb-btn--confirm cb-btn--sm" href="mailto:priya.sharma@colaberry.com"><span class="cb-i"><i class="ri-chat-1-line"></i></span> Message mentor</a>
+              <a class="cb-btn cb-btn--outline cb-btn--sm" href="#/schedule"><span class="cb-i"><i class="ri-calendar-line"></i></span> Book a 1:1</a>
+            </div>
+          </section>
+          <section class="cb-card cb-card--pad">
+            <div class="panel-head"><h3>Next session</h3><span class="cb-badge cb-badge--blue" data-status="today">Thu 5:30 PM</span></div>
+            <p class="muted" style="font-size:14px;margin:0 0 12px">Agenda: capstone proposal review.</p>
+            <p class="muted" style="font-size:14px;margin:0">Prep: <a href="#/assignments/a-capstone">draft your proposal</a> before the call.</p>
+          </section>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="view" data-view="settings" data-screen-label="Settings">
+        <div class="page-head"><div><p class="muted" style="margin:0 0 4px;font-size:14px">Profile, appearance &amp; notifications</p><h1>Settings</h1></div></div>
+        <div class="dash-grid">
+          <section class="cb-card cb-card--pad">
+            <div class="panel-head"><h3>Profile</h3></div>
+            <div class="cb-stack cb-stack--5">
+              <div class="field"><label for="setName">Full name</label><input class="cb-input" id="setName" value="Ada Lovelace"></div>
+              <div class="field"><label for="setEmail">Email</label><input class="cb-input" id="setEmail" type="email" value="ada@colaberry.com"></div>
+              <div class="cb-cluster"><button class="cb-btn cb-btn--confirm cb-btn--sm" id="saveProfile"><span class="cb-i"><i class="ri-save-line"></i></span> Save changes</button></div>
+            </div>
+          </section>
+          <div class="cb-stack cb-stack--6">
+            <section class="cb-card cb-card--pad">
+              <div class="panel-head"><h3>Appearance</h3></div>
+              <label class="settings-row" style="cursor:pointer"><span style="font-size:15px;display:inline-flex;align-items:center;gap:10px"><span class="cb-i" style="color:var(--text-muted);font-size:17px"><i class="ri-sun-line"></i></span>Light theme</span><input type="radio" name="themePick" value="light" data-theme-radio style="accent-color:var(--brand-primary)"></label>
+              <label class="settings-row" style="cursor:pointer"><span style="font-size:15px;display:inline-flex;align-items:center;gap:10px"><span class="cb-i" style="color:var(--text-muted);font-size:17px"><i class="ri-moon-line"></i></span>Dark theme</span><input type="radio" name="themePick" value="dark" data-theme-radio style="accent-color:var(--brand-primary)"></label>
+            </section>
+            <section class="cb-card cb-card--pad">
+              <div class="panel-head"><h3>Notifications</h3></div>
+              <div class="settings-row"><span style="font-size:15px">Email me before deadlines</span><label class="cb-switch"><input type="checkbox" id="prefEmail" checked><span class="cb-switch__track"><span class="cb-switch__knob"></span></span></label></div>
+              <div class="settings-row"><span style="font-size:15px">Weekly progress digest</span><label class="cb-switch"><input type="checkbox" id="prefDigest"><span class="cb-switch__track"><span class="cb-switch__knob"></span></span></label></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <p class="muted" style="text-align:center;font-size:13px;padding:8px 0 24px">Colaberry Learn · demo dashboard built entirely on the design system</p>
+    </div>
+  </div>
+</div>
+
+<script src="../motion.js?v=216f9290"></script>
+<script src="charts.js?v=e758927e"></script>
+</body>
+</html>

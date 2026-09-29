@@ -1,0 +1,51 @@
+<!-- @dsCard group="Brand" viewport="700x680" name="Email sender identity" subtitle="sender_profiles · table-based header, button, footer + legal — inline styles, client-safe" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css?v=b492c172">
+<style>
+body{margin:0;padding:20px;background:var(--surface-subtle);font-family:var(--font-body)}
+.cap{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;color:var(--text-muted);margin:14px 0 6px;max-width:600px;margin-left:auto;margin-right:auto}
+.cap:first-child{margin-top:0}
+.wrap{max-width:600px;margin:0 auto;box-shadow:var(--shadow-sm)}
+a{color:var(--text-link)}a:hover{color:var(--text-link-hover)}
+</style>
+</head>
+<body>
+<!-- Every block below is lift-ready: tables + inline styles + hex literals only (no CSS vars — clients strip <style>). Font stack degrades Roboto→Helvetica/Arial where web fonts don't load. Production: logo src must be absolute https URLs; {{unsubscribe_url}} is the merge tag. Sends from training.colaberry.com; support: admissions@colaberry.com. -->
+<div class="cap">HEADER — white, cherry keyline, logo 150px</div>
+<div class="wrap">
+<!-- sender-profile: header -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;background:#FFFFFF">
+<tr><td style="height:3px;background:#E5121D;font-size:0;line-height:0">&nbsp;</td></tr>
+<tr><td style="padding:20px 32px"><img src="../assets/logo/colaberry-horizontal.png" width="150" alt="Colaberry" style="display:block;border:0;width:150px;height:auto"></td></tr>
+</table>
+</div>
+<div class="cap">BODY SAMPLE + BUTTON — fill #E5121D, label #FFFFFF 700, pill</div>
+<div class="wrap">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;background:#FFFFFF">
+<tr><td style="padding:8px 32px 30px">
+<h1 style="margin:0 0 10px;font-family:'Roboto',Helvetica,Arial,sans-serif;font-weight:700;font-size:26px;line-height:1.15;color:#1A1A1A">Your data career starts here.</h1>
+<p style="margin:0 0 22px;font-family:'Roboto',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;color:#2B2B2B">Free intro class Thursday 7:30pm CT — no degree required, 5,000+ careers launched since 2012.</p>
+<!-- sender-profile: button -->
+<table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:separate">
+<tr><td bgcolor="#E5121D" style="border-radius:999px;mso-padding-alt:13px 30px"><a href="#" style="display:inline-block;padding:13px 30px;font-family:'Roboto',Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#FFFFFF;text-decoration:none;border-radius:999px">Save your seat</a></td></tr>
+</table>
+<p style="margin:14px 0 0;font-family:'Roboto',Helvetica,Arial,sans-serif;font-size:13px;color:#6B6B6B">Questions? Just reply — a real person answers.</p>
+</td></tr>
+</table>
+</div>
+<div class="cap">FOOTER + LEGAL BLOCK — #1A1A1A, white logo 120px, #B4B4B4 fine print (8.4:1)</div>
+<div class="wrap">
+<!-- sender-profile: footer + legal -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;background:#1A1A1A">
+<tr><td align="center" style="padding:26px 32px 24px;text-align:center">
+<img src="../assets/logo/colaberry-horizontal-white.png" width="120" alt="Colaberry" style="display:inline-block;border:0;width:120px;height:auto;margin-bottom:14px">
+<p style="margin:0 0 10px;font-family:'Roboto',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#B4B4B4">Colaberry School of Data and AI is operated by Colaberry Inc.<br>[street address &mdash; legal to confirm], Irving, TX &middot; training.colaberry.com</p>
+<p style="margin:0;font-family:'Roboto',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#B4B4B4">You're receiving this because you joined our list.<br><a href="{{unsubscribe_url}}" style="color:#FFFFFF;text-decoration:underline">Unsubscribe</a> &nbsp;&middot;&nbsp; <a href="mailto:admissions@colaberry.com" style="color:#FFFFFF;text-decoration:underline">admissions@colaberry.com</a></p>
+</td></tr>
+</table>
+</div>
+</body>
+</html>

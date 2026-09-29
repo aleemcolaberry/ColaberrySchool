@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Career · Video Editor Assignment" description="Take-home interview brief: cut a viral-style 16:9 social video from training.colaberry.com content" -->
+<helmet><script src="./ds-base.js"></script></helmet>
+<div style="max-width:860px;margin:0 auto;background:#fff;font-family:Roboto,sans-serif;color:#1a1a1a;border:1px solid #e4e4e4;border-radius:16px;overflow:hidden">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px 36px;border-bottom:1px solid #ececec">
+<div><div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#4a4a4a">Colaberry · hiring</div>
+<h1 style="margin:6px 0 0;font-size:30px;font-weight:700;letter-spacing:-.01em">Video editor — interview assignment</h1></div>
+<img src="../../assets/logo/colaberry-horizontal.png" alt="Colaberry" style="height:34px;width:auto"/>
+</div>
+<div style="padding:28px 36px;display:grid;gap:26px">
+<div style="display:flex;flex-wrap:wrap;gap:8px 10px">
+<span style="border:1px solid #e4e4e4;border-radius:999px;padding:7px 16px;font-size:13.5px"><strong>Role:</strong>&nbsp;Video editor</span>
+<span style="border:1px solid #e4e4e4;border-radius:999px;padding:7px 16px;font-size:13.5px"><strong>Stage:</strong>&nbsp;Take-home assignment</span>
+<span style="border:1px solid #e4e4e4;border-radius:999px;padding:7px 16px;font-size:13.5px"><strong>Time-box:</strong>&nbsp;4–6 hours of editing</span>
+<span style="border:1px solid #e4e4e4;border-radius:999px;padding:7px 16px;font-size:13.5px"><strong>Due:</strong>&nbsp;{{ deadline }}</span>
+</div>
+<section style="display:grid;gap:10px">
+<h2 style="margin:0;font-size:13px;font-family:'Roboto Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#fb2832">1 · The assignment</h2>
+<p style="margin:0;font-size:15px;line-height:1.55">Cut one short promo for Colaberry's data &amp; AI training in a <strong>viral social-media editing style</strong>, landscape <strong>16:9</strong>. All concept content comes from our website, <a href="https://training.colaberry.com/" style="color:#367895">training.colaberry.com</a> — your job is the edit: hook, pacing, captions, sound.</p>
+<p style="margin:0;font-size:15px;line-height:1.55;color:#4a4a4a">We're testing retention instincts, rhythm, typography, and sound design — not motion-graphics wizardry or production value. A rough-but-gripping edit beats a polished-but-flat one.</p>
+</section>
+<section style="display:grid;gap:10px">
+<h2 style="margin:0;font-size:13px;font-family:'Roboto Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#fb2832">2 · The concept — from training.colaberry.com</h2>
+<p style="margin:0;font-size:15px;line-height:1.55"><strong>Hook / headline:</strong> Switch to a career in data &amp; AI — no previous IT experience required.</p>
+<div style="font-size:15px;line-height:1.55"><strong>Key points (pick 3–4, don't cram all):</strong>
+<ul style="margin:6px 0 0;padding-left:22px;display:grid;gap:4px">
+<li>5,000+ successful graduates since 2012 · learners from 45+ countries</li>
+<li>$80,000 average starting salary · 98% employment rate</li>
+<li>Project-based, mentor-led, built around your life — no degree or tests required</li>
+<li>Programs: Data Analytics · Data Science · Job Readiness</li>
+</ul></div>
+<p style="margin:0;font-size:15px;line-height:1.55"><strong>CTA end card:</strong> Colaberry logo + "Apply now — training.colaberry.com"</p>
+</section>
+<section style="display:grid;gap:10px">
+<h2 style="margin:0;font-size:13px;font-family:'Roboto Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#fb2832">3 · Deliverable</h2>
+<div style="display:flex;flex-wrap:wrap;gap:8px 10px">
+<span style="border:1px solid #e4e4e4;border-radius:999px;padding:7px 16px;font-size:13.5px"><strong>Aspect:</strong>&nbsp;16:9 landscape</span>
+<span style="border:1px solid #e4e4e4;border-radius:999px;padding:7px 16px;font-size:13.5px"><strong>Resolution:</strong>&nbsp;1920×1080</span>
+<span style="border:1px solid #e4e4e4;border-radius:999px;padding:7px 16px;font-size:13.5px"><strong>Length:</strong>&nbsp;{{ length }}</span>
+<span style="border:1px solid #e4e4e4;border-radius:999px;padding:7px 16px;font-size:13.5px"><strong>Format:</strong>&nbsp;MP4 (H.264)</span>
+<span style="border:1px solid #e4e4e4;border-radius:999px;padding:7px 16px;font-size:13.5px"><strong>Captions:</strong>&nbsp;burned-in</span>
+<span style="border:1px solid #e4e4e4;border-radius:999px;padding:7px 16px;font-size:13.5px"><strong>Narration:</strong>&nbsp;{{ narration }}</span>
+</div>
+</section>
+<section style="display:grid;gap:8px">
+<h2 style="margin:0;font-size:13px;font-family:'Roboto Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#fb2832">4 · Editing style — what "viral" means here</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px">
+<div style="border:1px solid #e4e4e4;border-radius:12px;padding:14px"><div style="font-weight:700;font-size:14px">Hook (0–2s)</div><p style="margin:4px 0 0;font-size:12.5px;color:#4a4a4a;line-height:1.5">Pattern interrupt + the boldest claim on screen before second two. No logo intro.</p></div>
+<div style="border:1px solid #e4e4e4;border-radius:12px;padding:14px"><div style="font-weight:700;font-size:14px">Cut rate</div><p style="margin:4px 0 0;font-size:12.5px;color:#4a4a4a;line-height:1.5">New visual every 1–3s, cut on the beat. Punch-ins, speed ramps, whip transitions.</p></div>
+<div style="border:1px solid #e4e4e4;border-radius:12px;padding:14px"><div style="font-weight:700;font-size:14px">Captions</div><p style="margin:4px 0 0;font-size:12.5px;color:#4a4a4a;line-height:1.5">Big kinetic text, 3–5 words per line, key words popped in cherry red.</p></div>
+<div style="border:1px solid #e4e4e4;border-radius:12px;padding:14px"><div style="font-weight:700;font-size:14px">Sound</div><p style="margin:4px 0 0;font-size:12.5px;color:#4a4a4a;line-height:1.5">Music with a clear beat, SFX layer (whooshes, clicks, risers), ducked under VO.</p></div>
+<div style="border:1px solid #e4e4e4;border-radius:12px;padding:14px"><div style="font-weight:700;font-size:14px">Proof beat</div><p style="margin:4px 0 0;font-size:12.5px;color:#4a4a4a;line-height:1.5">Numbers hit hard — counters, stat pops: 5,000+ grads, $80K, 98%.</p></div>
+<div style="border:1px solid #e4e4e4;border-radius:12px;padding:14px"><div style="font-weight:700;font-size:14px">End card (last 3s)</div><p style="margin:4px 0 0;font-size:12.5px;color:#4a4a4a;line-height:1.5">Clean stop: logo + "Apply now — training.colaberry.com". Nothing else moving.</p></div>
+</div>
+</section>
+<section style="display:grid;gap:10px">
+<h2 style="margin:0;font-size:13px;font-family:'Roboto Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#fb2832">5 · Materials &amp; ground rules</h2>
+<ul style="margin:0;padding-left:22px;font-size:15px;line-height:1.55;display:grid;gap:4px">
+<li><strong>Footage:</strong> screen-record any pages of <a href="https://training.colaberry.com/" style="color:#367895">training.colaberry.com</a>; royalty-free b-roll (Pexels, Pixabay, etc.) is fine — cite sources.</li>
+<li><strong>Logos:</strong> use the attached brand kit only (full-color on light, white mark on dark/cherry). Never recolor or add effects.</li>
+<li><strong>Brand guardrails:</strong> Roboto for text, cherry red #FB2832 as the lead accent, sentence case, no emoji, no hype-speak.</li>
+<li><strong>Music/SFX:</strong> licensed or royalty-free only. AI voiceover is allowed if narrated.</li>
+<li><strong>Original work:</strong> your edit, made for this assignment. Any editor works — Premiere, Resolve, CapCut, AE.</li>
+</ul>
+</section>
+<section style="display:grid;gap:8px">
+<h2 style="margin:0;font-size:13px;font-family:'Roboto Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#fb2832">6 · How we score it</h2>
+<div style="display:grid;gap:6px;font-size:14px">
+<div style="display:flex;justify-content:space-between;gap:12px;border:1px solid #e4e4e4;border-radius:10px;padding:10px 16px"><span><strong>Hook &amp; retention</strong> — would a stranger keep watching past 3s?</span><span style="font-family:'Roboto Mono',monospace;color:#fb2832;font-weight:700;white-space:nowrap">30%</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;border:1px solid #e4e4e4;border-radius:10px;padding:10px 16px"><span><strong>Pacing &amp; rhythm</strong> — cuts on beat, no dead air, momentum to the end</span><span style="font-family:'Roboto Mono',monospace;color:#fb2832;font-weight:700;white-space:nowrap">25%</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;border:1px solid #e4e4e4;border-radius:10px;padding:10px 16px"><span><strong>Captions &amp; brand</strong> — readable kinetic type, on-brand color and voice</span><span style="font-family:'Roboto Mono',monospace;color:#fb2832;font-weight:700;white-space:nowrap">20%</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;border:1px solid #e4e4e4;border-radius:10px;padding:10px 16px"><span><strong>Sound design</strong> — music choice, SFX, clean mix</span><span style="font-family:'Roboto Mono',monospace;color:#fb2832;font-weight:700;white-space:nowrap">15%</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;border:1px solid #e4e4e4;border-radius:10px;padding:10px 16px"><span><strong>Delivery</strong> — correct spec, clean export, on time</span><span style="font-family:'Roboto Mono',monospace;color:#fb2832;font-weight:700;white-space:nowrap">10%</span></div>
+</div>
+</section>
+<section style="display:grid;gap:10px">
+<h2 style="margin:0;font-size:13px;font-family:'Roboto Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#fb2832">7 · Submitting</h2>
+<p style="margin:0;font-size:15px;line-height:1.55">Send a Drive/WeTransfer link with the <strong>MP4</strong>, your <strong>project file</strong> (or timeline export), and 2–3 sentences on your choices — hook, music, what you'd do with more time. Reply to the email that sent you this brief; questions welcome any time before the deadline.</p>
+</section>
+</div>
+<div style="background:#101010;color:#fff;padding:20px 36px;display:flex;gap:14px;align-items:flex-start">
+<img src="../../assets/logo/colaberry-mark-white.png" alt="" style="height:26px;width:auto;margin-top:2px"/>
+<p style="margin:0;font-size:13px;line-height:1.6;color:#d8d8d8">Hiring manager: set the deadline, length, and narration in Tweaks, swap section 2's key points if you're testing a specific program, and send with <span style="font-family:'Roboto Mono',monospace;color:#fff">assets/logo/colaberry-horizontal.png</span> and <span style="font-family:'Roboto Mono',monospace;color:#fff">colaberry-mark-white.png</span> attached.</p>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:1560},&quot;deadline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;72 hours after receiving this brief&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Assignment&quot;},&quot;length&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;30–45s&quot;,&quot;options&quot;:[&quot;Under 30s&quot;,&quot;30–45s&quot;,&quot;45–60s&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Deliverable&quot;},&quot;narration&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Your choice — VO or captions-only&quot;,&quot;options&quot;:[&quot;Your choice — VO or captions-only&quot;,&quot;Voiceover required&quot;,&quot;Captions + music only&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Deliverable&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      deadline: this.props.deadline ?? '72 hours after receiving this brief',
+      length: this.props.length ?? '30–45s',
+      narration: this.props.narration ?? 'Your choice — VO or captions-only',
+    };
+  }
+}
+</script>
+</body>
+</html>

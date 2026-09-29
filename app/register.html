@@ -1,0 +1,173 @@
+<!-- @dsCard group="Application" viewport="1120x760" name="Registration" subtitle="Split-panel application form with steps + validation" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply — Colaberry Learn</title>
+<link rel="stylesheet" href="../assets/fonts/remixicon.css">
+<link rel="stylesheet" href="../components.css?v=e9ba514f">
+<link rel="stylesheet" href="app.css?v=f49a9928">
+<script src="theme.js?v=9aeea57d"></script>
+<script src="icons.js?v=c57b0605"></script>
+<script src="toast.js?v=006ae98e"></script>
+<script src="guard.js?v=bbc91a2c"></script>
+</head>
+<body>
+<div class="auth">
+
+  <!-- BRAND ASIDE -->
+  <aside class="auth__aside">
+    <span class="auth__blob" style="width:300px;height:300px;top:-60px;right:-60px"></span>
+    <span class="auth__blob" style="width:200px;height:200px;bottom:40px;left:-40px"></span>
+    <a href="index.html" class="brand"><img class="brand__logo" src="../assets/logo/colaberry-horizontal-white.png" alt="Colaberry" style="height:28px"></a>
+    <h2>Start the application that changes your career.</h2>
+    <div class="auth__quote">
+      <p>"I was a teacher making $38k. Eight months after my Colaberry cohort I was a data analyst at $91k."</p>
+      <cite>— Marcus R., Cohort 09 graduate</cite>
+    </div>
+    <div class="cb-cluster" style="gap:32px;margin-top:40px;color:var(--text-on-accent)">
+      <div><div style="font-family:var(--font-display);font-weight:900;font-size:28px">5,000+</div><div style="font-size:13px">careers launched</div></div>
+      <div><div style="font-family:var(--font-display);font-weight:900;font-size:28px">87%</div><div style="font-size:13px">hired in 6 mo.</div></div>
+    </div>
+  </aside>
+
+  <!-- FORM -->
+  <main class="auth__main">
+    <div class="auth__card auth__card--wide">
+      <div class="cb-cluster cb-cluster--between" style="margin-bottom:8px">
+        <a href="index.html" class="nav__link" style="padding-left:0;color:var(--text-muted)"><span class="cb-i"><i class="ri-arrow-left-line"></i></span> Back</a>
+        <span class="muted" style="font-size:14px;white-space:nowrap">Already applied? <a href="login.html" style="color:var(--text-link);font-weight:600;text-decoration:none">Log in</a></span>
+      </div>
+
+      <h1 style="font-size:var(--fs-h2);margin:0 0 6px">Create your account</h1>
+      <p class="muted" style="margin:0 0 28px">It takes about 5 minutes. No payment required to apply.</p>
+
+      <!-- step indicator -->
+      <div class="steps">
+        <span class="steps__dot is-active">1</span>
+        <span class="steps__line"></span>
+        <span class="steps__dot">2</span>
+        <span class="steps__line"></span>
+        <span class="steps__dot">3</span>
+      </div>
+
+      <form id="regForm" novalidate>
+        <div class="cb-stack cb-stack--6">
+
+          <div class="field-row">
+            <div class="field">
+              <label for="fn">First name</label>
+              <input class="cb-input" id="fn" name="fn" placeholder="Ada" required>
+            </div>
+            <div class="field">
+              <label for="ln">Last name</label>
+              <input class="cb-input" id="ln" name="ln" placeholder="Lovelace" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="em">Email address</label>
+            <input class="cb-input" id="em" name="em" type="email" placeholder="you@email.com" required>
+            <span class="field__hint">We'll send your application status here.</span>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="ph">Phone</label>
+              <input class="cb-input" id="ph" name="ph" type="tel" placeholder="(555) 012-3456">
+            </div>
+            <div class="field">
+              <label for="track">Track</label>
+              <select class="cb-select" id="track" name="track">
+                <option>AI Systems Architect — 24 wk</option>
+                <option>Data Analytics — 16 wk</option>
+                <option>Enterprise (for teams)</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="bg">Current background</label>
+            <select class="cb-select" id="bg" name="bg">
+              <option>Career changer (non-technical)</option>
+              <option>Some technical experience</option>
+              <option>Working in data/analytics</option>
+              <option>Student / recent graduate</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="goal">What's your goal? <span class="muted" style="font-weight:400">(optional)</span></label>
+            <textarea class="cb-ta" id="goal" name="goal" rows="3" placeholder="e.g. Move into a data analyst role within a year."></textarea>
+          </div>
+
+          <label class="cb-check" style="display:flex;gap:12px;align-items:flex-start;cursor:pointer">
+            <input type="checkbox" id="agree" required>
+            <span class="cb-check__box" aria-hidden="true"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span style="font-size:14px;color:var(--text-body)">I agree to the <a href="legal.html#terms" style="color:var(--text-link);text-decoration:none">Terms</a> and <a href="legal.html#privacy" style="color:var(--text-link);text-decoration:none">Privacy Policy</a>, and consent to be contacted by an advisor.</span>
+          </label>
+
+          <button class="cb-btn cb-btn--confirm cb-btn--lg cb-btn--full" type="submit"><span class="cb-i"><i class="ri-send-plane-line"></i></span> Continue to application</button>
+
+          <div class="divider-or">or sign up with</div>
+          <div class="cb-grid cb-grid--2 cb-grid--tight">
+            <button type="button" class="social-btn"><span class="cb-i"><i class="ri-google-fill"></i></span> Google</button>
+            <button type="button" class="social-btn"><span class="cb-i"><i class="ri-linkedin-box-fill"></i></span> LinkedIn</button>
+          </div>
+        </div>
+      </form><p class="muted" style="font-size:12.5px;margin-top:18px;text-align:center">Colaberry School of Data and AI is operated by Colaberry Inc.</p>
+    </div>
+  </main>
+</div>
+
+<!-- inline checkbox styling parity (the CSS-only build covers .cb-check) -->
+<script>
+  var regForm = document.getElementById('regForm');
+  var FIELDS = ['fn', 'ln', 'em', 'ph', 'track', 'bg', 'goal'];
+  /* Deep link: register.html?track=ai|analytics|enterprise preselects the track. */
+  var trackMap = { ai: 'AI Systems Architect \u2014 24 wk', analytics: 'Data Analytics \u2014 16 wk', enterprise: 'Enterprise (for teams)' };
+  var qTrack = new URLSearchParams(location.search).get('track');
+  /* Draft persistence: refresh or leaving never loses typed input. */
+  try {
+    var draft = JSON.parse(localStorage.getItem('cb-reg-draft') || '{}');
+    FIELDS.forEach(function (id) { if (draft[id]) document.getElementById(id).value = draft[id]; });
+  } catch (e) {}
+  if (qTrack && trackMap[qTrack]) document.getElementById('track').value = trackMap[qTrack];
+  regForm.addEventListener('input', function (ev) {
+    if (ev.target && ev.target.matches('input, select, textarea')) window.cbSetFieldError(ev.target, '');
+    var d = {};
+    FIELDS.forEach(function (id) { d[id] = document.getElementById(id).value; });
+    try { localStorage.setItem('cb-reg-draft', JSON.stringify(d)); } catch (e) {}
+  });
+  regForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fn = document.getElementById('fn'), ln = document.getElementById('ln'), em = document.getElementById('em'), ph = document.getElementById('ph');
+    var bad = [];
+    if (!fn.value.trim()) { cbSetFieldError(fn, 'First name is required.'); bad.push(fn); }
+    if (!ln.value.trim()) { cbSetFieldError(ln, 'Last name is required.'); bad.push(ln); }
+    if (!em.value.trim()) { cbSetFieldError(em, 'Email is required.'); bad.push(em); }
+    else if (!cbEmailOk(em.value.trim())) { cbSetFieldError(em, 'Enter a valid email like you@domain.com.'); bad.push(em); }
+    if (ph.value.trim() && !cbPhoneOk(ph.value.trim())) { cbSetFieldError(ph, 'Enter a valid phone number.'); bad.push(ph); }
+    if (bad.length) {
+      window.cbToast('Fix the highlighted fields to continue.', { tone: 'error', title: 'A few details missing' });
+      bad[0].focus();
+      return;
+    }
+    var agree = document.getElementById('agree');
+    if (!agree.checked) {
+      window.cbToast('Please agree to the Terms and Privacy Policy to continue.', { tone: 'warning' });
+      agree.focus();
+      return;
+    }
+    try { localStorage.removeItem('cb-reg-draft'); } catch (e2) {}
+    window.location.href = 'thank-you.html';
+  });
+  /* Social auth is demo-wired: proceeds like a submitted application. */
+  document.querySelectorAll('.social-btn').forEach(function (b) {
+    b.addEventListener('click', function () { window.location.href = 'thank-you.html'; });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+# ── Dependencies ───────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ── OS / editor junk ───────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.sublime-*
+
+# ── Logs ───────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# ── Build / publish artifacts ──────────────────
+# Short-lived bundles minted for Canva / external imports
+.bundles/
+# Self-contained standalone exports + intermediate sources
+*-standalone.html
+templates/**/_kit-standalone.html
+Colaberry Social Media Kit.html
+
+# ── Print-to-PDF intermediates ─────────────────
+*-print-*.html
+
+# ── Editor / host artifacts ────────────────────
+.thumbnail
+
+# ── Scratch / QA working files ─────────────────
+scraps/
+uploads/
+screenshots/

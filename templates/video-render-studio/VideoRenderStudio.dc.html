@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Marketing · Video Render Studio (.mp4)" description="Render any animated clip in this design system (intro/outro, dark + light) to a downloadable 1080×1920 H.264 .mp4 — entirely in the browser." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mp4-muxer@5/build/mp4-muxer.min.js"></script>
+</helmet>
+<div style="background:#EFEDE8;min-height:100vh;display:flex;flex-direction:column;font-family:'Roboto',system-ui,sans-serif">
+
+  <!-- Header -->
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:16px 22px;border-bottom:1px solid #DDD9D0">
+    <h1 style="font-family:'Roboto',system-ui,sans-serif;font-weight:900;font-size:18px;letter-spacing:-.01em;color:#171717;margin:0">Video render studio</h1>
+    <span style="font-family:'Roboto Mono',ui-monospace,monospace;font-size:11px;color:#6E6E6E">pick a clip → Render .mp4 → file downloads</span>
+    <span style="font-family:'Roboto Mono',ui-monospace,monospace;font-size:11px;color:#6E6E6E;margin-left:auto">H.264 · 1080×1920 · 30 fps · renders in-browser</span>
+  </div>
+
+  <!-- Studio -->
+  <div style="position:relative;flex:1;min-height:600px">
+    <x-import component-from-global-scope="VideoRenderStudio" from="./animations.jsx ../video-intro-outro-animated/intro-outro-scenes.jsx ../video-intro-outro-light/intro-outro-light-scenes.jsx ./render-studio.jsx" hint-size="100%,600px"></x-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1100,&quot;height&quot;:800}}"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+{
+  "brandSlug": "colaberry-training",
+  "themeKey": "colaberry-training",
+  "supportEmail": "admissions@colaberry.com",
+  "typography": {
+    "heading": "'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "headingWeight": 700,
+    "body": "'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "bodyWeight": 400,
+    "mono": "'Roboto Mono', ui-monospace, 'SF Mono', Menlo, monospace",
+    "scale": "18px base; ladder 12/14/16/18/20/22/28/36/48/60px",
+    "radius": "12px",
+    "shadow": "0 3px 8px rgba(26,26,26,0.06), 0 1px 3px rgba(26,26,26,0.04)"
+  },
+  "light": {
+    "bg": "#FFFFFF",
+    "bgElevated": "#FFFFFF",
+    "fg": "#2B2B2B",
+    "fgMuted": "#6B6B6B",
+    "accent": "#E5121D",
+    "accentContrast": "#FFFFFF",
+    "accentSoft": "#FFF0F1",
+    "line": "#D8D8D8",
+    "success": "#356A24",
+    "warning": "#96590A",
+    "danger": "#C20E1E"
+  },
+  "dark": {
+    "bg": "#0F0F0F",
+    "bgElevated": "#1A1A1A",
+    "fg": "#E4E4E3",
+    "fgMuted": "#B4B4B4",
+    "accent": "#E5121D",
+    "accentContrast": "#FFFFFF",
+    "accentSoft": "#351315",
+    "line": "#313131",
+    "success": "#A2D375",
+    "warning": "#F5C878",
+    "danger": "#FE8A90"
+  },
+  "contrastRatios": {
+    "fgOnBg": 14.15,
+    "fgMutedOnBg": 5.32,
+    "accentContrastOnAccent": 4.73,
+    "accentOnBg": 4.04,
+    "byMode": {
+      "light": {
+        "fgOnBg": 14.15,
+        "fgOnBgElevated": 14.15,
+        "fgMutedOnBg": 5.32,
+        "fgMutedOnBgElevated": 5.32,
+        "accentContrastOnAccent": 4.73,
+        "accentOnBg": 4.73,
+        "accentOnBgElevated": 4.73,
+        "fgOnAccentSoft": 12.8,
+        "successOnBg": 6.48,
+        "warningOnBg": 5.62,
+        "dangerOnBg": 6.22
+      },
+      "dark": {
+        "fgOnBg": 15.06,
+        "fgOnBgElevated": 13.67,
+        "fgMutedOnBg": 9.24,
+        "fgMutedOnBgElevated": 8.39,
+        "accentContrastOnAccent": 4.73,
+        "accentOnBg": 4.04,
+        "accentOnBgElevated": 3.67,
+        "fgOnAccentSoft": 13.14,
+        "successOnBg": 11.05,
+        "warningOnBg": 12.24,
+        "dangerOnBg": 8.44
+      }
+    },
+    "note": "Flat keys are the worst (minimum) of the two modes; byMode carries every measured pair."
+  },
+  "email": {
+    "headerNotes": "White #FFFFFF header on a 3px cherry #E5121D top keyline; colaberry-horizontal.png at 150px wide, left-aligned, 24px padding. Table-based, all styles inline; logo must be an absolute https URL in production.",
+    "footerNotes": "Near-black #1A1A1A footer; white horizontal logo 120px; legal line \"Colaberry School of Data and AI is operated by Colaberry Inc.\" + mailing address + unsubscribe, set in #B4B4B4 12px (4.5:1+ on #1A1A1A).",
+    "buttonHex": "#E5121D",
+    "buttonLabelHex": "#FFFFFF",
+    "buttonRadius": "999px"
+  },
+  "fonts": {
+    "families": [
+      "Roboto — Apache-2.0",
+      "Roboto Mono — Apache-2.0",
+      "Quicksand — SIL OFL-1.1 (logotype only, never UI)"
+    ],
+    "licenseCost": "None. All open-license, self-hosted in assets/fonts/ — no typeface budget needed for this brand."
+  },
+  "notes": [
+    "accent is red-600 #E5121D (button-safe), NOT raw brand cherry #FB2832 — cherry is 3.9:1 with white and is reserved for the logo, large display text and decorative accents.",
+    "accent stays constant across modes (brand rule: the cherry never changes; it clears 3:1 on both bg values). Brand-colored TEXT in dark mode lightens to #FE8A90 (red-300) for 4.5:1 — use fg-side tokens for red text, never the accent.",
+    "bgElevated intentionally equals bg in light mode — light-mode elevation comes from line + shadow (see typography.shadow); dark mode separates 0F0F0F / 1A1A1A.",
+    "success/warning/danger are text-grade tones (>=4.5:1 on bg in each mode). The full token set also ships chip pairs (status-*-bg / status-*-fg) if the platform renders tinted badges.",
+    "Focus ring: 3px berry-blue #367895 at 80% (light) / #6F9DB6 at 50% (dark) — kept separate from accent by design so focus is never lost on red controls."
+  ]
+}

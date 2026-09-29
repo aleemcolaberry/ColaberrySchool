@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Print · One-Pager" description="A4 one-pager: single-page announcement or program summary. Print-ready." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  a{color:var(--text-brand)}a:hover{color:var(--text-brand-hover)}
+  @media print { @page { size: A4 portrait; margin: 0; } body{background:#fff!important} .op-stage{padding:0!important} .op{box-shadow:none!important} }
+  @media (max-width:680px){ .op-cols,.op-foot{grid-template-columns:1fr!important} .op-stamp{display:none!important} }
+</style>
+</helmet>
+<div class="op-stage" style="background:var(--surface-subtle);min-height:100vh;display:grid;place-items:start center;padding:32px 16px;font-family:var(--font-body)">
+  <div class="op" data-export="colaberry-one-pager" data-export-w="1588" style="width:794px;max-width:100%;min-height:1123px;background:var(--surface-card);box-shadow:var(--shadow-lg);display:flex;flex-direction:column;overflow:hidden">
+
+    <!-- ===== Header band ===== -->
+    <div style="background:linear-gradient(150deg,var(--red-500) 30%,var(--red-700));color:#fff;padding:24px 44px 26px;position:relative;overflow:hidden">
+      <img src="../../assets/logo/colaberry-mark-white.png" alt="" style="position:absolute;right:-55px;bottom:-75px;height:265px;opacity:.09;transform:rotate(-10deg)">
+      <div style="position:absolute;top:-130px;left:52%;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.06)"></div>
+      <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+        <img src="../../assets/logo/colaberry-horizontal-white.png" alt="Colaberry" style="height:24px">
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);padding:5px 12px;border-radius:var(--radius-pill);white-space:nowrap">Internal announcement</span>
+      </div>
+      <div style="position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:24px">
+        <div style="min-width:0">
+          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.88;display:flex;align-items:center;gap:9px;margin-bottom:11px"><span style="width:22px;height:1px;background:rgba(255,255,255,.65);flex:none"></span>Claude Certified Architect · CCA</div>
+          <h1 style="font-family:var(--font-display);font-weight:900;font-size:45px;line-height:1.04;letter-spacing:-.025em;margin:0;color:#fff">Let's get Claude Certified.<br><span style="background:#fff;color:var(--red-600);padding:1px 12px 3px;display:inline-block;transform:rotate(-1.2deg);margin-top:8px;box-shadow:0 6px 16px rgba(0,0,0,.15)">Together.</span></h1>
+          <p style="font-size:14px;line-height:1.55;opacity:.94;margin:15px 0 0;max-width:47ch">Your path to the credential: a team endeavor, with the exam fee on Colaberry.</p>
+        </div>
+        <div class="op-stamp" style="flex:none;width:124px;height:124px;border-radius:50%;background:#fff;color:var(--red-600);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:3px;transform:rotate(6deg);margin-bottom:2px;box-shadow:0 14px 34px rgba(0,0,0,.24);position:relative">
+          <div style="position:absolute;inset:7px;border-radius:50%;border:1.5px dashed var(--red-300)"></div>
+          <div style="font-family:var(--font-display);font-weight:900;font-size:32px;line-height:1">100%</div>
+          <div style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5;color:var(--red-700)">Exam fee<br>covered*</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Body ===== -->
+    <div class="op-cols" style="padding:22px 44px 22px;display:grid;grid-template-columns:1.45fr 1fr;gap:8px 34px;flex:1">
+
+      <!-- Left: the path -->
+      <div style="display:flex;flex-direction:column">
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-brand);margin-bottom:6px">Your path</div>
+        <h2 style="font-family:var(--font-display);font-weight:900;font-size:23px;letter-spacing:-.015em;color:var(--text-strong);margin:0 0 18px">Five steps, one team.</h2>
+        <div style="position:relative;display:flex;flex-direction:column;gap:15px;flex:1;justify-content:space-between">
+          <div style="position:absolute;left:14px;top:16px;bottom:16px;width:2px;background:var(--border-subtle)"></div>
+          <div style="display:flex;gap:15px;align-items:flex-start;position:relative">
+            <span style="width:30px;height:30px;border-radius:50%;background:var(--red-500);color:#fff;font-family:var(--font-display);font-weight:900;font-size:14px;display:grid;place-items:center;flex:none;box-shadow:0 0 0 4px var(--surface-card)">1</span>
+            <div style="min-width:0;padding-top:4px">
+              <b style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-strong)">Sign up at <a href="https://training.colaberry.com/" target="_blank" rel="noopener" style="color:var(--text-brand);text-decoration:underline">training.colaberry.com</a></b>
+              <p style="font-size:12px;color:var(--text-muted);line-height:1.55;margin:3px 0 0">Follow the standard Colaberry process: submit your name, email, and phone number. Every one of us starts here.</p>
+              <div style="background:var(--surface-sunken);border-radius:var(--radius-md);padding:9px 12px;margin-top:8px">
+                <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-body);line-height:1.6">Then email <b style="color:var(--text-brand)">support@colaberry.com</b> + <b style="color:var(--text-brand)">hr@colaberry.com</b></div>
+                <div style="font-size:11.5px;color:var(--text-muted);line-height:1.55;margin-top:2px">your sign-up email, your nature of employment, and when you plan to take the exam. We'll verify employment and complete any approvals.</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:15px;align-items:flex-start;position:relative">
+            <span style="width:30px;height:30px;border-radius:50%;background:var(--red-500);color:#fff;font-family:var(--font-display);font-weight:900;font-size:14px;display:grid;place-items:center;flex:none;box-shadow:0 0 0 4px var(--surface-card)">2</span>
+            <div style="min-width:0;padding-top:4px">
+              <b style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-strong)">Open the "Access to Portal" email</b>
+              <p style="font-size:12px;color:var(--text-muted);line-height:1.55;margin:3px 0 0">A login link arrives after you submit. No password needed, just your email to log in.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:15px;align-items:flex-start;position:relative">
+            <span style="width:30px;height:30px;border-radius:50%;background:var(--red-500);color:#fff;font-family:var(--font-display);font-weight:900;font-size:14px;display:grid;place-items:center;flex:none;box-shadow:0 0 0 4px var(--surface-card)">3</span>
+            <div style="min-width:0;padding-top:4px">
+              <b style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-strong)">Follow your dashboard</b>
+              <p style="font-size:12px;color:var(--text-muted);line-height:1.55;margin:3px 0 0">Log in and work through what's listed on your dashboard.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:15px;align-items:flex-start;position:relative">
+            <span style="width:30px;height:30px;border-radius:50%;background:var(--red-500);color:#fff;font-family:var(--font-display);font-weight:900;font-size:14px;display:grid;place-items:center;flex:none;box-shadow:0 0 0 4px var(--surface-card)">4</span>
+            <div style="min-width:0;padding-top:4px">
+              <b style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-strong)">Submit the required projects</b>
+              <p style="font-size:12px;color:var(--text-muted);line-height:1.55;margin:3px 0 0">Complete and submit the required projects to prepare for certification.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:15px;align-items:flex-start;position:relative">
+            <span style="width:30px;height:30px;border-radius:50%;background:var(--green-600);color:#fff;font-family:var(--font-display);font-weight:900;font-size:14px;display:grid;place-items:center;flex:none;box-shadow:0 0 0 4px var(--surface-card)">5</span>
+            <div style="min-width:0;background:var(--surface-green-subtle);border-radius:var(--radius-lg);padding:12px 15px;flex:1">
+              <span style="display:block"><b style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-strong)">Take the certification exam</b><span style="background:var(--green-700);color:#fff;font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:var(--radius-pill);white-space:nowrap;display:inline-block;vertical-align:2px;margin-left:8px">Fee reimbursed</span></span>
+              <p style="font-size:12px;color:var(--text-body);line-height:1.55;margin:4px 0 0">Sit for the CCA exam with the whole team behind you. The fee is reimbursed for all Colaberry employees.*</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: why + perks -->
+      <div style="display:flex;flex-direction:column;gap:18px;height:100%">
+        <p style="font-size:13.5px;line-height:1.65;color:var(--text-body);margin:5px 0 0">We're building deep Claude expertise across Colaberry, as one team. <b style="color:var(--text-strong)">No one pursues the CCA alone:</b> we sign up, learn, build, and prepare together, then take the exam with the fee reimbursed.</p>
+        <div style="background:var(--surface-blue-subtle);border-radius:var(--radius-xl);padding:16px 20px;flex:1;display:flex;flex-direction:column">
+          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-700);margin-bottom:4px">Free with membership</div>
+          <h2 style="font-family:var(--font-display);font-weight:900;font-size:19px;letter-spacing:-.015em;color:var(--text-strong);margin:0 0 6px">The Colaberry Portal</h2>
+          <div style="display:flex;gap:13px;align-items:center;padding:10px 0;flex:1;border-bottom:1px solid var(--blue-100)">
+            <span style="width:36px;height:36px;border-radius:var(--radius-md);background:var(--surface-card);display:grid;place-items:center;flex:none" class="cb-i"><span style="color:var(--red-600);font-size:19px;display:inline-flex"><i class="ri-mic-line"></i></span></span>
+            <div style="min-width:0"><b style="font-size:13.5px;color:var(--text-strong)">Colaberry AI Podcast</b><div style="font-size:12px;color:var(--text-muted);line-height:1.55;margin-top:2px">New episodes on what's happening in the AI space, right in the portal.</div></div>
+          </div>
+          <div style="display:flex;gap:13px;align-items:center;padding:10px 0;flex:1;border-bottom:1px solid var(--blue-100)">
+            <span style="width:36px;height:36px;border-radius:var(--radius-md);background:var(--surface-card);display:grid;place-items:center;flex:none" class="cb-i"><span style="color:var(--blue-600);font-size:19px;display:inline-flex"><i class="ri-book-open-line"></i></span></span>
+            <div style="min-width:0"><b style="font-size:13.5px;color:var(--text-strong)">Free learning resources</b><div style="font-size:12px;color:var(--text-muted);line-height:1.55;margin-top:2px">Courses, workshops, and exam-prep material for your certification, all included at no cost.</div></div>
+          </div>
+          <div style="display:flex;gap:13px;align-items:center;padding:10px 0;flex:1">
+            <span style="width:36px;height:36px;border-radius:var(--radius-md);background:var(--surface-card);display:grid;place-items:center;flex:none" class="cb-i"><span style="color:var(--green-700);font-size:19px;display:inline-flex"><i class="ri-sparkling-2-line"></i></span></span>
+            <div style="min-width:0"><b style="font-size:13.5px;color:var(--text-strong)">And plenty more</b><div style="font-size:12px;color:var(--text-muted);line-height:1.55;margin-top:2px">Community events, project reviews, and new resources added to the portal regularly.</div></div>
+          </div>
+          <div style="padding-top:14px;display:flex;gap:8px;align-items:center;border-top:1px solid var(--blue-100)"><span class="cb-i" style="color:var(--green-700);font-size:16px;flex:none"><i class="ri-checkbox-circle-fill"></i></span><span style="font-size:12px;font-weight:700;color:var(--blue-700);line-height:1.4">All included with free membership.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Footer band ===== -->
+    <div style="background:var(--surface-inverse);color:#fff;padding:22px 44px 14px;position:relative;overflow:hidden">
+      <div style="position:absolute;top:-110px;right:-70px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.05)"></div>
+      <div class="op-foot" style="display:grid;grid-template-columns:1.45fr 1fr;gap:16px 34px;align-items:center;position:relative">
+        <div style="min-width:0">
+          <div style="font-family:var(--font-display);font-weight:900;font-size:24px;letter-spacing:-.015em;line-height:1.1">Ready to start?</div>
+          <span style="font-size:12.5px;opacity:.75">Sign up today. Your team is already in.</span>
+        </div>
+        <div style="background:#fff;border-radius:var(--radius-xl);padding:10px 12px 10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 10px 26px rgba(0,0,0,.3);min-width:0">
+          <div style="min-width:0">
+            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-600);font-weight:700;margin-bottom:3px">Sign up at</div>
+            <div style="font-family:var(--font-display);font-weight:900;font-size:16px;letter-spacing:-.015em;white-space:nowrap;line-height:1"><a href="https://training.colaberry.com/" target="_blank" rel="noopener" style="color:var(--neutral-900);text-decoration:none">training.colaberry.com</a></div>
+          </div>
+          <span class="cb-i" style="width:34px;height:34px;border-radius:50%;background:var(--red-600);color:#fff;display:grid;place-items:center;flex:none;font-size:17px"><i class="ri-arrow-right-line"></i></span>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.14);margin-top:18px;padding-top:11px;display:flex;justify-content:space-between;align-items:center;gap:8px 24px;flex-wrap:wrap;position:relative">
+        <div style="display:flex;align-items:center;gap:10px;flex:none">
+          <img src="../../assets/logo/colaberry-mark-white.png" alt="" style="height:15px;flex:none;opacity:.9">
+          <span style="font-size:10.5px;letter-spacing:.02em;opacity:.72;font-weight:600;white-space:nowrap">Colaberry School of Data and AI <span style="opacity:.65;font-weight:400">is operated by Colaberry Inc.</span></span>
+        </div>
+        <span style="font-size:10px;opacity:.5;flex:1 1 auto;text-align:right;min-width:0">*Reimbursement requires verified Colaberry employment and prior approval.</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

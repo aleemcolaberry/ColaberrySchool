@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Career · Cover Letter" description="One-page A4 cover letter for interns & trainees — clean letterhead, matches the Resume template. Print-ready." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  @media print { @page { size:A4 portrait; margin:0; } body{background:#fff!important;} .cl-stage{padding:0!important;} .cl{box-shadow:none!important;} }
+</style>
+</helmet>
+<div class="cl-stage" style="background:var(--surface-subtle);min-height:100vh;display:grid;place-items:start center;padding:32px 16px;font-family:var(--font-body)">
+  <div class="cl" data-export="colaberry-cover-letter" data-export-w="1588" style="width:794px;max-width:100%;min-height:1123px;background:var(--surface-card);box-shadow:var(--shadow-lg);display:flex;flex-direction:column;overflow:hidden">
+    <!-- Letterhead -->
+    <div style="padding:44px 48px 22px;border-bottom:3px solid var(--red-500);display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+      <div>
+        <div style="font-family:var(--font-display);font-weight:900;font-size:26px;color:var(--text-strong);letter-spacing:-.02em;line-height:1.05">Jordan Rivera</div>
+        <div style="font-size:13.5px;color:var(--red-600);font-weight:600;margin-top:4px">Data Analyst · SQL &amp; BI</div>
+      </div>
+      <div style="text-align:right;font-size:12px;color:var(--text-muted);font-family:var(--font-mono);line-height:1.8">jordan.rivera@email.com<br>(469) 555-0134 · Dallas, TX</div>
+    </div>
+    <!-- Letter body -->
+    <div style="padding:36px 48px 44px;flex:1;display:flex;flex-direction:column;gap:22px;font-size:14px;line-height:1.75;color:var(--text-body)">
+      <div style="font-family:var(--font-mono);font-size:12.5px;color:var(--text-subtle)">July 17, 2026</div>
+      <div style="font-size:13.5px;line-height:1.7;color:var(--text-strong)">Alex Morgan<br>Analytics Hiring Manager<br>Northwind Health · Dallas, TX</div>
+      <p style="margin:0"><b style="color:var(--text-strong)">Re: Data Analyst position (Job #DA-2214)</b></p>
+      <p style="margin:0">Dear Alex Morgan,</p>
+      <p style="margin:0">When I saw that Northwind Health is building a reporting team to reduce claim turnaround times, I recognized the exact problem I've spent the past year training to solve. As a graduate of Colaberry's Data Analytics program, I've built dashboards and SQL pipelines on healthcare-style datasets every week — and I'd love to bring that momentum to your team.</p>
+      <p style="margin:0">In my current internship at Colaberry, I built a Power BI dashboard that three program managers now use weekly, and rewrote the SQL behind our enrollment reporting, cutting prep time from four hours to twenty minutes. Before that, my support role at RetailCo taught me what analytics is really for: my Excel ticket-trend reports drove a staffing change that cut customer wait times by 18%. I've learned to start from the decision someone needs to make, then work backward to the data.</p>
+      <p style="margin:0">Northwind's focus on measurable patient outcomes matches how I like to work — small, shippable analyses with a clear owner and a clear metric. I'd welcome the chance to walk you through my readmissions dashboard and discuss how I could contribute in the first 90 days.</p>
+      <p style="margin:0">Thank you for your time and consideration.</p>
+      <div style="margin-top:12px">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--text-strong)">Jordan Rivera</div>
+        <div style="font-size:12.5px;color:var(--text-muted);font-family:var(--font-mono);margin-top:4px">Portfolio: refactored.ai/jordanr · github.com/jordanrivera</div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

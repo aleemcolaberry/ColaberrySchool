@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Marketing · Video Intro + Outro (Light)" description="Light-ground animated 9:16 intro bumper (3s) and outro CTA end card (6s) with the full-color Colaberry logo — play, scrub, export as .mp4 via Share → Export → Video. Switch clip from Tweaks." -->
+<helmet>
+<script src="./ds-base.js"></script>
+</helmet>
+<div style="background:#EFEDE8;min-height:100vh;display:flex;flex-direction:column;font-family:'Roboto',system-ui,sans-serif">
+
+  <!-- Header -->
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:16px 22px">
+    <h1 style="font-family:'Roboto',system-ui,sans-serif;font-weight:900;font-size:18px;letter-spacing:-.01em;color:#171717;margin:0">Animated intro + outro · light</h1>
+    <span style="font-family:'Roboto Mono',ui-monospace,monospace;font-size:11px;color:#6E6E6E">9:16 · 1080×1920 · intro 3s · outro 6s</span>
+    <span style="font-family:'Roboto Mono',ui-monospace,monospace;font-size:11px;color:#6E6E6E;margin-left:auto">switch clip in Tweaks · export via Share → Export → Video</span>
+  </div>
+
+  <!-- Stage -->
+  <div style="position:relative;flex:1;min-height:560px">
+    <x-import component-from-global-scope="IntroOutroLightAnimation" from="./animations.jsx ./intro-outro-light-scenes.jsx" clip="{{ clip }}" hint-size="100%,560px"></x-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:760},&quot;clip&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;intro&quot;,&quot;options&quot;:[&quot;intro&quot;,&quot;outro&quot;],&quot;tsType&quot;:&quot;'intro' | 'outro'&quot;,&quot;section&quot;:&quot;Clip&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { clip: this.props.clip ?? 'intro' };
+  }
+}
+</script>
+</body>
+</html>

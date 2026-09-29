@@ -1,0 +1,77 @@
+<!-- @dsCard group="Brand" viewport="700x585" name="Platform theme payload" subtitle="colaberry-training · brands.metadata JSON — light + dark tokens, measured WCAG gates" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css?v=b492c172">
+<style>
+body{margin:0;padding:18px 22px;background:var(--surface-page);font-family:var(--font-body);color:var(--text-body)}
+.hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.hd b{font-size:15px;color:var(--text-strong)}
+.chip{font-family:var(--font-mono);font-size:11px;background:var(--surface-sunken);border:1px solid var(--border-subtle);border-radius:6px;padding:2px 8px;color:var(--text-muted)}
+.strip{border-radius:10px;padding:10px 12px 8px;margin-bottom:8px}
+.strip.light{background:#FFFFFF;border:1px solid #E4E4E3}
+.strip.dark{background:#0F0F0F;border:1px solid #313131}
+.strip h4{margin:0 0 6px;font-size:10px;letter-spacing:.08em;font-weight:700}
+.strip.light h4{color:#6B6B6B}.strip.dark h4{color:#B4B4B4}
+.row{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:6px}
+.sw{height:34px;border-radius:6px}
+.strip.light .sw{border:1px solid rgba(26,26,26,.12)}
+.strip.dark .sw{border:1px solid rgba(255,255,255,.14)}
+.lbl{font-family:var(--font-mono);font-size:8.5px;line-height:1.35;margin-top:4px;word-break:break-all}
+.strip.light .lbl{color:#4A4A4A}.strip.dark .lbl{color:#B4B4B4}
+table{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0 8px}
+th{text-align:left;font-size:10px;letter-spacing:.06em;color:var(--text-muted);font-weight:700;padding:4px 8px;border-bottom:1px solid var(--border-default)}
+td{padding:5px 8px;border-bottom:1px solid var(--border-subtle);color:var(--text-body)}
+td.m{font-family:var(--font-mono);font-size:11.5px}
+.pass{display:inline-block;font-size:10px;font-weight:700;color:var(--status-success-fg);background:var(--status-success-bg);border-radius:999px;padding:1px 8px}
+.ft{font-size:11px;color:var(--text-muted);line-height:1.55}
+.ft code{font-family:var(--font-mono);font-size:10.5px;color:var(--text-body)}
+a{color:var(--text-link)}a:hover{color:var(--text-link-hover)}
+</style>
+</head>
+<body>
+<div class="hd"><b>Platform theme payload</b><span class="chip">brandSlug: colaberry-training</span><span class="chip">themeKey: colaberry-training</span></div>
+<div class="strip light">
+<h4>LIGHT</h4>
+<div class="row">
+<div><div class="sw" style="background:#FFFFFF"></div><div class="lbl">bg<br>FFFFFF</div></div>
+<div><div class="sw" style="background:#FFFFFF"></div><div class="lbl">bg-elev<br>FFFFFF</div></div>
+<div><div class="sw" style="background:#2B2B2B"></div><div class="lbl">fg<br>2B2B2B</div></div>
+<div><div class="sw" style="background:#6B6B6B"></div><div class="lbl">fg-mut<br>6B6B6B</div></div>
+<div><div class="sw" style="background:#E5121D"></div><div class="lbl">accent<br>E5121D</div></div>
+<div><div class="sw" style="background:#FFFFFF"></div><div class="lbl">acc-con<br>FFFFFF</div></div>
+<div><div class="sw" style="background:#FFF0F1"></div><div class="lbl">acc-soft<br>FFF0F1</div></div>
+<div><div class="sw" style="background:#D8D8D8"></div><div class="lbl">line<br>D8D8D8</div></div>
+<div><div class="sw" style="background:#356A24"></div><div class="lbl">success<br>356A24</div></div>
+<div><div class="sw" style="background:#96590A"></div><div class="lbl">warning<br>96590A</div></div>
+<div><div class="sw" style="background:#C20E1E"></div><div class="lbl">danger<br>C20E1E</div></div>
+</div>
+</div>
+<div class="strip dark">
+<h4>DARK</h4>
+<div class="row">
+<div><div class="sw" style="background:#0F0F0F"></div><div class="lbl">bg<br>0F0F0F</div></div>
+<div><div class="sw" style="background:#1A1A1A"></div><div class="lbl">bg-elev<br>1A1A1A</div></div>
+<div><div class="sw" style="background:#E4E4E3"></div><div class="lbl">fg<br>E4E4E3</div></div>
+<div><div class="sw" style="background:#B4B4B4"></div><div class="lbl">fg-mut<br>B4B4B4</div></div>
+<div><div class="sw" style="background:#E5121D"></div><div class="lbl">accent<br>E5121D</div></div>
+<div><div class="sw" style="background:#FFFFFF"></div><div class="lbl">acc-con<br>FFFFFF</div></div>
+<div><div class="sw" style="background:#351315"></div><div class="lbl">acc-soft<br>351315</div></div>
+<div><div class="sw" style="background:#313131"></div><div class="lbl">line<br>313131</div></div>
+<div><div class="sw" style="background:#A2D375"></div><div class="lbl">success<br>A2D375</div></div>
+<div><div class="sw" style="background:#F5C878"></div><div class="lbl">warning<br>F5C878</div></div>
+<div><div class="sw" style="background:#FE8A90"></div><div class="lbl">danger<br>FE8A90</div></div>
+</div>
+</div>
+<table>
+<tr><th>WCAG 2.1 AA GATE</th><th>MIN</th><th>LIGHT</th><th>DARK</th><th></th></tr>
+<tr><td>fg on bg</td><td class="m">4.5</td><td class="m">14.15</td><td class="m">15.06</td><td><span class="pass">PASS</span></td></tr>
+<tr><td>fg on bg-elevated</td><td class="m">4.5</td><td class="m">14.15</td><td class="m">13.67</td><td><span class="pass">PASS</span></td></tr>
+<tr><td>fg-muted on bg</td><td class="m">4.5</td><td class="m">5.32</td><td class="m">9.24</td><td><span class="pass">PASS</span></td></tr>
+<tr><td>accent-contrast on accent (button label)</td><td class="m">4.5</td><td class="m">4.73</td><td class="m">4.73</td><td><span class="pass">PASS</span></td></tr>
+<tr><td>accent on bg (link / focus)</td><td class="m">3.0</td><td class="m">4.73</td><td class="m">4.04</td><td><span class="pass">PASS</span></td></tr>
+</table>
+<p class="ft">Payload: <code>brand-profile/colaberry-training.brand.json</code> — loads straight into <code>brands.metadata</code>. Type <code>Roboto 700/400 · 18px base</code> · radius <code>12px</code> (pill buttons, 24px cards) · shadow <code>--shadow-md</code>. Accent is red-600 <code>#E5121D</code> (button-safe), never raw cherry <code>#FB2832</code>; dark-mode red <em>text</em> lightens to red-300. Fonts all open-license — $0. Status colors are text-grade (≥4.5:1 shown above as 5.6–12.2).</p>
+</body>
+</html>

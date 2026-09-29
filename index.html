@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colaberry Design System — One system, every experience</title>
+<meta name="description" content="The living design system of Colaberry, the School of Data and AI — tokens, components, templates and rules that people and AI can read.">
+<link rel="icon" href="assets/logo/export/favicon-32.png">
+<script>try{var t=localStorage.getItem('cb-landing-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="styles.css?v=b492c172">
+<link rel="stylesheet" href="landing.css?v=aw3">
+</head>
+<body data-screen-label="DS Landing">
+
+<nav class="lnav" aria-label="Main">
+  <div class="lnav__in">
+    <a class="lnav__logo" href="index.html" aria-label="Colaberry home"><img class="lg-l" src="assets/logo/colaberry-horizontal.png" alt="Colaberry"><img class="lg-d" src="assets/logo/colaberry-horizontal-white.png" alt="Colaberry"></a>
+    <div class="lnav__links">
+      <a href="#system">What this is</a>
+      <a href="#flow">How it works</a>
+      <a href="#work">In practice</a>
+      <a href="#principles">Principles</a>
+      <a href="#start">Start here</a>
+    </div>
+    <div class="lnav__end">
+      <button class="icobtn" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode"><i class="ri-moon-line"></i></button>
+      <a class="btn btn--primary lnav__cta" href="design-system.html">Open the docs</a>
+      <button class="icobtn burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i><i></i></button>
+    </div>
+  </div>
+</nav>
+
+<div class="menu" id="menu" data-screen-label="Menu overlay">
+  <div class="menu__in">
+    <div class="menu__links">
+      <a href="#system"><small>01</small>What this is</a>
+      <a href="#flow"><small>02</small>How it works</a>
+      <a href="#work"><small>03</small>In practice</a>
+      <a href="#principles"><small>04</small>Principles</a>
+      <a href="#start"><small>05</small>Start here</a>
+    </div>
+    <div class="menu__foot">
+      <a class="btn btn--primary" href="design-system.html">Open the docs</a>
+      <button class="btn btn--ghost" data-theme-toggle aria-pressed="false"><span class="cb-i"><i class="ri-moon-line"></i></span>Theme</button>
+    </div>
+  </div>
+</div>
+
+<header class="hero" id="top" data-screen-label="Hero">
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="hero__in">
+    <span class="hero__pill"><span class="dot"></span>Colaberry Design System · v1.0</span>
+    <h1 class="hero__h1">
+      <span class="hl"><span class="hl__i">One system.</span></span>
+      <span class="hl"><span class="hl__i">Every <span class="grad">Colaberry</span></span></span>
+      <span class="hl"><span class="hl__i">experience<span class="cherry">.</span></span></span>
+    </h1>
+    <p class="hero__sub">The single source of truth for the School of Data and AI — tokens, components, templates and rules that let a marketer, a developer, or an AI ship on-brand work in minutes.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary mag" href="design-system.html">Explore the system</a>
+      <a class="btn btn--ghost mag" href="#system">What's inside</a>
+    </div>
+    <p class="hero__note">245 tokens · 20 components · 26 templates · WCAG 2.2 AA</p>
+  </div>
+  <span class="hero__shape" aria-hidden="true"><span id="glShape">01 · scatter field</span></span>
+  <span class="hero__hint" aria-hidden="true">move to gather the web · click to ripple &amp; reshape</span>
+  <span class="hero__cue" aria-hidden="true"></span>
+</header>
+
+<div class="marq" aria-hidden="true">
+  <div class="marq__track">
+    <span class="marq__item">Button</span><span class="marq__item">Badge</span><span class="marq__item">Card</span><span class="marq__item">Avatar</span><span class="marq__item">Input</span><span class="marq__item">Textarea</span><span class="marq__item">Checkbox</span><span class="marq__item">Switch</span><span class="marq__item">Accordion</span><span class="marq__item">Breadcrumb</span><span class="marq__item">Pagination</span><span class="marq__item">Tooltip</span><span class="marq__item">Popover</span><span class="marq__item">Progress</span><span class="marq__item">Skeleton</span><span class="marq__item">Toast</span><span class="marq__item">Table</span><span class="marq__item">Dialog</span><span class="marq__item">Drawer</span><span class="marq__item">Carousel</span>
+    <span class="marq__item">Button</span><span class="marq__item">Badge</span><span class="marq__item">Card</span><span class="marq__item">Avatar</span><span class="marq__item">Input</span><span class="marq__item">Textarea</span><span class="marq__item">Checkbox</span><span class="marq__item">Switch</span><span class="marq__item">Accordion</span><span class="marq__item">Breadcrumb</span><span class="marq__item">Pagination</span><span class="marq__item">Tooltip</span><span class="marq__item">Popover</span><span class="marq__item">Progress</span><span class="marq__item">Skeleton</span><span class="marq__item">Toast</span><span class="marq__item">Table</span><span class="marq__item">Dialog</span><span class="marq__item">Drawer</span><span class="marq__item">Carousel</span>
+  </div>
+</div>
+
+<section class="sec" id="system" data-screen-label="What this is">
+  <div class="wrap shead">
+    <p class="kicker" data-reveal><span class="idx">01</span>What this is</p>
+    <h2 class="h2" data-split>Everything the brand<br>knows, in one place.</h2>
+    <p class="lead" data-reveal>A design system is a brand's shared language — colors, type, components, motion and voice, packed into code that people <b style="color:var(--text-brand)">and AI</b> can read. This is Colaberry's. Everything below is live — go ahead and touch it.</p>
+  </div>
+  <div class="wrap">
+    <div class="bento" data-reveal-group>
+      <div class="tile t-ramps">
+        <p class="tile__k">Color</p>
+        <h3 class="tile__h">Three hues, one voice.</h3>
+        <div id="ramps"></div>
+        <p class="lr-hint">Click any swatch to copy its hex.</p>
+      </div>
+      <div class="tile t-type">
+        <div>
+          <p class="tile__k">Type</p>
+          <div class="tw-aa" id="twAa" aria-hidden="true">Aa<span class="g">.</span></div>
+        </div>
+        <div>
+          <div class="tw-row">
+            <button class="tw-btn" data-w="400">400</button>
+            <button class="tw-btn" data-w="500">500</button>
+            <button class="tw-btn" data-w="700">700</button>
+            <button class="tw-btn is-on" data-w="900">900</button>
+          </div>
+          <p class="tile__p" style="margin-top:12px">Roboto carries every word; Roboto Mono carries the numbers. Quicksand is reserved for the logotype.</p>
+        </div>
+      </div>
+      <div class="tile t-tokens">
+        <p class="tile__k">Tokens · 245</p>
+        <h3 class="tile__h">Every decision, named.</h3>
+        <p class="tile__p">Components never hard-code a value — change a token, every surface follows.</p>
+        <div class="tok-col">
+          <span class="tok"><i style="background:var(--red-500)"></i><code>--brand-accent</code></span>
+          <span class="tok"><i class="pill"></i><code>--radius-pill</code></span>
+          <span class="tok"><i class="aa">ms</i><code>--dur-base · 220ms</code></span>
+        </div>
+      </div>
+      <div class="tile t-theme">
+        <p class="tile__k">Theme</p>
+        <h3 class="tile__h">Dark mode, free.</h3>
+        <p class="tile__p">Every token flips with <code style="font-family:var(--font-mono);font-size:.92em">data-theme</code> — the cherry stays constant.</p>
+        <div class="theme-row"><button class="r-switch r-switch--lg" id="themeSwitch" role="switch" aria-checked="false" aria-label="Toggle dark mode for this page"></button><span style="font-size:13.5px;color:var(--text-body)">Try it — the whole page flips</span></div>
+      </div>
+      <div class="tile t-motion">
+        <p class="tile__k">Motion</p>
+        <h3 class="tile__h">Quick, gentle, purposeful.</h3>
+        <p class="tile__p">140–360ms, ease-out in, spring only to confirm. Never showy.</p>
+        <div class="mo-stage" id="mstage"><span class="mo-chip">enter · 360ms</span><span class="mo-chip">stagger · 70ms</span><span class="mo-chip">hover · 140ms</span><span class="mo-check"><span class="cb-i"><i class="ri-check-line"></i></span></span></div>
+        <button class="tw-btn mo-play" id="mplay">Replay</button>
+      </div>
+      <div class="tile t-cmp">
+        <p class="tile__k">Components · 20</p>
+        <h3 class="tile__h">Live, accessible, token-fed.</h3>
+        <div class="cmp-live">
+          <div class="row"><button class="r-btn">Apply now</button><button class="r-btn r-btn--green">Enroll</button><button class="r-btn r-btn--ghost">Maybe later</button></div>
+          <div class="row"><span class="r-badge r-badge--g"><span class="d"></span>Enrolling</span><span class="r-badge r-badge--b">Data Science</span></div>
+          <div>
+            <label class="r-label" for="demo-email">Email</label>
+            <input class="r-input" id="demo-email" type="email" placeholder="ada@email.com">
+          </div>
+          <div class="row"><button class="r-switch" role="switch" aria-checked="true" aria-label="Email me about new cohorts"></button><span style="font-size:13.5px;color:var(--text-body)">Email me about new cohorts</span></div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--text-muted);margin-bottom:6px"><span>Course progress</span><b style="color:var(--text-strong)">68%</b></div>
+            <div class="r-prog"><i data-val="68"></i></div>
+          </div>
+        </div>
+        <a class="tile__link" href="design-system.html#components">Meet all twenty <span class="cb-i"><i class="ri-arrow-right-line"></i></span></a>
+      </div>
+      <div class="tile t-tpl">
+        <p class="tile__k">Templates · 26</p>
+        <h3 class="tile__h">Start at 80% done.</h3>
+        <div class="tpl-grid">
+          <div class="tpl tpl--social"><small>social · 1:1</small><b>Your data career starts here.</b></div>
+          <div class="tpl tpl--cert"><small>certificate</small><span class="seal"></span><b>Certificate of Completion</b></div>
+          <div class="tpl tpl--resume"><small style="color:#8a8a8a">resume · letter</small><i class="hd"></i><i style="width:80%"></i><i style="width:68%"></i><i style="width:74%"></i></div>
+          <div class="tpl tpl--deck"><small>deck · 16:9</small><b>Q2 Investor Briefing</b><span class="mini-bars"><i style="height:40%;background:var(--chart-1)"></i><i style="height:70%;background:var(--chart-2)"></i><i style="height:55%;background:var(--chart-3)"></i><i style="height:100%;background:var(--chart-4)"></i></span></div>
+        </div>
+        <p class="tile__p">Social posts, decks, certificates, resumes, event pages, newsletters — pre-wired to the tokens. Pick one, swap the words, ship it.</p>
+        <a class="tile__link" href="design-system.html">See the template kit <span class="cb-i"><i class="ri-arrow-right-line"></i></span></a>
+      </div>
+      <div class="tile t-prompt">
+        <p class="tile__k">AI-readable</p>
+        <h3 class="tile__h">Plain English is the API.</h3>
+        <p class="tile__p">Claude reads the brand guide, tokens and components, then does the busywork — describe the artifact, download finished HTML.</p>
+        <div class="prompt-card" data-snip="prompt" role="button" tabindex="0" aria-label="Copy the starter prompt">
+          <span class="copy">Copy</span>
+          <code>"Using the <b style="color:#FD5760;font-weight:400">Colaberry design system</b>, create a [social post / flyer / slide] at [size] for [topic]. Headline: [your words] — give me 3 options."</code>
+        </div>
+        <div class="prompt-ret"><span class="arr">returns →</span><span class="filechip"><span class="cb-i"><i class="ri-file-download-line"></i></span>spring-cohort-post.html · 1080×1080</span></div>
+      </div>
+      <div class="tile t-a11y">
+        <p class="tile__k">Accessibility</p>
+        <h3 class="tile__h">AA is the floor.</h3>
+        <p class="tile__p">Every pair audited — focus always visible.</p>
+        <div class="ctr-row">
+          <span class="ctr"><b>14.2:1</b><span>body text</span></span>
+          <span class="ctr"><b>6.0:1</b><span>links</span></span>
+          <span class="ctr"><b>44px</b><span>touch targets</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="flow" data-screen-label="How it works">
+  <div class="wrap shead">
+    <p class="kicker" data-reveal><span class="idx">02</span>How it works</p>
+    <h2 class="h2" data-split>From token<br>to artifact.</h2>
+    <p class="lead" data-reveal>Scroll — one cherry-red decision travels from a variable, through components and templates, into a finished, shippable file.</p>
+  </div>
+  <div class="fp-vp">
+    <div class="fp-track">
+      <div class="fp-line" aria-hidden="true"><i id="fpFill"></i></div>
+      <article class="fp is-on">
+        <p class="fp__k">Stop 01 · token</p>
+        <h3 class="fp__h">A decision gets a name.</h3>
+        <div class="fp__stage">
+          <code><span class="c">/* tokens/color.css */</span><br>--brand-accent: <b>#FB2832</b>;</code>
+          <span class="fp__swatch" aria-hidden="true"></span>
+        </div>
+        <p class="fp__p">245 named decisions cover color, type, space and motion — the single source of truth.</p>
+      </article>
+      <article class="fp">
+        <p class="fp__k">Stop 02 · component</p>
+        <h3 class="fp__h">Twenty components inherit it.</h3>
+        <div class="fp__stage">
+          <button class="r-btn">Apply now</button>
+          <code class="fp__mini">background: var(--brand-accent)</code>
+        </div>
+        <p class="fp__p">Nothing hard-codes a value — edit one line and the whole kit restyles itself.</p>
+      </article>
+      <article class="fp">
+        <p class="fp__k">Stop 03 · template</p>
+        <h3 class="fp__h">Templates assemble them.</h3>
+        <div class="fp__stage">
+          <div class="fp__post"><small>social · 1080×1080</small><b>Your data career starts here.</b><span class="fp__pill">Apply now</span></div>
+        </div>
+        <p class="fp__p">26 starting points — posts, decks, certificates, pages — arrive 80% done.</p>
+      </article>
+      <article class="fp">
+        <p class="fp__k">Stop 04 · artifact</p>
+        <h3 class="fp__h">Anyone ships, on-brand.</h3>
+        <div class="fp__stage">
+          <span class="filechip"><span class="cb-i"><i class="ri-file-download-line"></i></span>spring-cohort-post.html</span>
+          <span class="fp__ok"><span class="cb-i"><i class="ri-check-line"></i></span>on-brand · AA · dark-mode ready</span>
+        </div>
+        <p class="fp__p">Describe it in plain English — a person or Claude delivers the finished file in minutes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="work" data-screen-label="In practice" style="background: var(--surface-subtle); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <div class="wrap shead" style="margin-bottom: clamp(28px, 5vh, 56px);">
+    <div class="gal-head">
+      <div>
+        <p class="kicker" data-reveal><span class="idx">03</span>In practice</p>
+        <h2 class="h2" data-split>One system,<br>every medium.</h2>
+        <p class="lead" data-reveal>Decks, posts, product, print — all drawn from the same tokens. Nothing custom, nothing off-brand. Drag through.</p>
+      </div>
+      <div class="gal-ui" data-reveal>
+        <span class="gal-track"><i id="galBar"></i></span>
+        <button class="icobtn" data-gal="prev" aria-label="Scroll gallery back"><i class="ri-arrow-left-line"></i></button>
+        <button class="icobtn" data-gal="next" aria-label="Scroll gallery forward"><i class="ri-arrow-right-line"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="gal" id="gal">
+    <div class="gitem">
+      <p class="glabel">deck · title 16:9</p>
+      <div class="gcard gcard--deck g-title">
+        <img src="assets/logo/colaberry-horizontal-white.png" alt="">
+        <h4>Future-proof your career in data &amp; AI</h4>
+        <div class="meta"><span>Investor briefing</span><span>Q2 2026</span></div>
+      </div>
+    </div>
+    <div class="gitem">
+      <p class="glabel">deck · data slide</p>
+      <div class="gcard gcard--deck g-data">
+        <p class="sh">Graduate outcomes</p>
+        <h4>5,000+ careers changed</h4>
+        <div class="g-bars">
+          <i data-l="'23" style="height:52%;background:var(--chart-1)"></i>
+          <i data-l="'24" style="height:68%;background:var(--chart-2)"></i>
+          <i data-l="'25" style="height:84%;background:var(--chart-3)"></i>
+          <i data-l="'26" style="height:97%;background:var(--chart-4)"></i>
+        </div>
+      </div>
+    </div>
+    <div class="gitem">
+      <p class="glabel">social · 1:1</p>
+      <div class="gcard gcard--sq g-post g-post--cream">
+        <img src="assets/logo/colaberry-horizontal.png" alt="">
+        <h4>No degree.<br>No problem.</h4>
+        <span class="pill">Free info session</span>
+      </div>
+    </div>
+    <div class="gitem">
+      <p class="glabel">story · 9:16</p>
+      <div class="gcard gcard--story g-story">
+        <span class="tag">Spring cohort</span>
+        <h4>12 weeks to job-ready.</h4>
+        <span class="pill">Swipe up</span>
+      </div>
+    </div>
+    <div class="gitem">
+      <p class="glabel">web · sign-in</p>
+      <div class="gcard gcard--web">
+        <div class="g-bar"><i></i><i></i><i></i><span>sign-in.html</span></div>
+        <div class="g-body">
+          <p class="ttl">Welcome back</p>
+          <p class="sub">Sign in to continue your data journey.</p>
+          <label class="r-label" for="g-email">Email</label>
+          <input class="r-input" id="g-email" type="email" placeholder="ada@email.com">
+          <button class="r-btn" style="width:100%;margin-top:6px">Sign in</button>
+        </div>
+      </div>
+    </div>
+    <div class="gitem">
+      <p class="glabel">web · dashboard, dark</p>
+      <div class="gcard gcard--web" data-theme="dark">
+        <div class="g-bar"><i></i><i></i><i></i><span>dashboard.html</span></div>
+        <div class="g-body">
+          <p class="ttl">This week</p>
+          <div class="g-stats">
+            <span class="g-stat"><b>68%</b><span>Complete</span></span>
+            <span class="g-stat"><b>4.9</b><span>Avg. score</span></span>
+          </div>
+          <div>
+            <div class="g-prog-l"><span>SQL fundamentals</span><b>90%</b></div>
+            <div class="r-prog r-prog--g"><i data-val="90"></i></div>
+          </div>
+          <div>
+            <div class="g-prog-l"><span>Dashboards</span><b>55%</b></div>
+            <div class="r-prog"><i data-val="55"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gitem">
+      <p class="glabel">social · 1:1</p>
+      <div class="gcard gcard--sq g-post g-post--green">
+        <span class="tag">Scholarships</span>
+        <h4>Veterans: full-tuition scholarships open.</h4>
+        <span class="pill">Apply now</span>
+      </div>
+    </div>
+    <div class="gitem">
+      <p class="glabel">print · brochure A4</p>
+      <div class="gcard gcard--print g-print">
+        <img src="assets/logo/colaberry-horizontal.png" alt="">
+        <h4>Why Colaberry</h4>
+        <div class="col">
+          <span class="ln"><i style="background:var(--green-500)"></i>Instructor-led classes</span>
+          <span class="ln"><i style="background:var(--blue-500)"></i>1:1 mentorship</span>
+          <span class="ln"><i style="background:var(--red-500)"></i>A year of job support</span>
+        </div>
+        <span class="pill">Spring cohort</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band" data-screen-label="Proof" aria-label="Colaberry in numbers">
+  <span class="band__float band__float--a" data-speed="0.82" aria-hidden="true">certificate · letter</span>
+  <span class="band__float band__float--b" data-speed="1.18" aria-hidden="true">deck · 16:9</span>
+  <span class="band__float band__float--c" data-speed="0.9" aria-hidden="true">social · 1:1</span>
+  <div class="band__in">
+    <p class="band__k" data-reveal>The school this system serves</p>
+    <div class="band__grid" data-reveal-group>
+      <div class="bstat"><b>2012</b><span>teaching data &amp; AI since</span></div>
+      <div class="bstat bstat--red"><b data-count="5000" data-suffix="+">0</b><span>careers changed</span></div>
+      <div class="bstat"><b data-count="49">0</b><span>countries reached</span></div>
+      <div class="bstat"><b>AA</b><span>WCAG 2.2 — the floor</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="sec" id="principles" data-screen-label="Principles">
+  <div class="wrap shead">
+    <p class="kicker" data-reveal><span class="idx">04</span>Principles</p>
+    <h2 class="h2" data-split>Five beliefs<br>that break ties.</h2>
+    <p class="lead" data-reveal>When a design decision is ambiguous, these settle it — in order.</p>
+  </div>
+  <div class="wrap">
+    <div class="pr-stack">
+      <article class="pr-card" style="--pi:0">
+        <span class="pr-idx" style="color:var(--green-600)">01</span>
+        <div>
+          <h3>Inclusive by default</h3>
+          <p>Accessibility, plain language and generous touch targets are requirements, not extras. If everyone can't use it, it isn't done.</p>
+        </div>
+        <span class="r-badge r-badge--g pr-chip">44px targets · AA contrast · plain words</span>
+      </article>
+      <article class="pr-card" style="--pi:1">
+        <span class="pr-idx" style="color:var(--red-500)">02</span>
+        <div>
+          <h3>Warm, not loud</h3>
+          <p>Soft shapes, gentle motion, friendly copy — confidence without hype.</p>
+        </div>
+        <span class="r-badge r-badge--r pr-chip">soft radii · 140–360ms motion · no shouting</span>
+      </article>
+      <article class="pr-card" style="--pi:2">
+        <span class="pr-idx" style="color:var(--blue-600)">03</span>
+        <div>
+          <h3>Clarity over decoration</h3>
+          <p>We teach data, so content and numbers lead. Ornament earns its place.</p>
+        </div>
+        <span class="r-badge r-badge--b pr-chip">numbers first · ornament earns its place</span>
+      </article>
+      <article class="pr-card" style="--pi:3">
+        <span class="pr-idx" style="color:var(--text-subtle)">04</span>
+        <div>
+          <h3>One system, many makers</h3>
+          <p>Semantic tokens and reusable components let a marketer, a developer and an AI produce the same brand.</p>
+        </div>
+        <span class="r-badge r-badge--n pr-chip">245 tokens · 20 components · one voice</span>
+      </article>
+      <article class="pr-card pr-card--dark" style="--pi:4">
+        <span class="pr-idx" style="color:#FD5760">05</span>
+        <div>
+          <h3>Consistent &amp; constant</h3>
+          <p>The cherry accent never changes; foreground inverts with the background. Trust is built by repetition.</p>
+        </div>
+        <span class="r-badge pr-chip">the cherry never changes</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="start" data-screen-label="Start here">
+  <div class="wrap shead">
+    <p class="kicker" data-reveal><span class="idx">05</span>Start here</p>
+    <h2 class="h2" data-split>Three ways in.</h2>
+    <p class="lead" data-reveal>Pick your lane — plain English, the living docs, or two lines of code.</p>
+  </div>
+  <div class="wrap">
+    <div class="go-grid" data-reveal-group>
+      <div class="go-card">
+        <span class="cb-icon-tile" style="background:var(--red-500)"><span class="cb-i"><i class="ri-chat-smile-2-line"></i></span></span>
+        <p class="go-k">Marketing &amp; everyone</p>
+        <h3>Describe it, download it.</h3>
+        <ol>
+          <li>Attach this project in a Claude chat.</li>
+          <li>Say what you need — format, size, your words.</li>
+          <li>Preview, tweak in plain English, download.</li>
+        </ol>
+        <div class="go-snip prompt-card" data-snip="prompt" role="button" tabindex="0" aria-label="Copy prompt template">
+          <span class="copy">Copy</span>
+          <code>"Using the Colaberry design system, create a [social post] at [1080×1080] for [the spring cohort]…"</code>
+        </div>
+      </div>
+      <div class="go-card">
+        <span class="cb-icon-tile" style="background:var(--blue-500)"><span class="cb-i"><i class="ri-palette-line"></i></span></span>
+        <p class="go-k">Designers</p>
+        <h3>The living reference.</h3>
+        <p>Tokens with contrast ratios, logo and clear-space rules, the full WCAG audit, motion recipes, and every component in light and dark — interactive, not a PDF.</p>
+        <a class="btn btn--ghost" href="design-system.html">Open the docs</a>
+      </div>
+      <div class="go-card">
+        <span class="cb-icon-tile" style="background:var(--green-600)"><span class="cb-i"><i class="ri-code-s-slash-line"></i></span></span>
+        <p class="go-k">Developers</p>
+        <h3>Two files, fully wired.</h3>
+        <p>Link the stylesheet for tokens and fonts, load the bundle for components, reference semantic vars — dark mode comes free.</p>
+        <div class="go-snip prompt-card" data-snip="install" role="button" tabindex="0" aria-label="Copy install snippet">
+          <span class="copy">Copy</span>
+          <code><span style="color:#8AC759">&lt;link</span> rel="stylesheet" href="colaberry/styles.css"<span style="color:#8AC759">&gt;</span>
+<span style="color:#8AC759">&lt;script</span> src="colaberry/_ds_bundle.js"<span style="color:#8AC759">&gt;&lt;/script&gt;</span></code>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta" data-reveal data-screen-label="CTA">
+  <div class="cta__in">
+    <i class="cta__glow" aria-hidden="true"></i>
+    <h2>Build something on-brand today.</h2>
+    <p>The full reference — tokens, live components, accessibility audit, logo rules and hand-off guides — is one click away.</p>
+    <div class="cta__btns">
+      <a class="btn btn--onred mag" href="design-system.html">Open the design system</a>
+      <a class="btn btn--outred mag" href="design-system.html#handoff">Read the hand-off guide</a>
+    </div>
+    <p class="cta__meta">warm, not loud · clarity over decoration · one system, many makers</p>
+  </div>
+</div>
+
+<footer class="foot" data-screen-label="Footer">
+  <div class="foot__in">
+    <div class="foot__brand">
+      <img src="assets/logo/colaberry-horizontal-white.png?v=2" alt="Colaberry">
+      <p>The School of Data and AI — helping people future-proof their careers since 2012. 5,000+ careers changed across 49 countries.</p>
+    </div>
+    <div class="foot__cols">
+      <div class="foot__col">
+        <b>System</b>
+        <a href="design-system.html">Documentation</a>
+        <a href="design-system.html#components">Components</a>
+        <a href="design-system.html#a11y">Accessibility</a>
+        <a href="design-system.html#handoff">Hand-off</a>
+      </div>
+      <div class="foot__col">
+        <b>This page</b>
+        <a href="#system">What this is</a>
+        <a href="#flow">How it works</a>
+        <a href="#work">In practice</a>
+        <a href="#principles">Principles</a>
+        <a href="#start">Start here</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot__bar"><div><span>© <span id="yr">2026</span> · Colaberry School of Data and AI is operated by Colaberry Inc.</span><span>Plano, TX &amp; Boston, MA</span></div></div>
+</footer>
+
+<div class="l-toast" id="ltoast" role="status" aria-live="polite"></div>
+
+<script src="assets/vendor/three.min.js"></script>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="hero-three.js?v=aw5"></script>
+<script src="landing.js?v=aw3"></script>
+</body>
+</html>
